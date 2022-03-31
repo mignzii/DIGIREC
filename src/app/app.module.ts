@@ -13,6 +13,8 @@ import { RecrouvementComponent } from './recrouvement/recrouvement.component';
 import { ListeEtudiantComponent } from './liste-etudiant/liste-etudiant.component';
 import { ReccouvrementComponent } from './reccouvrement/reccouvrement.component';
 import { RecuComponent } from './recu/recu.component';
+import { TableaudebordComptableComponent } from './tableaudebord-comptable/tableaudebord-comptable.component';
+import { StatistiquesComponent } from './statistiques/statistiques.component';
 
 const appRoutes : Routes =[
   {path:'page-acceuil',component:PageacceuilComponent},
@@ -24,6 +26,8 @@ const appRoutes : Routes =[
   {path:'debiteur',component:ListeEtudiantComponent},
   {path:'recouvrement',component:ReccouvrementComponent},
   {path:'recu',component:RecuComponent},
+  {path:'dashboard',component:TableaudebordComptableComponent},
+  {path:'statistique',component:StatistiquesComponent},
 
 ]
 

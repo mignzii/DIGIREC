@@ -10,7 +10,8 @@ module.exports = {
       "grisfonce":"#6E6E6E",
       "bleuclair":"#4FCCF7",
       "verte":"#72B920",
-      "texte-r":"#F26013"
+      "texte-r":"#F26013",
+      "blanc":"#ffffff"
      },},
   },
 

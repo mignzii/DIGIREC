@@ -72,27 +72,27 @@
       </svg>
       <p class="" style="font-size: 35px; color: #3596D2;">DIGIREC ESMT</p>
       <div class="bg-gris-clair  rounded-lg shadow-md flex flex-col py-6 px-6 space-y-8 justify-center items-center">
-         <div class="flex space-x-3">
-          <div class="bg-bleudusite   rounded-full" style="background-color: #3596D2; width: 350px; padding: 15px;">
-            <p class="text-center flex items-baseline " style="font-size: 25px;"> <span class="material-icons" style="font-size: 30px;">
+         <div class="flex space-x-3" >
+          <div  class="bg-bleudusite  rounded-full" style="background-color: #3596D2; width: 350px; padding: 15px;">
+            <p class="text-center flex items-center " style="font-size: 25px;"> <span class="material-icons mr-2" style="font-size: 30px;">
               mode_edit_outline
               </span> Nouveau versement</p>
           </div>
           <div class="bg-bleudusite  rounded-full" style="background-color: #3596D2; width: 350px; padding: 15px;">
-            <p class="text-center flex items-baseline  space-x-1" style="font-size: 25px;"><span class="material-icons" style="font-size: 30px;">
+            <p class="text-center flex items-center  space-x-1" style="font-size: 25px;"><span class="material-icons mr-2" style="font-size: 30px;">
               assignment_ind
               </span>Nouveau versement</p>
           </div>
          </div>
          <div class="flex space-x-3">
           <div class=" w-full rounded-full" style="background-color: #3596D2; width: 350px; padding: 15px;">
-            <p class="text-center items-baseline  flex" style="font-size: 25px;"><span class="material-icons" style="font-size: 30px;">
+            <p class="text-center items-center   flex" style="font-size: 25px;"><span class="material-icons mr-2" style="font-size: 30px;">
               difference
               </span>Nouveau versement</p>
           </div>
           <div class="bg-bleudusite w-full rounded-full" style="background-color: #3596D2; width: 350px; padding: 15px;">
-            <p class="text-center items-baseline  flex" style="font-size: 30px;">
-              <span class="material-icons ">
+            <p class="text-center items-center  flex" style="font-size: 25px;">
+              <span style="font-size: 30px;" class="material-icons mr-2 ">
                 assignment_ind
                 </span>Nouveau versement</p>
           </div>
@@ -104,40 +104,40 @@
       <div class="bg-gray-400 rounded-lg  shadow-md px-5 py-12 ">
         <img src="../../assets/pic2.jpg" width="158px" height="158px" class="rounded-full mx-auto" alt="">
         <div class="  flex space-x-2">
-          <div class="bg-blanc text-bleudusite rounded-lg">
+          <div class="bg-blanc text-bleudusite rounded-lg" >
             <div class="py-3 px-3 ">
               <p class="flex "><span class="material-icons  rounded-full shadow-xl px-1 py-1">
                 account_circle
-                </span>Cheikh Tidiane Diallo </p>
+                </span> {{res[0].prenom}} {{res[0].nom}} </p>
             </div>
             <div class="py-3 px-3 ">
               <p class="flex"><span class="material-icons rounded-full shadow-xl px-1 py-1" >
                 email
-                </span>Cheikh Tidiane Diallo </p>
+                </span>{{res[0].email}} </p>
             </div>
             <div class="py-3 px-3 ">
-              <p class="flex "><span class="material-icons rounded-full shadow-xl px-1 py-1">
+              <p class="flex items-center "><span class="material-icons rounded-full shadow-xl px-1 py-1">
                 phone
-                </span>+221 77 644 35 81 </p>
+                </span> +221{{res[0].telephone}} </p>
             </div>
             <div class="py-3 px-3 ">
               <p class="flex space-x-1"><span class="material-icons rounded-full shadow-xl px-1 py-1">
                 fmd_good
-                </span>Cité Sipres II, Liberté 6, Dakar, Sénégal </p>
+                </span>{{res[0].adresse}}</p>
             </div>
           </div>
          <div class="bg-blanc text-bleuclair px-3 py-3 rounded-lg">
           <div class="flex flex-col ">
             <p >Departement</p>
-            <p style="color: #6E6E6E; font-weight: 700;">Management</p>
+            <p style="color: #6E6E6E; font-weight: 700;">{{res[0].Departement}}</p>
           </div>
           <div class="flex flex-col ">
             <p>Service</p>
-            <p style="color: #6E6E6E; font-weight: 700;">Comptabilité</p>
+            <p style="color: #6E6E6E; font-weight: 700;">{{res[0].Service}}</p>
           </div>
           <div class="flex flex-col ">
             <p>Fonction</p>
-            <p style="color: #6E6E6E; font-weight: 700;">Comptabilité</p>
+            <p style="color: #6E6E6E; font-weight: 700;">{{res[0].Fonction}}</p>
           </div>
          </div>
         </div>
@@ -233,7 +233,7 @@
               </g>
             </svg>
 
-            <p style="color: #3596D2;" >@cheikhtidiane</p>
+            <p style="color: #3596D2;" >{{res[0].tag}}</p>
           </div>
           <div class="flex justify-end">
             <span>esmt.sn</span>

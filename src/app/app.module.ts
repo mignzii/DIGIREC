@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes,RouterModule} from '@angular/router';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { PageacceuilComponent } from './pageacceuil/pageacceuil.component';
 import { ConnexionComponent } from './connexion/connexion.component';
@@ -15,6 +16,7 @@ import { ReccouvrementComponent } from './reccouvrement/reccouvrement.component'
 import { RecuComponent } from './recu/recu.component';
 import { TableaudebordComptableComponent } from './tableaudebord-comptable/tableaudebord-comptable.component';
 import { StatistiquesComponent } from './statistiques/statistiques.component';
+import { ProfilComponent } from './profil/profil.component';
 
 const appRoutes : Routes =[
   {path:'page-acceuil',component:PageacceuilComponent},
@@ -26,8 +28,9 @@ const appRoutes : Routes =[
   {path:'debiteur',component:ListeEtudiantComponent},
   {path:'recouvrement',component:ReccouvrementComponent},
   {path:'recu',component:RecuComponent},
-  {path:'dashboard',component:TableaudebordComptableComponent},
+  {path:'dashboard/:num',component:TableaudebordComptableComponent},
   {path:'statistique',component:StatistiquesComponent},
+  {path:'profil',component:ProfilComponent},
 
 ]
 
@@ -42,11 +45,12 @@ const appRoutes : Routes =[
     ListeDesEtudiantsComponent,
     RecrouvementComponent,
     ListeEtudiantComponent,
-    ReccouvrementComponent
+    ReccouvrementComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes),ReactiveFormsModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

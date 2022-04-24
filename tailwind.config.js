@@ -11,7 +11,7 @@ module.exports = {
       "bleuclair":"#4FCCF7",
       "verte":"#72B920",
       "texte-r":"#F26013",
-      "blanc":"#ffffff"
+      "blanc":"#ffffff",
      },},
   },
 

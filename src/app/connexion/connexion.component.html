@@ -9,10 +9,10 @@
         <div class="flex items-center  space-x-20">
           <div class="flex flex-col space-y-1 ">
               <label for="email" class="text-xl pl-1 font-bold">Adresse e-mail</label>
-              <input type="email" class="rounded-full p-3  " placeholder="ABDOU MBAYE">
+              <input type="email" class="rounded-full p-3 " [formControl]="username" placeholder="ABDOU MBAYE">
           </div>
           <div class="flex flex-col pt-[60px] space-y-2">
-            <button class="bg-bleudusite border-2 py-3 px-5  rounded-[20px] "><span class="text-white">CONNEXION</span> </button>
+            <button (click)="connecter() " class="bg-bleudusite border-2 py-3 px-5  rounded-[20px] "><span class="text-white">CONNEXION</span> </button>
             <span class="underline underline-offset-4">Mot de passe oublie ?</span>
           </div>
 
@@ -20,7 +20,7 @@
         <div>
           <div class="flex flex-col space-y-1">
             <label for="email" class="text-xl pl-1 font-bold">Mot de passe</label>
-            <input type="password" class="rounded-full p-3 w-[19%] ">
+            <input type="password" [formControl]="password" class="rounded-full p-3 w-[19%] ">
         </div>
 
         </div>

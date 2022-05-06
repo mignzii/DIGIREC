@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EtudiantsService } from '../services/etudiants.service';
 
 @Component({
   selector: 'app-liste-etudiant',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListeEtudiantComponent implements OnInit {
 
-  constructor() { }
+  public rec:any
+
+  constructor(private lidtedebit:EtudiantsService) { }
 
   ngOnInit(): void {
+    this.lidtedebit.recupdebiteur().subscribe(data=>{
+      this.rec=data
+      console.log(this.rec)
+    })
   }
 
 }

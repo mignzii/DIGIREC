@@ -19,10 +19,12 @@ password = new FormControl()
   constructor(private userconnect:ConnexionService) { }
 
   ngOnInit(): void {
+    console.log("bonjour")
   }
   connecter(){
     this.userconnect.recupone(this.username.value).subscribe(res=>{
       this.info=res
+      console.log(this.info)
       if ( this.info==false){
         this.isnum=true
         this.ispwd=false

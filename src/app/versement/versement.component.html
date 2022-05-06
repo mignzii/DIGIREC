@@ -2,109 +2,128 @@
   <div class="pt-[75px] pl-[250px]">
     <span class="material-icons"> arrow_back_ios </span>
     <p class="text-bleudusite text-5xl font-bold">DIGIREC ESMT</p>
+    <!-- Choix du type d'operation -->
+    <p> Choix du type d'operation</p>
 
-    <div class="flex justify-between">
-      <div class="flex flex-col mt-[100px] space-y-11">
-        <div class="flex space-x-8">
-          <div class="flex flex-col">
-            <label for="annee"
-              ><div class="text-xl font-bold">Annee scolaire</div>
-            </label>
-            <div class="flex items-center w-full bg-white rounded-full">
-              <input
-                type="text"
-                class="rounded-full p-3"
-                placeholder="2021-2022"
-              />
-              <span class="material-icons pr-2 text-bleudusite">
-                expand_more
-              </span>
-            </div>
-          </div>
-          <div class="flex flex-col">
-            <label for="Classe"
-              ><div class="text-xl font-bold">Classe</div>
-            </label>
-            <div class="flex items-center w-full bg-white rounded-full">
-              <input
-                type="text"
-                class="rounded-full p-3"
-                placeholder="MP-SI 2"
-              />
-              <span class="material-icons pr-2 text-bleudusite">
-                expand_more
-              </span>
-            </div>
+
+
+  <div class="flex items-center space-x-2 mt-[100px]  ">
+    <label for="" class="text-xl font-bold">Numero carte Etudiant</label>
+    <input type="text" class="rounded-full p-3" [formControl]="code" placeholder="numero etudiant "/>
+    <button class="bg-bleudusite border-2 py-3 px-8 w-[10%] rounded-[20px]" (click)="affiche() ">
+      <span class="text-white" >Chercher</span>
+    </button>
+  </div>
+  <div class="flex justify-between items-start">
+    <div class="flex flex-col mt-[50px] space-y-4">
+      <div class="flex space-x-8">
+        <div class="flex flex-col">
+          <label for="annee"
+            ><div class="text-xl font-bold">Annee scolaire</div>
+          </label>
+          <div class="flex items-center w-full bg-white rounded-full">
+            <input type="text" class="rounded-full p-3" value="{{stock[0].annee_scolaire}} " placeholder="2021-2022" />
+            <span class="material-icons pr-2 text-bleudusite" >
+              expand_more
+            </span>
           </div>
         </div>
-        <div class="flex space-x-8">
-          <div class="flex flex-col">
-            <label for="nom"><div class="text-xl font-bold">Nom</div> </label>
-            <div class="flex items-center w-full bg-white rounded-full">
-              <input type="text" class="rounded-full p-3" placeholder="MBAYE" />
-              <span class="material-icons pr-2 text-bleudusite">
-                expand_more
-              </span>
-            </div>
-          </div>
-          <div class="flex flex-col">
-            <label for="Prenom"
-              ><div class="text-xl font-bold">Prenom</div>
-            </label>
-            <div class="flex items-center w-full bg-white rounded-full">
-              <input type="text" class="rounded-full p-3" placeholder="ABDOU" />
-              <span class="material-icons pr-2 text-bleudusite">
-                expand_more
-              </span>
-            </div>
+        <div class="flex flex-col">
+          <label for="Classe"
+            ><div class="text-xl font-bold">Classe</div>
+          </label>
+          <div class="flex items-center w-full bg-white rounded-full">
+            <input type="text" class="rounded-full p-3" value="{{stock[0].classe}}" placeholder="MP-S2"/>
+            <span class="material-icons pr-2 text-bleudusite">
+              expand_more
+            </span>
           </div>
         </div>
-        <button class="bg-bleudusite border-2 py-3 px-8 w-[35%] rounded-[20px]">
-          <span class="text-white">Enregistrer</span>
-        </button>
       </div>
-      <div class="bg-bleudusite p-4 mt-3 mr-20 rounded-[10%]">
-        <div class="flex flex-col items-center space-y-14">
+      <div class="flex space-x-8">
+        <div class="flex flex-col">
+          <label for="nom"><div class="text-xl font-bold">Nom</div> </label>
+          <div class="flex items-center w-full bg-white rounded-full">
+            <input type="text" class="rounded-full p-3" value="{{stock[0].nom}}" placeholder="MBAYE" />
+            <span class="material-icons pr-2 text-bleudusite">
+              expand_more
+            </span>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <label for="Prenom"
+            ><div class="text-xl font-bold">Prenom</div>
+          </label>
+          <div class="flex items-center w-full bg-white rounded-full">
+            <input type="text" class="rounded-full p-3" value="{{stock[0].prenom}}" placeholder="ABDOU" />
+            <span class="material-icons pr-2 text-bleudusite">
+              expand_more
+            </span>
+          </div>
+        </div>
+      </div>
+     <div class="flex space-x-2">
+      <button (click)="postversement() " class="bg-bleudusite border-2 py-3 px-8 w-[35%] rounded-[20px]">
+        <span class="text-white">Enregistrer</span>
+      </button>
+      <button (click)="miseajour()" class="bg-bleudusite border-2 py-3 px-8 w-[35%] rounded-[20px]">
+        <span class="text-white">Mettre à Jour</span>
+      </button>
+     </div>
+    </div>
+    <div class="bg-bleudusite p-8 mt-3 mr-20 rounded-[10%]">
+      <div class="flex flex-col items-center space-y-8">
+        <div class="flex flex-col items-center">
+          <label for="Prenom"
+            ><div class="text-xl font-bold text-white">LIBELLE</div>
+          </label>
+          <div class="flex items-center mt-2  w-full bg-white rounded-full">
+           <select class="w-full rounded-lg py-2 px-2" [formControl]="libelle" id="">
+             <option value="">Frais de Dossier</option>
+             <option value="">Frais de Scolarite</option>
+             <option value=""></option>
+             <option value=""></option>
+           </select>
+
+          </div>
+        </div>
+        <div class="flex flex-col space-y-2 w-[80%]">
           <div class="flex flex-col items-center">
             <label for="Prenom"
-              ><div class="text-xl font-bold text-white">LIBELLE</div>
+              ><div class="text-md font-bold text-white">
+                Montant de la facture
+              </div>
+            </label>
+            <input type="text" class="w-[110%] rounded-full p-3" [formControl]="montant" placeholder="1 255 000 fcfa"
+/>
+          </div>
+          <div class="flex flex-col items-center">
+            <label for="Prenom"
+              ><div class="text-md font-bold text-white">
+                Delai de reglement
+              </div>
             </label>
             <div class="flex items-center w-full bg-white rounded-full">
               <input
-                type="text"
+                type="date"
                 class="rounded-full p-3"
-                placeholder="FRAIS DE DOSSIER"
+                placeholder="01/01/2022" [formControl]="date"
               />
-              <span class="material-icons pr-2 text-bleudusite">
+              <span
+                class="material-icons absolute right-[123px] text-bleudusite"
+              >
                 expand_more
               </span>
             </div>
-          </div>
-          <div class="flex flex-col space-y-5">
-            <span  class="text-3xl text-white font-bold">Moyen de paiement</span>
-            <div class="flex w-full justify-between ">
-              <div class="flex flex-col  items-center">
-                <input type="radio" name="paiement" id="espece" value="espece" class="m-2 w-8 h-8">
-                <label for="Espece" class="text-white text-2xl">Espece</label>
-              </div>
-              <div class="flex flex-col  items-center">
-                <input type="radio" name="paiement" id="cheque" value="cheque" class="m-2 w-8 h-8">
-                <label for="cheque" class="text-white text-2xl">Cheque</label>
-              </div>
-              <div class="flex flex-col  items-center">
-                <input type="radio" name="paiement" id="bordereau" value="bordereau"  class="m-2 w-8 h-8">
-                <label for="bordereau" class="text-white text-2xl">Bordereau</label>
-              </div>
-
-            </div>
-            <input type="text" class="rounded-full p-3" placeholder="Numero                              001232002">
           </div>
         </div>
       </div>
     </div>
-    <div
-      class="absolute top-3 right-3 flex flex-col border p-2 rounded-[20px] bg-gray-100"
-    >
+  </div>
+
+
+<!-- fin elements -->
+    <div class="absolute top-3 right-3 flex flex-col border p-2 rounded-[20px] bg-gray-100" >
       <img
         src="https://www.etudiant.ma/uploads/ckeditor/pictures/170/content_etudiant-universitaires.png"
         alt=""
@@ -125,9 +144,7 @@
         <defs>
           <pattern
             id="pattern"
-            preserveAspectRatio="none"
-            width="100%"
-            height="100%"
+            preserveAspectRatio="none"  width="100%" height="100%"
             viewBox="0 0 300 152"
           >
             <image

@@ -23,7 +23,7 @@ const appRoutes : Routes =[
   {path:'connexion',component:ConnexionComponent},
   {path:'recherche',component:RechercheComponent},
   {path:'facturation',component:FacturationComponent},
-  {path:'versement',component:VersementComponent},
+  {path:'versement/:numcomptable',component:VersementComponent},
   {path:'etudiant',component:ListeDesEtudiantsComponent},
   {path:'debiteur',component:ListeEtudiantComponent},
   {path:'recouvrement',component:ReccouvrementComponent},
@@ -45,12 +45,12 @@ const appRoutes : Routes =[
     ListeDesEtudiantsComponent,
     RecrouvementComponent,
     ListeEtudiantComponent,
-    ReccouvrementComponent,
+    ReccouvrementComponent,TableaudebordComptableComponent,
     ProfilComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),ReactiveFormsModule,HttpClientModule
+    RouterModule.forRoot(appRoutes),ReactiveFormsModule,HttpClientModule,RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

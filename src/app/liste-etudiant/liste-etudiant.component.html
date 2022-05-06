@@ -120,38 +120,15 @@
                   <th class="border-2  border-bleudusite text-texte-r text-center font-bold py-1">TOTAL VERS.</th>
                   <th class="border-2 border-bleudusite text-texte-r font-bold text-center py-1">RELIQUAT</th>
                 </thead>
-                <tbody class="text-bleudusite font-bold ">
-                  <tr>
-                    <td class="py-2 text-center border border-bleudusite">ESMT_12_ETU</td>
-                    <td  class="py-2 text-center border-bleudusite border">CPS 1</td>
-                    <td  class="py-2 text-center border-bleudusite border">ARALA SOUMAILA</td>
-                    <td  class="py-2 text-center border-bleudusite border">9 020 000</td>
-                    <td  class="py-2 text-center text-texte-r border-bleudusite border">9 020 000</td>
-                    <td  class="py-2 text-center text-texte-r border-bleudusite border">9 020 000</td>
-                  </tr>
-                  <tr>
-                    <td class="py-2 text-center border border-bleudusite">ESMT_12_ETU</td>
-                    <td  class="py-2 text-center border-bleudusite border">CPS 1</td>
-                    <td  class="py-2 text-center border-bleudusite border">ARALA SOUMAILA</td>
-                    <td  class="py-2 text-center border-bleudusite border">9 020 000</td>
-                    <td  class="py-2 text-center text-texte-r border-bleudusite border">9 020 000</td>
-                    <td  class="py-2 text-center text-texte-r border-bleudusite border">9 020 000</td>
-                  </tr>
-                  <tr>
-                    <td class="py-2 text-center border border-bleudusite">ESMT_12_ETU</td>
-                    <td  class="py-2 text-center border-bleudusite border">CPS 1</td>
-                    <td  class="py-2 text-center border-bleudusite border">ARALA SOUMAILA</td>
-                    <td  class="py-2 text-center border-bleudusite border">9 020 000</td>
-                    <td  class="py-2 text-center text-texte-r border-bleudusite border">9 020 000</td>
-                    <td  class="py-2 text-center text-texte-r border-bleudusite border">9 020 000</td>
-                  </tr>
-                  <tr>
-                    <td class="py-2 text-center border border-bleudusite">ESMT_12_ETU</td>
-                    <td  class="py-2 text-center border-bleudusite border">CPS 1</td>
-                    <td  class="py-2 text-center border-bleudusite border">ARALA SOUMAILA</td>
-                    <td  class="py-2 text-center border-bleudusite border">9 020 000</td>
-                    <td  class="py-2 text-center text-texte-r border-bleudusite border">9 020 000</td>
-                    <td  class="py-2 text-center text-texte-r border-bleudusite border">9 020 000</td>
+                <tbody class="text-bleudusite font-bold "  >
+
+                  <tr  *ngFor="let item of rec">
+                    <td class="py-2 text-center border border-bleudusite">{{item.num_etudiant}} </td>
+                    <td  class="py-2 text-center border-bleudusite border">{{item.classe}}</td>
+                    <td  class="py-2 text-center border-bleudusite border">{{item.nom}} {{item.prenom}}  </td>
+                    <td  class="py-2 text-center border-bleudusite border">{{item.montant}} </td>
+                    <td  class="py-2 text-center text-texte-r border-bleudusite border">{{item.totalversement}}</td>
+                    <td  class="py-2 text-center text-texte-r border-bleudusite border">{{item.montantEtat}} </td>
                   </tr>
                 </tbody>
               </table>

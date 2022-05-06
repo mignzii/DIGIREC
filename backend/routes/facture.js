@@ -19,7 +19,19 @@ db.connect((err) =>{
 
 // Les routes disponibles .................................................
 
+router.post('/', (request,response)=>{
+  let values1 = [
+    [request.body.id_facture ,request.body.libelle,request.body.montant,request.body.date_emission,request.body.num_etudiant,
+    request.body.id_fournisseur]
+]
+db.query('INSERT INTO facture (id_facture,libelle,montant,date_emission,num_etudiant,id_fournisseur) VALUES ?',[values1],(err)=>{
+    if(err) {response.send(false)
+              console.log(err)}
+    else  response.send(true)
+})
 
+
+})
 
 // Exportation de la route ................................................
 

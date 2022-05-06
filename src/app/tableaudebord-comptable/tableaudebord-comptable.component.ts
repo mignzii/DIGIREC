@@ -21,5 +21,7 @@ public afficheur:any
       console.log(this.afficheur)
     })
   }
-
+affiche(){
+  console.log("bonjour")
+}
 }

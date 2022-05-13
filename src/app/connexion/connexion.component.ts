@@ -25,10 +25,11 @@ password = new FormControl()
     this.userconnect.recupone(this.username.value).subscribe(res=>{
       this.info=res
       console.log(this.info)
-      if ( this.info==false){
+      if( this.info==false){
         this.isnum=true
         this.ispwd=false
-      } else if (this.info[0].password==this.password.value) {
+      }
+       else if (this.info[0].mdp==this.password.value) {
         sessionStorage.setItem('isconnect',"true")
         sessionStorage.setItem('iduser',this.info[0].id_personnel)
         this.url=sessionStorage.getItem('iduser')
@@ -38,6 +39,7 @@ password = new FormControl()
       else{
         this.isnum=false
         this.ispwd=true
+        console.log("hello")
       }
     })
   }

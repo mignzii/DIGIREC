@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { EtudiantsService } from '../services/etudiants.service';
 
 @Component({
   selector: 'app-recu',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecuComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private route:ActivatedRoute , public info:EtudiantsService) { }
+code=this.route.snapshot.params['code']
+montant=this.route.snapshot.params['mont']
+libelle=this.route.snapshot.params['libelle']
+res:any
   ngOnInit(): void {
+
+    this.info.recupinfoetudiant(this.code).subscribe(data=>{
+      this.res=data
+    })
   }
 
 }

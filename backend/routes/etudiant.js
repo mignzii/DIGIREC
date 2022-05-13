@@ -41,7 +41,8 @@ router.put('/mign',(request,response)=>{
 let a=request.body.totalvers
 let b=request.body.montantEtat
 let c=request.body.num_etudiant
-  db.query(`UPDATE etudiant SET totalversement =${a} , montantEtat =${b} WHERE num_etudiant='${c}'` ,(err)=>{
+let d=request.body.nbredevers
+  db.query(`UPDATE etudiant SET totalversement =${a} , montantEtat =${b} , nbredeversement=${d} WHERE num_etudiant='${c}'` ,(err)=>{
     if(err) {response.send(false)
               console.log(err)}
     else  return response.send(true)

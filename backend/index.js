@@ -8,6 +8,7 @@ import fournisseurRoutes from './routes/fournisseur.js'
 import membrepersonnelRoutes from './routes/membrepersonnel.js'
 import personnelRoutes from './routes/personnel.js'
 import transactionRoutes from './routes/transaction.js'
+import bailleurRoutes from './routes/bailleur.js'
 
 // Creation de l'application ........................................
 
@@ -31,7 +32,7 @@ app.use('/fournisseur',fournisseurRoutes)
 app.use('/membrepersonnel',membrepersonnelRoutes)
 app.use('/personnel',personnelRoutes)
 app.use('/transaction',transactionRoutes)
-
+app.use('/bailleur',bailleurRoutes)
 // Lancement de l'application .......................................
 
 app.listen(PORT, ()=> console.log(`Le serveur fonctionne à l'adresse http://localhost:${PORT}`))

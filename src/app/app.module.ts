@@ -27,10 +27,10 @@ const appRoutes : Routes =[
   {path:'etudiant',component:ListeDesEtudiantsComponent},
   {path:'debiteur',component:ListeEtudiantComponent},
   {path:'recouvrement',component:ReccouvrementComponent},
-  {path:'recu',component:RecuComponent},
+  {path:'recu/:code/:mont/:libelle',component:RecuComponent},
   {path:'dashboard/:num',component:TableaudebordComptableComponent},
   {path:'statistique',component:StatistiquesComponent},
-  {path:'profil',component:ProfilComponent},
+  {path:'profil/:id',component:ProfilComponent},
 
 ]
 

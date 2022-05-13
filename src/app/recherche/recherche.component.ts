@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-recherche',
@@ -11,5 +12,6 @@ export class RechercheComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  idetudiant=new FormControl()
 
 }

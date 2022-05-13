@@ -1,6 +1,6 @@
 <div class="h-screen w-full bg-gris-clair">
   <div class="pt-[75px] pl-[250px]">
-    <span class="material-icons"> arrow_back_ios </span>
+   <a routerLink="/dashboard/{{test}}" class="cursor-pointer"> <span class="material-icons"> arrow_back_ios </span></a>
     <p class="text-bleudusite text-5xl font-bold">DIGIREC ESMT</p>
     <!-- Choix du type d'operation -->
     <p> Choix du type d'operation</p>
@@ -8,7 +8,7 @@
 
 
   <div class="flex items-center space-x-2 mt-[100px]  ">
-    <label for="" class="text-xl font-bold">Numero carte Etudiant</label>
+    <label for="" class="text-xl font-bold">Numéro de  carte étudiant</label>
     <input type="text" class="rounded-full p-3" [formControl]="code" placeholder="numero etudiant "/>
     <button class="bg-bleudusite border-2 py-3 px-8 w-[10%] rounded-[20px]" (click)="affiche() ">
       <span class="text-white" >Chercher</span>
@@ -63,12 +63,10 @@
         </div>
       </div>
      <div class="flex space-x-2">
-      <button (click)="postversement() " class="bg-bleudusite border-2 py-3 px-8 w-[35%] rounded-[20px]">
+      <a href="#ex1" rel="modal:open" class=" ">  <button (click)="postversement() " class="bg-bleudusite border-2 py-3 px-8 w-[35%] rounded-[20px]">
         <span class="text-white">Enregistrer</span>
-      </button>
-      <button (click)="miseajour()" class="bg-bleudusite border-2 py-3 px-8 w-[35%] rounded-[20px]">
-        <span class="text-white">Mettre à Jour</span>
-      </button>
+      </button></a>
+
      </div>
     </div>
     <div class="bg-bleudusite p-8 mt-3 mr-20 rounded-[10%]">
@@ -79,10 +77,8 @@
           </label>
           <div class="flex items-center mt-2  w-full bg-white rounded-full">
            <select class="w-full rounded-lg py-2 px-2" [formControl]="libelle" id="">
-             <option value="">Frais de Dossier</option>
-             <option value="">Frais de Scolarite</option>
-             <option value=""></option>
-             <option value=""></option>
+             <option value="Frais de Dossier">Frais de Dossier</option>
+             <option value="Frais de Scolarite">Frais de Scolarite</option>
            </select>
 
           </div>
@@ -100,7 +96,7 @@
           <div class="flex flex-col items-center">
             <label for="Prenom"
               ><div class="text-md font-bold text-white">
-                Delai de reglement
+               Date
               </div>
             </label>
             <div class="flex items-center w-full bg-white rounded-full">
@@ -164,4 +160,18 @@
       </svg>
     </span>
   </div>
+  <div id="ex1" class="modal">
+    <ng-container *ngIf="serveurresponse==true"[ngTemplateOutlet]="bon" ></ng-container>
+    <ng-container *ngIf="serveurresponse==false"[ngTemplateOutlet]="mauvais" ></ng-container>
+  </div>
+
+  <!-- Link to open the modal -->
+<ng-template #bon>
+  <p>Votre enregistrement a ete effectue avec succés</p>
+  <a routerLink="/recu/{{code.value}}/{{montant.value}}/{{libelle.value}}" rel="modal:close" (click)="miseajour() "><p class="text-bleudusite">Imprimer le reçu</p></a>
+</ng-template>
+<ng-template #mauvais>
+  <p>Votre enregistrement n'a pas ete effectue avec succes</p>
+  <p>Veuillez revoir les informations fournies</p>
+</ng-template>
 </div>

@@ -51,31 +51,31 @@
         <span>Recu No <span class="font-bold">358 850</span> </span>
         <span class="font-bold">29/08/2022</span>
       </div>
-        <table class="w-full">
+        <table class="w-full" >
           <tr>
             <td class="">Nom :</td>
-            <td class=" border-l-2 border-green-600 pl-6  ">Mbaye</td>
+            <td class=" border-l-2 border-green-600 pl-6  ">{{res[0].nom}} </td>
           </tr>
           <tr>
            <td>Prenom :</td>
-           <td class=" border-l-2 border-green-600 pl-6 ">Abdoulaye</td>
+           <td class=" border-l-2 border-green-600 pl-6 ">{{res[0].prenom}} </td>
          </tr>
          <tr>
            <td>Email :</td>
-           <td class=" border-l-2 border-green-600 pl-6 "> <span class="font-bold">mbaye.abdoulaye.etu@esmt.sn</span> </td>
+           <td class=" border-l-2 border-green-600 pl-6 "> <span class="font-bold">{{res[0].email}} </span> </td>
          </tr>
          <tr>
            <td>Classe :</td>
-           <td class=" border-l-2 border-green-600 pl-6 ">INGC1</td>
+           <td class=" border-l-2 border-green-600 pl-6 ">{{res[0].classe}} </td>
          </tr>
          <tr >
 
            <td class="pt-6">Objet :</td>
-           <td class=" border-l-2 border-green-600 pl-6 pt-6 ">Frais de dossier</td>
+           <td class=" border-l-2 border-green-600 pl-6 pt-6 ">{{libelle}} </td>
           </tr>
          <tr>
            <td>Montant :</td>
-           <td class=" border-l-2 border-green-600 pl-6 "><span class="font-bold">10 000 F</span> </td>
+           <td class=" border-l-2 border-green-600 pl-6 "><span class="font-bold">{{montant}} F</span> </td>
          </tr>
          <tr>
            <td>Mode de reglement :</td>

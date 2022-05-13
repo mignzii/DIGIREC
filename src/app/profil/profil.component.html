@@ -70,9 +70,9 @@
           <div class="">
             <p class="text-center text-bleudusite">Etat des paiements</p>
             <div class="flex divide-x-2 px-2 rounded-3xl ">
-              <div class="bg-[#4BDF6D] rounded-l-3xl px-2">Versement 1</div>
-              <div class="bg-[#4BDF6D] px-2">Versement 2</div>
-              <div class="bg-red-400 rounded-r-3xl px-2">Versement 3</div>
+              <div class="bg-red-400 rounded-l-3xl px-2" [ngClass]="{first:res[0].nbredeversement==1 || res[0].nbredeversement==2 || res[0].nbredeversement==3 } ">Versement 1</div>
+              <div class="bg-red-400 px-2" [ngClass]="{first:res[0].nbredeversement==2 || res[0].nbredeversement==3  } ">Versement 2</div>
+              <div class="bg-red-400 rounded-r-3xl px-2" [ngClass]="{first:res[0].nbredeversement==3} ">Versement 3</div>
             </div>
             <div class="flex w-full justify-between text-black ">
               <div class="flex flex-col  items-center">
@@ -89,7 +89,7 @@
               </div>
 
             </div>
-              <div class="flex flex-col py-2 space-y-2">
+              <div class="flex flex-col py-2 space-y-2" *ngFor="let item of res">
                 <div class="flex space-x-1 items-center">
                   <p class="rounded-full px-2 py-2 shadow-xl">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20.741" height="20.741" viewBox="0 0 20.741 20.741">
@@ -100,7 +100,7 @@
                   </svg>
 
                   </p>
-                  <p class="text-bleudusite">200 0000 FCFA</p>
+                  <p class="text-bleudusite"> {{item.montant}} FCFA</p>
                 </div>
                 <div class="flex space-x-1 items-center">
 
@@ -110,7 +110,7 @@
                     </svg>
 
                   </p>
-                    <p class="text-orange-500">1 055 0000 FCFA</p>
+                    <p class="text-orange-500">{{item.montantEtat}} FCFA</p>
                 </div>
                 <div class="flex space-x-1">
                   <p class="rounded-full px-2 py-2 shadow-xl">
@@ -123,20 +123,20 @@
 
 
                   </p>
-                  <p class="text-bleudusite">200 000 FCFA</p>
+                  <p class="text-bleudusite">{{item.totalversement}} FCFA</p>
                 </div>
               </div>
           </div>
         </div>
         <div class="bg-white w-1/2 px-2 py-3 rounded-2xl">
-            <table class="text-black w-full">
+            <table class="text-black w-full" *ngFor="let et of res">
               <thead>
                 <tr>
                   <th class="  text-center text-bleudusite border-r-2 border-r-gray-200"><span class="border-bleudusite   border-b-2">Informations sur l'etudiant</span> </th>
                   <th class="text-center text-bleudusite "> <span class="border-bleudusite border-b-2"> Information sur le bailleur</span> </th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody *ngFor="let bai of res1">
                 <tr>
                   <td class="py-2 border-r-2 border-r-gray-200">
                     <div class="flex space-x-1 items-center">
@@ -151,7 +151,11 @@
                       </svg>
 
                     </p>
-                    <p class="">Iniasse Thiam</p>
+                    <div class="flex space-x-1">
+                      <p class="">{{et.nom}} </p>
+                      <p class="">{{et.prenom}}</p>
+                    </div>
+
                   </div>
                 </td>
                   <td class="py-2 px-2  "> <div class="flex space-x-1 items-center">
@@ -165,7 +169,11 @@
                         </g>
                       </svg>
                     </p>
-                    <p class="">Cheikh THIAM</p>
+                    <div class="flex space-x-1">
+                      <p class="">{{bai.nom}} </p>
+                      <p class="">{{bai.prenom}} </p>
+                    </div>
+
                   </div></td>
                 </tr>
                 <tr>
@@ -177,7 +185,7 @@
 
 
                     </p>
-                    <p class="">iniasse.thiam.etu@esmt.sn</p>
+                    <p class="">{{et.email}} </p>
                   </div></td>
                   <td class="py-2 px-2"> <div class="flex space-x-1 items-center">
                     <p class="rounded-full px-2 py-2 shadow-xl">
@@ -186,7 +194,7 @@
                       </svg>
 
                     </p>
-                    <p class="">cheikh.thiam01@adie.sn</p>
+                    <p class="">{{bai.mail}} </p>
                   </div>
                 </td>
                 </tr>
@@ -198,7 +206,7 @@
                       </svg>
 
                     </p>
-                    <p class="">+221 77 644 35 81</p>
+                    <p class="">+221 {{et.telephone}} </p>
                   </div></td>
                   <td class="py-2 px-2"> <div class="flex space-x-1 items-center">
                     <p class="rounded-full px-2 py-2 shadow-xl">
@@ -206,7 +214,7 @@
                         <path id="Tracé_2560" data-name="Tracé 2560" d="M9.476,13.475A14.442,14.442,0,0,0,15.8,19.79l2.11-2.115a.962.962,0,0,1,.973-.235,10.917,10.917,0,0,0,3.424.547.956.956,0,0,1,.959.959V22.3a.956.956,0,0,1-.959.959A16.3,16.3,0,0,1,6,6.959.959.959,0,0,1,6.959,6h3.356a.956.956,0,0,1,.959.959,10.917,10.917,0,0,0,.547,3.424.962.962,0,0,1-.235.973Z" transform="translate(-6 -6)" fill="#3596d2"/>
                       </svg>
                     </p>
-                    <p class="">+221 77 644 35 81</p>
+                    <p class="">+221 {{bai.tel}} </p>
                   </div></td>
                 </tr>
                 <tr>
@@ -218,7 +226,7 @@
 
 
                     </p>
-                    <p class="w-1/2">199, Ouagou Niayes, Liberté 6, Dakar, Sénégal</p>
+                    <p class="w-1/2">{{et.Adreesse}} </p>
                   </div></td>
                   <td class="py-2 px-2"> <div class="flex space-x-1 items-center">
                     <p class="rounded-full px-2 py-2 shadow-xl">
@@ -228,7 +236,7 @@
 
 
                     </p>
-                    <p class="">199, Ouagou Niayes, Liberté 6, Dakar, Sénégal</p>
+                    <p class="">{{bai.adresse}} </p>
                   </div></td>
                 </tr>
                 <tr>
@@ -245,7 +253,7 @@
 
 
                     </p>
-                    <p class="">Père</p>
+                    <p class="">{{bai.role}} </p>
                   </div></td>
                 </tr>
                 <tr>
@@ -261,7 +269,7 @@
                       </svg>
 
                     </p>
-                    <p class="">Directeur ADIE</p>
+                    <p class="">{{bai.poste_occupe}} </p>
                   </div></td>
                 </tr>
               </tbody>
@@ -270,17 +278,21 @@
         <div>
           <div>
             <img src="../../assets/pic2.jpg" width="158px" height="158px" class="rounded-full mx-auto" alt="">
-            <p class="text-bleudusite  text-xl">Ibrahima NJ</p>
+           <div class="flex space-x-1">
+            <p class="text-bleudusite  text-xl">{{res[0].nom}} </p>
+            <p class="text-bleudusite  text-xl">{{res[0].prenom}} </p>
+           </div>
+
           </div>
           <div class="bg-white text-black  rounded-lg px-1 py-2">
             <div class="flex space-y-2 flex-col">
               <div class="flex flex-col space-y-1">
                 <p class="text-bleuclair font-semibold">Niveau en cours</p>
-                <p>Licence 3</p>
+                <p>{{res[0].classe}} </p>
               </div>
               <div class="flex flex-col space-y-1">
                 <p class="text-bleuclair font-semibold">Filiere</p>
-                <p>LMEN</p>
+                <p>{{res[0].formation}} </p>
               </div>
             </div>
           </div>

@@ -8,6 +8,7 @@ import { Observable,
 })
 export class EtudiantsService {
 public url="http://localhost:6001/etudiant"
+public url1="http://localhost:6001/bailleur"
   constructor(private http:HttpClient) { }
 
   recupinfoetudiant(id:any):Observable<any>{
@@ -15,5 +16,8 @@ public url="http://localhost:6001/etudiant"
   }
   recupdebiteur():Observable<any>{
     return this.http.get(this.url)
+  }
+  recupbailleur(id:any):Observable<any>{
+    return this.http.get(`${this.url1}/${id}`)
   }
 }

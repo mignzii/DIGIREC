@@ -1,4 +1,4 @@
-<div class="h-screen w-full bg-gris-clair">
+<div class="h-full w-full bg-gris-clair">
   <div class="pt-[75px] pl-[250px]">
     <span class="material-icons"> arrow_back_ios </span>
     <p class="text-bleudusite text-5xl font-bold">DIGIREC ESMT</p>
@@ -6,7 +6,7 @@
    <div class="flex w-full space-x-20">
       <div class="flex space-x-10 mt-[50px] ">
         <div>
-        <button class="bg-bleudusite border-2 py-3 px-8 rounded-[20px]">
+        <button (click)="PrintElem('mysection') " class="bg-bleudusite border-2 py-3 px-8 rounded-[20px]">
           <span class="text-white">Imprimer</span>
         </button>
       </div>
@@ -19,16 +19,20 @@
 
 
       </div>
-      <div class=" flex flex-col items-center space-y-3 border border-gray-400 rounded-2xl px-8 py-6 -m-20 bg-white">
-        <svg xmlns="http://www.w3.org/2000/svg" width="125" height="120" viewBox="0 0 148 141" class="absolute top-[85px] right-[515px]">
+      <div id="mysection" style=" display:flex ;flex-direction: column; border: rgb(156 163 175) ;
+border-radius: 1rem;padding-top: 1.5rem; padding-bottom: 1.5rem; padding-right: 2rem; padding-left: 2rem;
+ align-items: center; justify-content: center;
+      background-color: white;
+      position: relative;" >
+        <svg class="print:hidden" style=" position:absolute; top:8px; left:8px; " xmlns="http://www.w3.org/2000/svg" width="125" height="120" viewBox="0 0 148 141" >
           <g id="Groupe_2735" data-name="Groupe 2735" transform="translate(0.129 -0.027)">
             <rect id="Rectangle_25" data-name="Rectangle 25" width="141" height="17" transform="translate(6.871 0.027)" fill="#72b920"/>
             <rect id="Rectangle_26" data-name="Rectangle 26" width="141" height="17" transform="translate(-0.129 141.027) rotate(-90)" fill="#3596d2"/>
           </g>
         </svg>
 
-        <span class=" font-bold">Ecole superieure Multinationale des telecommunications</span>
-        <div class="p-2"><svg xmlns="http://www.w3.org/2000/svg" width="299" height="17" viewBox="0 0 299 17">
+        <p  style="font-weight: 700; padding: 15px; margin: 20px;display: flex; align-items: center; justify-content: center;  ">Ecole superieure Multinationale des telecommunications</p>
+        <div  style="padding: 8px; margin-left: 30px; display: flex; align-items: center; justify-content: center; "><svg xmlns="http://www.w3.org/2000/svg" width="299" height="17" viewBox="0 0 299 17">
           <g id="Groupe_2739" data-name="Groupe 2739" transform="translate(-1081 -342)">
             <g id="Groupe_2737" data-name="Groupe 2737" transform="translate(1380.076 342.129) rotate(90)">
               <rect id="Rectangle_26" data-name="Rectangle 26" width="299" height="17" transform="translate(-0.129 299.076) rotate(-90)" fill="#3596d2"/>
@@ -40,52 +44,76 @@
         </svg>
         </div>
 
-        <svg xmlns="http://www.w3.org/2000/svg" width="130" height="130" viewBox="0 0 148 141" class="absolute bottom-6 right-[180px]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="print:hidden" width="130" height="130" viewBox="0 0 148 141"  style="position:absolute; bottom:8px; right: 8px;">
           <g id="Groupe_2736" data-name="Groupe 2736" transform="translate(148 141) rotate(180)">
             <rect id="Rectangle_25" data-name="Rectangle 25" width="141" height="17" transform="translate(7 0)" fill="#3596d2"/>
             <rect id="Rectangle_26" data-name="Rectangle 26" width="141" height="17" transform="translate(0 141) rotate(-90)" fill="#4fccf7"/>
           </g>
         </svg>
 
-        <div class="p-1 flex flex-col items-center">
+        <div  style="display:flex ;flex-direction: column; align-items: center; ">
         <span>Recu No <span class="font-bold">358 850</span> </span>
         <span class="font-bold">29/08/2022</span>
       </div>
-        <table class="w-full" >
-          <tr>
-            <td class="">Nom :</td>
-            <td class=" border-l-2 border-green-600 pl-6  ">{{res[0].nom}} </td>
-          </tr>
-          <tr>
-           <td>Prenom :</td>
-           <td class=" border-l-2 border-green-600 pl-6 ">{{res[0].prenom}} </td>
-         </tr>
-         <tr>
-           <td>Email :</td>
-           <td class=" border-l-2 border-green-600 pl-6 "> <span class="font-bold">{{res[0].email}} </span> </td>
-         </tr>
-         <tr>
-           <td>Classe :</td>
-           <td class=" border-l-2 border-green-600 pl-6 ">{{res[0].classe}} </td>
-         </tr>
-         <tr >
+      <!-- elements grand div -->
+        <div  style="display:flex ;">
+         <div>
+           <div >
+          <p>Nom : </p>
+        </div>
+        <div >
+          <p>Prenom :</p>
+        </div>
+        <div >
+          <p>Email :</p>
 
-           <td class="pt-6">Objet :</td>
-           <td class=" border-l-2 border-green-600 pl-6 pt-6 ">{{libelle}} </td>
-          </tr>
-         <tr>
-           <td>Montant :</td>
-           <td class=" border-l-2 border-green-600 pl-6 "><span class="font-bold">{{montant}} F</span> </td>
-         </tr>
-         <tr>
-           <td>Mode de reglement :</td>
-           <td class=" border-l-2 border-green-600 pl-6 ">Especes</td>
-         </tr>
+        </div>
+        <div >
+          <p>Classe 4 :</p>
 
-        </table>
+        </div>
+        <div >
+          <p>Objet :</p>
+
+        </div>
+        <div >
+          <p>Montant :</p>
+
+        </div>
+        <div >
+          <p>Mode de reglement :</p>
+
+        </div>
+      </div>
+         <div>
+           <div>
+            <p >{{res[0].nom}}</p>
+           </div>
+           <div>
+            <p>{{res[0].prenom}}</p>
+           </div>
+           <div>
+            <p>{{res[0].email}}</p>
+           </div>
+           <div>
+            <p>{{res[0].classe}}</p>
+           </div>
+           <div>
+            <p>{{libelle}}</p>
+           </div>
+           <div>
+            <p>{{montant}} F</p>
+           </div>
+           <div>
+            <p>Especes</p>
+           </div>
+         </div>
+        </div>
+       <div style="display: flex;align-items: center; justify-content: center; flex-direction: column; ">
         <span>Rocade Fann Bel Air,Dakar,Liberte Senegal</span>
         <span>33 8645778 - 337599076</span>
-        <div class="flex items-center space-x-20 w-full">
+       </div>
+        <div class="flex items-center space-x-20 w-full" style="display: flex;   width: 100%;" >
           <div>
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="45" viewBox="0 0 320 65">
             <defs>

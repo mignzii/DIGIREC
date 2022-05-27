@@ -20,5 +20,24 @@ res:any
       this.res=data
     })
   }
+  ele:string="impression"
+   PrintElem(elem:any){
+    var mywindow :any = window.open('', 'PRINT', 'height=900,width=1300');
+
+    mywindow.document.write('<html><head><title>' + document.title  + '</title>');
+    mywindow.document.write('<link rel="stylesheet" href="../../styles.css" />');
+    mywindow.document.write('</head><body >');
+    mywindow.document.write(document.getElementById(elem)?.innerHTML);
+    mywindow.document.write('</body></html>');
+
+    mywindow.document.close(); // necessary for IE >= 10
+    mywindow.focus(); // necessary for IE >= 10*/
+
+    mywindow.print();
+    mywindow.close();
+    console.log("test")
+    return true;
+
+}
 
 }

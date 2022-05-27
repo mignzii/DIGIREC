@@ -19,10 +19,12 @@ import { StatistiquesComponent } from './statistiques/statistiques.component';
 import { ProfilComponent } from './profil/profil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
+import { NgxPrintElementModule } from 'ngx-print-element';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
+
 import { DataTablesModule } from "angular-datatables";
 import {NgxPrintModule} from 'ngx-print';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -59,7 +61,7 @@ const appRoutes : Routes =[
     SidebarComponent
   ],
   imports: [
-    BrowserModule,MatProgressSpinnerModule,NgxPrintModule,
+    BrowserModule,MatProgressSpinnerModule,NgxPrintModule,NgxPrintElementModule,
     RouterModule.forRoot(appRoutes),ReactiveFormsModule,HttpClientModule,RouterModule, BrowserAnimationsModule,MatInputModule,
     MatPaginatorModule,MatSortModule,MatTableModule,DataTablesModule
   ],

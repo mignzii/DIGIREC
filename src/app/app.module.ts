@@ -17,6 +17,15 @@ import { RecuComponent } from './recu/recu.component';
 import { TableaudebordComptableComponent } from './tableaudebord-comptable/tableaudebord-comptable.component';
 import { StatistiquesComponent } from './statistiques/statistiques.component';
 import { ProfilComponent } from './profil/profil.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSortModule} from '@angular/material/sort';
+import {MatTableModule} from '@angular/material/table';
+import { DataTablesModule } from "angular-datatables";
+import {NgxPrintModule} from 'ngx-print';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 const appRoutes : Routes =[
   {path:'page-acceuil',component:PageacceuilComponent},
@@ -44,13 +53,15 @@ const appRoutes : Routes =[
     VersementComponent,
     ListeDesEtudiantsComponent,
     RecrouvementComponent,
-    ListeEtudiantComponent,
+    ListeEtudiantComponent,StatistiquesComponent,
     ReccouvrementComponent,TableaudebordComptableComponent,
-    ProfilComponent
+    ProfilComponent,
+    SidebarComponent
   ],
   imports: [
-    BrowserModule,
-    RouterModule.forRoot(appRoutes),ReactiveFormsModule,HttpClientModule,RouterModule,
+    BrowserModule,MatProgressSpinnerModule,NgxPrintModule,
+    RouterModule.forRoot(appRoutes),ReactiveFormsModule,HttpClientModule,RouterModule, BrowserAnimationsModule,MatInputModule,
+    MatPaginatorModule,MatSortModule,MatTableModule,DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InfoUtilisateurService } from '../services/info-utilisateur.service';
 
 @Component({
   selector: 'app-statistiques',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./statistiques.component.css']
 })
 export class StatistiquesComponent implements OnInit {
-
-  constructor() { }
+public url:any
+public res:any
+  constructor(private utilisateur:InfoUtilisateurService) { }
 
   ngOnInit(): void {
+    this.url=sessionStorage.getItem('iduser')
+    this.utilisateur.recupinfo(this.url).subscribe(data=>{
+      this.res=data
+      console.log(this.res)
+
+    })
   }
 
 }

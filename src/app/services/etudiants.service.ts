@@ -9,6 +9,11 @@ import { Observable,
 export class EtudiantsService {
 public url="http://localhost:6001/etudiant"
 public url1="http://localhost:6001/bailleur"
+public url2="http://localhost:6001/etudiant/test/montantprevisionnel"
+
+public url5="http://localhost:6001/etudiant/test4/totalmontant"
+
+
   constructor(private http:HttpClient) { }
 
   recupinfoetudiant(id:any):Observable<any>{
@@ -20,4 +25,12 @@ public url1="http://localhost:6001/bailleur"
   recupbailleur(id:any):Observable<any>{
     return this.http.get(`${this.url1}/${id}`)
   }
+  recupmontantprevisionnelparclasse():Observable<any>{
+    return this.http.get(this.url2)
+  }
+  recuptotalmontant():Observable<any>{
+    return this.http.get(this.url5)
+  }
+
+
 }

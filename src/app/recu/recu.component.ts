@@ -10,6 +10,7 @@ import { EtudiantsService } from '../services/etudiants.service';
 export class RecuComponent implements OnInit {
 
   constructor(private route:ActivatedRoute , public info:EtudiantsService) { }
+  public user=sessionStorage.getItem('iduser')
 code=this.route.snapshot.params['code']
 montant=this.route.snapshot.params['mont']
 libelle=this.route.snapshot.params['libelle']
@@ -19,6 +20,7 @@ res:any
     this.info.recupinfoetudiant(this.code).subscribe(data=>{
       this.res=data
     })
+    console.log(this.user)
   }
   ele:string="impression"
    PrintElem(elem:any){

@@ -24,13 +24,19 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
-
+import {MatMenuModule} from '@angular/material/menu';
 import { DataTablesModule } from "angular-datatables";
 import {NgxPrintModule} from 'ngx-print';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { PremieretrancheComponent } from './premieretranche/premieretranche.component';
+import { SecondtrancheComponent } from './secondtranche/secondtranche.component';
+import { TroisiemetrancheComponent } from './troisiemetranche/troisiemetranche.component';
+import { DebiteurpartrancheComponent } from './debiteurpartranche/debiteurpartranche.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 const appRoutes : Routes =[
-  {path:'page-acceuil',component:PageacceuilComponent},
+  {path:'',component:PageacceuilComponent},
+  {path:'page-accueil',component:PageacceuilComponent},
   {path:'connexion',component:ConnexionComponent},
   {path:'recherche',component:RechercheComponent},
   {path:'facturation',component:FacturationComponent},
@@ -42,6 +48,10 @@ const appRoutes : Routes =[
   {path:'dashboard/:num',component:TableaudebordComptableComponent},
   {path:'statistique',component:StatistiquesComponent},
   {path:'profil/:id',component:ProfilComponent},
+  {path:'premieretranche',component:PremieretrancheComponent},
+  {path:'secondtranche',component:SecondtrancheComponent},
+  {path:'troisiemetranche',component:TroisiemetrancheComponent},
+  {path:'debiteurpartranche',component:DebiteurpartrancheComponent},
 
 ]
 
@@ -58,12 +68,17 @@ const appRoutes : Routes =[
     ListeEtudiantComponent,StatistiquesComponent,
     ReccouvrementComponent,TableaudebordComptableComponent,
     ProfilComponent,
-    SidebarComponent
+    SidebarComponent,
+    PremieretrancheComponent,
+    SecondtrancheComponent,
+    TroisiemetrancheComponent,
+    DebiteurpartrancheComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule,MatProgressSpinnerModule,NgxPrintModule,NgxPrintElementModule,
     RouterModule.forRoot(appRoutes),ReactiveFormsModule,HttpClientModule,RouterModule, BrowserAnimationsModule,MatInputModule,
-    MatPaginatorModule,MatSortModule,MatTableModule,DataTablesModule
+    MatPaginatorModule,MatSortModule,MatTableModule,DataTablesModule,MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -29,7 +29,7 @@
       <div class="flex space-x-2">
 
         <div class="bg-white w-full px-2 py-3">
-            <div class="flex w-full justify-between items-baseline">
+            <div class="flex w-full flex-col space-y-2 justify-between items-baseline">
               <p class="bg-bleudusite text-xl font-bold text-white rounded-lg py-2 px-1">Liste des étudiants débiteurs par classe</p>
 
             </div>
@@ -37,23 +37,23 @@
               <table class="w-full border font-bold" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
                 <thead>
                   <tr>
-                    <th class="border-2 border-bleudusite text-texte-r text-center font-bold py-1">IDENTIFIANT</th>
-                  <th class="border-2  border-bleudusite text-texte-r text-center font-bold py-1">CLASSE</th>
-                  <th class="border-2 border-bleudusite text-texte-r font-bold text-center py-1">NOM & PRENOM</th>
-                  <th class="border-2 border-bleudusite text-texte-r text-center font-bold py-1">FACTURE</th>
-                  <th class="border-2  border-bleudusite text-texte-r text-center font-bold py-1">TOTAL VERS.</th>
-                  <th class="border-2 border-bleudusite text-texte-r font-bold text-center py-1">RELIQUAT</th>
+                    <th class="border-2  text-gray-600 text-center font-bold py-1">IDENTIFIANT</th>
+                  <th class="border-2   text-gray-600 text-center font-bold py-1">CLASSE</th>
+                  <th class="border-2  text-gray-600 font-bold text-center py-1">NOM & PRENOM</th>
+                  <th class="border-2  text-gray-600 text-center font-bold py-1">FACTURE</th>
+                  <th class="border-2   text-bleudusite text-center font-bold py-1">TOTAL VERS.</th>
+                  <th class="border-2  text-bleudusite font-bold text-center py-1">RELIQUAT</th>
                   </tr>
                 </thead>
                 <tbody class="text-bleudusite font-bold "  >
 
                   <tr  *ngFor="let item of rec">
-                    <td class="py-2 text-center border border-bleudusite">{{item.num_etudiant}} </td>
-                    <td  class="py-2 text-center border-bleudusite border">{{item.classe}}</td>
-                    <td  class="py-2 text-center border-bleudusite border">{{item.nom}} {{item.prenom}}  </td>
-                    <td  class="py-2 text-center border-bleudusite border">{{item.montant}} </td>
-                    <td  class="py-2 text-center text-texte-r border-bleudusite border">{{item.totalversement}}</td>
-                    <td  class="py-2 text-center text-texte-r border-bleudusite border">{{item.montantEtat}} </td>
+                    <td class="py-2 text-center text-gray-600 border "><a routerLink="/profil/{{item.num_etudiant}}">{{item.num_etudiant}}</a> </td>
+                    <td  class="py-2 text-center text-gray-600  border"><a routerLink="/profil/{{item.num_etudiant}}">{{item.classe}}</a></td>
+                    <td  class="py-2 text-center text-gray-600  border"><a routerLink="/profil/{{item.num_etudiant}}">{{item.nom}} {{item.prenom}}</a>  </td>
+                    <td  class="py-2 text-center text-gray-600  border"><a routerLink="/profil/{{item.num_etudiant}}">{{item.montant.toLocaleString()}}</a> </td>
+                    <td  class="py-2 text-center  text-bleudusite  border"><a routerLink="/profil/{{item.num_etudiant}}">{{item.totalversement.toLocaleString()}}</a></td>
+                    <td  class="py-2 text-center text-bleudusite  border"><a routerLink="/profil/{{item.num_etudiant}}">{{item.montantEtat.toLocaleString()}}</a> </td>
                   </tr>
                 </tbody>
               </table>
@@ -63,14 +63,8 @@
       </div>
 
     </div>
-    <div class="w-1/6 py-10">
-      <div class=" rounded-lg flex flex-col      shadow-md px-5 py-12 ">
-        <div>
-          <img src="../../assets/pic2.jpg" width="158px" height="158px" class="rounded-full mx-auto" alt="">
-          <p class="text-bleudusite  text-xl">Diop Khady</p>
-        </div>
-
-      </div>
+    <div class="w-1/6 py-10" >
+      <app-dropdown></app-dropdown>
     </div>
 
   </div>

@@ -27,7 +27,25 @@ router.get('/:idetudiant',(request,response)=>{
     if(err) throw err
     response.send(result)
 })
+})// liste montant previsionel
+router.get('/test/montantprevisionnel',(request,response)=>{
+  db.query('SELECT SUM(montant)as montanttotalformation,SUM(totalversement)as totalversclasse,SUM(montantEtat)as totalvers ,classe FROM etudiant GROUP BY classe', (err,result)=>{
+    if(err) throw err
+    response.send(result)
 })
+})
+
+// previsionnel total
+router.get('/test4/totalmontant',(request,response)=>{
+  db.query('SELECT SUM(montant)as previsionnel, SUM(totalversement)as totalverserclasse, SUM(etatSolde)as totalverser, classe FROM etudiant ', (err,result)=>{
+    if(err) throw err
+    response.send(result)
+})
+})
+// Chiffres d'affaires
+
+
+
 // liste des debiteurs avec selection
 router.get('/',(req,response)=>{
   db.query("SELECT * FROM etudiant where etatSolde='debiteur' ",(err,result)=>{
@@ -42,7 +60,8 @@ let a=request.body.totalvers
 let b=request.body.montantEtat
 let c=request.body.num_etudiant
 let d=request.body.nbredevers
-  db.query(`UPDATE etudiant SET totalversement =${a} , montantEtat =${b} , nbredeversement=${d} WHERE num_etudiant='${c}'` ,(err)=>{
+let e=request.body.responsable
+  db.query(`UPDATE etudiant SET totalversement =${a} , montantEtat =${b} , nbredeversement=${d} , responsable=${e} WHERE num_etudiant='${c}'` ,(err)=>{
     if(err) {response.send(false)
               console.log(err)}
     else  return response.send(true)

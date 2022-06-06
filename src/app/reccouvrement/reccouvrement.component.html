@@ -13,9 +13,9 @@
       </div>
       <div class="flex space-x-2">
         <div class="bg-white w-1/2 py-2 px-2 ">
-          <p class="bg-bleudusite w-2/4 text-white text-base font-bold pl-1 py-1 rounded-lg ">Situation REcouvrement </p>
+          <p class="bg-bleudusite w-2/4 text-white text-base font-bold pl-1 py-1 rounded-lg ">Situation Recouvrement </p>
           <div class="flex space-x-2">
-              <div class="bg-white shadow-lg rounded-lg px-2 flex justify-between space-x-1 w-[375px] ">
+              <div class="bg-white shadow-lg rounded-lg px-2 flex justify-between space-x-1 w-[405px] ">
                 <div class="">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76" height="77" viewBox="0 0 76 77">
                     <defs>
@@ -88,41 +88,27 @@
           </div>
         </div>
         <div class="bg-white w-full px-2 py-3">
-            <div class="flex w-full justify-around items-baseline">
+            <div class="flex w-full  items-baseline">
               <p class="bg-bleudusite text-white rounded-lg py-2 px-1">Situation Recrouvement par classe</p>
-              <div class="flex flex-col space-y-1 items-end ">
-                <input type="text" class=" border rounded-2xl shadow-md  py-2 " name="" id="">
-                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="37" viewBox="0 0 96 37">
-                  <g id="BOUTONS_DE_FILTRES" data-name="BOUTONS DE FILTRES" transform="translate(-1063.439 -739.092)">
-                    <rect id="Rectangle_35" data-name="Rectangle 35" width="96" height="37" rx="10" transform="translate(1063.439 739.092)" fill="#3596d2"/>
-                    <g id="LEFT" transform="translate(1072.891 742.091)">
-                      <ellipse id="Ellipse_27" data-name="Ellipse 27" cx="16" cy="15.5" rx="16" ry="15.5" transform="translate(-0.453 0.001)" fill="#fff"/>
-                      <path id="filter_descending_sort_icon_149476" d="M23.035,4.629a1.052,1.052,0,0,1-1.052,1.052H12.518a1.052,1.052,0,0,1,0-2.1h9.466A1.052,1.052,0,0,1,23.035,4.629ZM21.984,8.837H14.621a1.052,1.052,0,0,0,0,2.1h7.362a1.052,1.052,0,0,0,0-2.1Zm0,5.259H16.725a1.052,1.052,0,0,0,0,2.1h5.259a1.052,1.052,0,0,0,0-2.1Zm0,5.259H18.828a1.052,1.052,0,0,0,0,2.1h3.155a1.052,1.052,0,0,0,0-2.1ZM6.207,2A1.052,1.052,0,0,0,5.155,3.052V19.445L3.8,18.085a1.052,1.052,0,1,0-1.487,1.487l3.155,3.155a1.052,1.052,0,0,0,1.489,0l3.155-3.155a1.052,1.052,0,1,0-1.487-1.487l-1.362,1.36V3.052A1.052,1.052,0,0,0,6.207,2Z" transform="translate(3.71 3.621)" fill="#3596d2"/>
-                    </g>
-                    <g id="RIGHT" transform="translate(1116.165 742.091)">
-                      <circle id="Ellipse_26" data-name="Ellipse 26" cx="15.5" cy="15.5" r="15.5" transform="translate(0.274 0.001)" fill="#fff"/>
-                      <path id="filter_plus_icon_135624" d="M13.072,12.965v8.725a1.062,1.062,0,0,1-.321.919,1.1,1.1,0,0,1-1.561,0L8.964,20.383a1.1,1.1,0,0,1-.321-.919v-6.5H8.61L2.233,4.794a1.108,1.108,0,0,1,.188-1.55A1.154,1.154,0,0,1,3.107,3h15.5a1.154,1.154,0,0,1,.686.244,1.108,1.108,0,0,1,.188,1.55L13.1,12.965h-.033M16.393,18.5h3.321V15.179h2.214V18.5h3.321v2.214H21.929v3.322H19.715V20.715H16.393Z" transform="translate(2.33 3.579)" fill="#3596d2"/>
-                    </g>
-                  </g>
-                </svg>
 
-              </div>
             </div>
             <div class="w-full shadow-md py-2 px-1">
-              <table class="w-full border font-bold" datatable>
+              <table class="w-full border font-bold" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
                 <thead>
-                  <th class="border-2 border-bleudusite text-bleudusite text-center font-bold py-1">CLASSE</th>
+                  <tr>
+                    <th class="border-2 border-bleudusite text-bleudusite text-center font-bold py-1">CLASSE</th>
                   <th class="border-2  border-bleudusite text-bleudusite text-center font-bold py-1">PREVISONNNEL</th>
                   <th class="border-2 border-bleudusite text-bleudusite font-bold text-center py-1">CA</th>
                   <th class="border-2 border-bleudusite text-bleudusite font-bold text-center py-1">A RECOUVRER</th>
+                  </tr>
                 </thead>
                 <tbody>
 
-                  <tr *ngFor="let item of inter">
+                  <tr *ngFor="let item of previsionelparclasse">
                     <td class="py-2 text-center border border-bleudusite"> {{item.classe}} </td>
-                    <td  class="py-2 text-center border-bleudusite border">{{item.montant}} </td>
-                    <td  class="py-2 text-center border-bleudusite border">{{item.montant}}</td>
-                    <td  class="py-2 text-center border-bleudusite border">{{item.montantEtat}}</td>
+                    <td  class="py-2 text-center border-bleudusite border">{{item.montanttotalformation}} </td>
+                    <td  class="py-2 text-center border-bleudusite border">{{item.totalversclasse}}</td>
+                    <td  class="py-2 text-center border-bleudusite border">{{item.totalvers}}</td>
                   </tr>
                 </tbody>
               </table>
@@ -132,14 +118,8 @@
       </div>
 
     </div>
-    <div class="w-1/6 py-10">
-      <div class=" rounded-lg flex flex-col      shadow-md px-5 py-12 ">
-        <div>
-          <img src="../../assets/pic2.jpg" width="158px" height="158px" class="rounded-full mx-auto" alt="">
-          <p class="text-bleudusite  text-xl">Diop Khady</p>
-        </div>
-
-      </div>
+    <div class="w-1/6 py-10" >
+      <app-dropdown></app-dropdown>
     </div>
 
   </div>

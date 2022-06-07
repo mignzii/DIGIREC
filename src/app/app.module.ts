@@ -33,6 +33,7 @@ import { SecondtrancheComponent } from './secondtranche/secondtranche.component'
 import { TroisiemetrancheComponent } from './troisiemetranche/troisiemetranche.component';
 import { DebiteurpartrancheComponent } from './debiteurpartranche/debiteurpartranche.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { EtudiantComponent } from './etudiant/etudiant.component';
 
 const appRoutes : Routes =[
   {path:'',component:PageacceuilComponent},
@@ -52,6 +53,7 @@ const appRoutes : Routes =[
   {path:'secondtranche',component:SecondtrancheComponent},
   {path:'troisiemetranche',component:TroisiemetrancheComponent},
   {path:'debiteurpartranche',component:DebiteurpartrancheComponent},
+  {path:'ajoutetudiant',component:EtudiantComponent},
 
 ]
 
@@ -73,7 +75,8 @@ const appRoutes : Routes =[
     SecondtrancheComponent,
     TroisiemetrancheComponent,
     DebiteurpartrancheComponent,
-    DropdownComponent
+    DropdownComponent,
+    EtudiantComponent
   ],
   imports: [
     BrowserModule,MatProgressSpinnerModule,NgxPrintModule,NgxPrintElementModule,

@@ -48,12 +48,7 @@
 
 <!-- fin elements -->
     <div class="absolute top-3 right-3 flex flex-col border p-2 rounded-[20px] bg-gray-100" >
-      <img
-        src="https://www.etudiant.ma/uploads/ckeditor/pictures/170/content_etudiant-universitaires.png"
-        alt=""
-        class="rounded-full h-20"
-      />
-      <span class="text-bleudusite">DIOP KADY</span>
+      <app-droitephoto></app-droitephoto>
     </div>
 
   <div class="relative top-3">
@@ -244,15 +239,15 @@
             <div class="flex justify-between space-x-2 space-y-1 text-white ">
               <div class=" flex flex-col mt-1 items-center">
                 <label for="">Espece</label>
-               <a (click)="affichepaiem() "><input type="radio" name="test" id=""></a>
+               <input type="radio" name="test" id="">
               </div>
               <div class=" flex flex-col items-center">
                 <label for="">Cheque</label>
-                <input type="radio" name="test" id="">
+                <a (click)="affichepaiem() "><input type="radio" name="test" id=""></a>
               </div>
               <div class=" flex flex-col items-center">
                 <label for="">Virement</label>
-                <input type="radio" name="test" id="">
+                <a (click)="affichepaiem() "> <input type="radio" name="test" id=""></a>
               </div>
               <div class="flex flex-col items-center">
                 <label for="">Banque</label>

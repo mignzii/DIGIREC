@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProfilComponent implements OnInit {
 
+
   constructor(private info:EtudiantsService , private route:ActivatedRoute) { }
 code=this.route.snapshot.params['id']
 public res:any

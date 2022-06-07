@@ -7,7 +7,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./recherche.component.css']
 })
 export class RechercheComponent implements OnInit {
-
+  public user=sessionStorage.getItem('iduser')
   constructor() { }
 
   ngOnInit(): void {

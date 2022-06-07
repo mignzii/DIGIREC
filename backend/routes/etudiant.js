@@ -37,7 +37,7 @@ router.get('/test/montantprevisionnel',(request,response)=>{
 
 // previsionnel total
 router.get('/test4/totalmontant',(request,response)=>{
-  db.query('SELECT SUM(montant)as previsionnel, SUM(totalversement)as totalverserclasse, SUM(etatSolde)as totalverser, classe FROM etudiant ', (err,result)=>{
+  db.query('SELECT SUM(montant)as previsionnel, SUM(totalversement)as totalverserclasse, SUM(montantEtat)as totalverser, classe FROM etudiant ', (err,result)=>{
     if(err) throw err
     response.send(result)
 })
@@ -54,7 +54,16 @@ router.get('/',(req,response)=>{
     console.log('result')
   } )
 } )
-
+// inserer un etudiant
+router.post('/', (request,response)=>{
+  let values = [
+      [request.body.reservation_id,request.body.menu_id,request.body.quantite]
+  ]
+  db.query('INSERT INTO detailReservations (reservation_id,menu_id,quantite) VALUES ?', [values], (err)=>{
+      if(err) response.send(false)
+      else response.send(true)
+  })
+})
 // mise a jour etudiant
 router.put('/mign',(request,response)=>{
 let a=request.body.totalvers

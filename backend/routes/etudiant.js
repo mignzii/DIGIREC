@@ -55,12 +55,15 @@ router.get('/',(req,response)=>{
   } )
 } )
 // inserer un etudiant
-router.post('/', (request,response)=>{
+router.post('/postetudiant', (request,response)=>{
   let values = [
-      [request.body.reservation_id,request.body.menu_id,request.body.quantite]
+      [request.body.prenom,request.body.nom,request.body.carte,
+        request.body.telephone,request.body.email,request.body.datenaiss,
+        request.body.pays,request.body.classe,request.body.formation,
+        request.body.montant,request.body.annee,request.body.bailleur]
   ]
-  db.query('INSERT INTO detailReservations (reservation_id,menu_id,quantite) VALUES ?', [values], (err)=>{
-      if(err) response.send(false)
+  db.query('INSERT INTO etudiant (prenom,nom,num_etudiant,telephone,email,dateNaiss,nationalite,classe,formation,montant,annee_scolaire,id_bailleur) VALUES ?', [values], (err)=>{
+      if(err) response.send(err)
       else response.send(true)
   })
 })

@@ -12,9 +12,11 @@ public url1="http://localhost:6001/bailleur"
 public url2="http://localhost:6001/etudiant/test/montantprevisionnel"
 
 public url5="http://localhost:6001/etudiant/test4/totalmontant"
+public url6="http://localhost:6001/etudiant/postetudiant"
 
 
   constructor(private http:HttpClient) { }
+  public data:any
 
   recupinfoetudiant(id:any):Observable<any>{
     return this.http.get(`${this.url}/${id}`)
@@ -30,6 +32,9 @@ public url5="http://localhost:6001/etudiant/test4/totalmontant"
   }
   recuptotalmontant():Observable<any>{
     return this.http.get(this.url5)
+  }
+  postetudiant():Observable<any>{
+    return this.http.post(this.url6,this.data)
   }
 
 

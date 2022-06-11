@@ -135,7 +135,7 @@
       <div class="flex space-x-8">
         <div class="flex flex-col space-y-2">
           <label for="annee"
-            ><div class="text-xl font-bold">Annee scolaire</div>
+            ><div class="text-xl font-semibold text-gray-650">Année scolaire</div>
           </label>
           <div class="flex items-center w-full bg-white rounded-full">
             <input type="text" class="rounded-full p-3" value="{{stock[0].annee_scolaire}} " placeholder="2021-2022" />
@@ -144,7 +144,7 @@
         </div>
         <div class="flex flex-col">
           <label for="Classe"
-            ><div class="text-xl font-bold">Classe</div>
+            ><div class="text-xl  font-semibold text-gray-650">Classe</div>
           </label>
           <div class="flex items-center w-full bg-white rounded-full">
             <input type="text" class="rounded-full p-3" value="{{stock[0].classe}}" placeholder="MP-S2"/>
@@ -154,7 +154,7 @@
       </div>
       <div class="flex space-x-8">
         <div class="flex flex-col">
-          <label for="nom"><div class="text-xl font-bold">Nom</div> </label>
+          <label for="nom"><div class="text-xl font-semibold text-gray-650">Nom</div> </label>
           <div class="flex items-center w-full bg-white rounded-full">
             <input type="text" class="rounded-full p-3" value="{{stock[0].nom}}" placeholder="MBAYE" />
 
@@ -162,7 +162,7 @@
         </div>
         <div class="flex flex-col">
           <label for="Prenom"
-            ><div class="text-xl font-bold">Prenom</div>
+            ><div class="text-xl font-semibold text-gray-650">Prénom</div>
           </label>
           <div class="flex items-center w-full bg-white rounded-full">
             <input type="text" class="rounded-full p-3" value="{{stock[0].prenom}}" placeholder="ABDOU" />
@@ -173,7 +173,7 @@
       </div>
       <div class="flex flex-col">
         <label for="Prenom"
-          ><div class="text-xl font-bold">Payeur</div>
+          ><div class="text-xl font-semibold text-gray-650">Payeur</div>
         </label>
         <div class="flex items-center  rounded-full">
           <select name="" [formControl]="responsable" class="border w-1/2 py-1 rounde-lg" id="">
@@ -323,7 +323,7 @@
 <ng-template #fraismodule>
   <div class="flex flex-col  space-y-4">
     <div class="flex items-center space-x-2 my-[20px]  ">
-      <label for="" class="text-xl font-bold">Numéro de  carte étudiant</label>
+      <label for="" class="text-xl font-semibold text-gray-650">Nº Carte étudiant</label>
       <input type="text" class="rounded-full p-3" [formControl]="code" placeholder="numero etudiant "/>
       <button class="bg-bleudusite border-2 py-3 px-8 w-[20%] rounded-[20px]" (click)="affiche() ">
         <span class="text-white" >Chercher</span>

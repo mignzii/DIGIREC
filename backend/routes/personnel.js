@@ -33,6 +33,18 @@ router.get('/:idpersonne',(request,response)=>{
     response.send(result)
 })
 })
+//mise a jour
+router.put('/update',(request,response)=>{
+  let a=request.body.password
+  let c=request.body.id
+  let d=request.body.login
+
+    db.query(`UPDATE membrepersonnel SET login ='${d}', mdp='${a}' WHERE id_personnel='${c}'` ,(err)=>{
+      if(err) {response.send(false)
+                console.log(err)}
+      else  return response.send(true)
+  })
+  } )
 
 // Exportation de la route ................................................
 

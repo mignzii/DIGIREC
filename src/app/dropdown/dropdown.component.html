@@ -1,8 +1,8 @@
 
-  <div class=" rounded-lg flex flex-col shadow-md px-5 py-12 ">
+  <div class=" rounded-lg flex flex-col shadow-md px-5 py-2 ">
     <div>
       <img src="../../assets/pic2.jpg" width="158px" height="158px" class="rounded-full mx-auto" alt="">
-      <p class="text-bleudusite w-full flex  text-xl" *ngFor="let item of responsable">{{item.prenom}} {{item.nom}} </p>
+      <p  class="text-bleudusite w-full flex text-xl font-semibold" *ngFor="let item of responsable">{{item.prenom}} {{item.nom}} </p>
 
     </div>
     <button mat-button [matMenuTriggerFor]="beforeMenu" class="custom-menu bg-bleudusite rounded-lg my-2">Profil</button>
@@ -12,9 +12,9 @@
         <p class="text-gray-700 text-sm ">Voir le profil</p>
 
       </div>
-      <hr class="bg-blue-800 ">
+      <hr class="bg-bleudenuit">
       <div class="flex flex-col space-y-2 mx-1 mt-2  px-2 text-gray-600">
-       <a routerLink="/dashboard/{{url}}" > <p class="flex space-x-2 items-center"><span><img src="../../assets/carre/tableau-de-bord.svg" class="mr-2" width="14px" height="14px" alt=""></span> Tableau de bord</p></a>
+        <a routerLink="/dashboard/{{url}}" > <p class="flex space-x-2 items-center"><span><img src="../../assets/carre/tableau-de-bord.svg" class="mr-2" width="14px" height="14px" alt=""></span> Tableau de bord</p></a>
         <a routerLink="/parametre" ><p class="flex space-x-2 items-center "><span><img src="../../assets/carre/parametres.svg" class="mr-2" width="14px" height="14px" alt=""></span> Paramètres</p></a>
         <a href=""><p class="flex space-x-2 items-center"><span><img src="../../assets/carre/deconnexion.svg" class="mr-2" width="14px" height="14px" alt=""></span> Quitter</p></a>
       </div>

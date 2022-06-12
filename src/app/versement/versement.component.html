@@ -1,24 +1,24 @@
 <div class="h-auto w-full bg-gris-clair">
   <div class="pt-[75px] pl-[250px]">
-   <a routerLink="/dashboard/{{test}}" class="cursor-pointer"> <span class="material-icons"> arrow_back_ios </span></a>
+   <a routerLink="/dashboard/{{test}}" class="cursor-pointer"> <span class="material-icons text-bleudenuit"> arrow_back_ios </span></a>
     <p class="text-bleudusite text-5xl font-bold">DIGIREC ESMT</p>
     <!-- Choix du type d'operation -->
-    <p class="py-2 "> Veuillez Choisir votre type d'operation</p>
+    <p class="py-2 text-xl text-gris-texte"> Veuillez Choisir votre type d'operation</p>
   <div class="flex my-2 space-x-4">
     <div class="flex flex-col space-y-1 items-center justify-center">
-      <label for="">Frais de Dossier</label>
+      <label for="" class="text-xl text-gris-texte font-semibold">Frais de Dossier</label>
     <a (click)="dossier() "><input type="radio" name="frais"  value="Frais de Dossier" id=""></a>
     </div>
     <div class="flex flex-col space-y-1 items-center justify-center">
-      <label for="">Frais de Scolarite</label>
+      <label for="" class="text-xl text-gris-texte  font-semibold">Frais de Scolarite</label>
      <a (click)="scolarite() "> <input type="radio" checked name="frais" value="Frais de Scolarite"  id=""></a>
     </div>
     <div class="flex flex-col space-y-1 items-center justify-center">
-      <label for="">Frais de Formation/Certification</label>
+      <label for="" class="text-xl text-gris-texte  font-semibold">Frais de Formation/Certification</label>
       <a (click)="certif() "><input type="radio" name="frais"  value="Frais de Formation/Certification" id=""></a>
     </div>
     <div class="flex flex-col space-y-1 items-center justify-center">
-      <label for="">Frais de rattrapage module</label>
+      <label for="" class="text-xl text-gris-texte font-semibold">Frais de réinscription </label>
       <a (click)="module() "><input type="radio" name="frais" value="Frais de rattrapage module"  id=""></a>
     </div>
   </div>
@@ -126,9 +126,9 @@
   <div class="flex w-full mb-11 mt-4 justify-between">
     <div class="flex flex-col  space-y-4">
       <div class="flex items-center space-x-2 my-[20px]  ">
-        <label for="" class="text-xl font-bold">Numéro de  carte étudiant</label>
-        <input type="text" class="rounded-full p-3" [formControl]="code" placeholder="numero etudiant "/>
-        <button class="bg-bleudusite border-2 py-3 px-8 w-[20%] rounded-[20px]" (click)="affiche() ">
+        <label for="" class="text-xl font-semibold text-gris-texte">Nº carte étudiant</label>
+        <input type="text" class="rounded-full p-3" [formControl]="code" placeholder="ESMT_001_ETU"/>
+        <button class="bg-bleudusite border-2 py-3 px-8 w-[25%] rounded-[20px]" (click)="affiche() ">
           <span class="text-white" >Chercher</span>
         </button>
       </div>
@@ -178,7 +178,7 @@
           ><div class="text-xl font-semibold text-gris-texte">Payeur</div>
         </label>
         <div class="flex items-center  rounded-full">
-          <select name="" [formControl]="responsable" class="border w-1/2 py-1 rounde-lg" id="">
+          <select name="" [formControl]="responsable" class="border text-gris-texte w-1/2 py-1 rounde-lg" id="">
             <option value="Entreprise">Entreprise</option>
             <option value="Particulier">Particulier</option>
           </select>
@@ -192,7 +192,7 @@
      </div>
 
     </div>
-    <div class="bg-bleudusite p-8 mt-8 ml-2 mr-20 rounded-[10%]">
+    <div class="bg-bleudusite p-8 mt-8 ml-2 mr-20 rounded-[10%] shadow-md">
       <div class="flex flex-col items-center space-y-8">
         <div class="flex flex-col items-center">
           <label for="Prenom"
@@ -251,7 +251,7 @@
               </div>
             </label>
             <div class="">
-              <input type="date" class="rounded-full p-3 border" placeholder="01/01/2022" [formControl]="date"/>
+              <input type="date" class="rounded-full p-3 border text-gris-texte" placeholder="01/01/2022" [formControl]="date"/>
             </div>
 
             
@@ -445,7 +445,7 @@
                   Montant de la facture
                 </div>
               </label>
-              <input type="text" class="w-full border rounded-full p-3" [formControl]="montant" placeholder="1 255 000 fcfa"
+              <input type="text" class="w-full border rounded-full p-3 text-gris-texte" [formControl]="montant" placeholder="1 255 000 fcfa"
   />
             </div>
             <div class="flex flex-col items-center">

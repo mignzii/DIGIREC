@@ -1,0 +1,80 @@
+<div class="grid grid-cols-8 h-full text-blanc ">
+  <app-sidebar></app-sidebar>
+  <div class="col-span-7 bg-gris-clair flex  space-x-4 w-full px-5 h-auto">
+    <div class="py-10 w-full  ">
+      <p class="font-bold leading-6 tracking-wider py-1 " style="font-size: 35px; color: #3596D2;">DIGIREC ESMT</p>
+      <div class="bg-gris-clair  rounded-lg shadow-md flex flex-col py-6 px-6 space-y-8  ">
+        <div class="w-full flex space-x-1">
+        <div class="   py-1 w-1/2   items-center rounded-lg  px-2  ">
+          <p class=" bg-bleudusite text-xl px-2 text-white font-semibold py-2 rounded-l-lg w-full " >Modifier mes informations </p>
+
+      </div>
+
+      </div>
+      <div class="flex space-x-2">
+        <div class="bg-white w-full py-2 px-2 ">
+          <div class="mt-10 sm:mt-0">
+            <div class="md:grid md:grid-cols-3 md:gap-6">
+              <div class="md:col-span-1">
+                <div class="px-4 sm:px-0">
+                  <br>
+
+
+                  <h3 class="text-lg font-medium leading-6 text-gray-600">Remplir le formulaire</h3>
+
+
+                </div>
+              </div>
+              <div class="mt-5 md:mt-0 md:col-span-2">
+
+                  <div class="shadow overflow-hidden sm:rounded-md">
+                    <div class="px-4 py-5 bg-white sm:p-6">
+                      <div class="grid grid-cols-6 gap-6">
+                        <div class="col-span-6 sm:col-span-3">
+                          <label for="first-name" class="block text-sm font-medium text-gray-700">Login</label>
+                          <input type="text" [formControl]="login" id="first-name" autocomplete="given-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                          <label for="postal-code" class="block text-sm font-medium text-gray-700">Nouveau Mot de passe</label>
+                          <input type="text" [formControl]="password" id="postal-code" autocomplete="postal-code" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full border shadow-sm sm:text-sm border-gray-300 rounded-md py-2 text-black">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                      <a href="#ex1" rel="modal:open" class=" "> <button (click)="update() " class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Valider</button></a>
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="hidden sm:block" aria-hidden="true">
+            <div class="py-5">
+              <div class="border-t border-gray-200"></div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+      </div>
+
+    </div>
+    <div class="w-1/6 py-10">
+      <app-dropdown></app-dropdown>
+    </div>
+
+  </div>
+</div>
+<div id="ex1" class="modal">
+  <ng-container *ngIf="serveurresponse==true"[ngTemplateOutlet]="bon" ></ng-container>
+  <ng-container *ngIf="serveurresponse==false"[ngTemplateOutlet]="mauvais" ></ng-container>
+</div>
+<ng-template #bon>
+  <p>Votre Modification  a ete effectue avec succés</p>
+</ng-template>
+<ng-template #mauvais>
+  <p>Votre enregistrement n'a pas ete effectue avec succes</p>
+  <p>Veuillez revoir les informations fournies</p>
+</ng-template>

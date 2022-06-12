@@ -35,6 +35,7 @@ import { DebiteurpartrancheComponent } from './debiteurpartranche/debiteurpartra
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { EtudiantComponent } from './etudiant/etudiant.component';
 import { DroitephotoComponent } from './droitephoto/droitephoto.component';
+import { ParametreComponent } from './parametre/parametre.component';
 
 const appRoutes : Routes =[
   {path:'',component:PageacceuilComponent},
@@ -55,6 +56,7 @@ const appRoutes : Routes =[
   {path:'troisiemetranche',component:TroisiemetrancheComponent},
   {path:'debiteurpartranche',component:DebiteurpartrancheComponent},
   {path:'ajoutetudiant',component:EtudiantComponent},
+  {path:'parametre',component:ParametreComponent},
 
 ]
 
@@ -78,7 +80,8 @@ const appRoutes : Routes =[
     DebiteurpartrancheComponent,
     DropdownComponent,
     EtudiantComponent,
-    DroitephotoComponent
+    DroitephotoComponent,
+    ParametreComponent
   ],
   imports: [
     BrowserModule,MatProgressSpinnerModule,NgxPrintModule,NgxPrintElementModule,

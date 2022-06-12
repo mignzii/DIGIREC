@@ -9,13 +9,12 @@ import { EtudiantsService } from '../services/etudiants.service';
 })
 export class ReccouvrementComponent implements OnInit {
 
+  dtOptions: DataTables.Settings = {};
+dtTrigger: Subject<any> = new Subject<any>();
+
   constructor(private arecou:EtudiantsService) { }
 public inter:any
 public previsionelparclasse:any
-dtOptions: DataTables.Settings = {};
-dtTrigger: Subject<any> = new Subject<any>();
-
-
 public montantprevisionnel:any
 
   ngOnInit(): void {
@@ -26,7 +25,8 @@ public montantprevisionnel:any
     this.arecou.recupmontantprevisionnelparclasse().subscribe(data=>{
       this.previsionelparclasse=data
       console.log(this.previsionelparclasse)
-      this.dtTrigger.next(this.previsionelparclasse);
+      this.dtTrigger.next(this.previsionelparclasse)
+      console.log(this.previsionelparclasse)
     })
     this.arecou.recuptotalmontant().subscribe(data=>{
       this.montantprevisionnel=data

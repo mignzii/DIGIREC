@@ -42,7 +42,7 @@
                  </div>
                  <div class="flex space-y-2 flex-col ">
 
-                  <p class="font-medium text-bleudusite py-1 ">{{montantprevisionnel[0].previsionnel.toLocaleString()}}</p>
+                  <p class="font-medium text-bleudusite py-1 " *ngFor="let item1 of montantprevisionnel">{{item1.previsionnel.toLocaleString()}}</p>
                  </div>
                 </div>
                 <div class=" flex flex-col justify-between">
@@ -68,7 +68,7 @@
                  </div>
                   <div class="flex space-y-2 flex-col">
 
-                    <p class="font-medium text-bleudusite py-1 ">{{montantprevisionnel[0].totalverserclasse.toLocaleString()}}</p>
+                    <p class="font-medium text-bleudusite py-1 " *ngFor="let item2 of montantprevisionnel">{{item2.totalverserclasse.toLocaleString()}}</p>
                    </div>
                 </div>
                 <div>
@@ -94,7 +94,7 @@
                   </svg>
                   <div class="flex space-y-2 flex-col">
                     <p class="w-11 text-red-500 ">MONTANT A RECOUVRER</p>
-                    <p class="font-medium text-red-500 py-1">{{montantprevisionnel[0].totalverser.toLocaleString()}} </p>
+                    <p class="font-medium text-red-500 py-1" *ngFor="let item3 of montantprevisionnel">{{item3.totalverser.toLocaleString()}} </p>
                    </div>
                 </div>
 
@@ -111,14 +111,13 @@
               <table class="w-full border font-bold" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
                 <thead>
                   <tr>
-                    <th class="border-2 border-bleudusite text-bleudusite text-center font-bold py-1">CLASSE</th>
+                  <th class="border-2 border-bleudusite text-bleudusite text-center font-bold py-1">CLASSE</th>
                   <th class="border-2  border-bleudusite text-bleudusite text-center font-bold py-1">PREVISONNNEL</th>
                   <th class="border-2 border-bleudusite text-bleudusite font-bold text-center py-1">CA</th>
                   <th class="border-2 border-bleudusite text-bleudusite font-bold text-center py-1">A RECOUVRER</th>
                   </tr>
                 </thead>
                 <tbody>
-
                   <tr *ngFor="let item of previsionelparclasse">
                     <td class="py-2 text-center border border-bleudusite"> {{item.classe}} </td>
                     <td  class="py-2 text-center border-bleudusite border">{{item.montanttotalformation.toLocaleString()}} </td>

@@ -135,45 +135,47 @@
       <div class="flex space-x-8">
         <div class="flex flex-col space-y-2">
           <label for="annee"
-            ><div class="text-xl font-semibold text-gray-650">Année scolaire</div>
+            ><div class="text-xl font-semibold text-gris-texte">Année scolaire</div>
           </label>
           <div class="flex items-center w-full bg-white rounded-full">
             <input type="text" class="rounded-full p-3" value="{{stock[0].annee_scolaire}} " placeholder="2021-2022" />
 
           </div>
         </div>
-        <div class="flex flex-col">
+        <div class="flex flex-col space-y-2">
           <label for="Classe"
-            ><div class="text-xl  font-semibold text-gray-650">Classe</div>
+            ><div class="text-xl  font-semibold text-gris-texte">Classe</div>
           </label>
           <div class="flex items-center w-full bg-white rounded-full">
-            <input type="text" class="rounded-full p-3" value="{{stock[0].classe}}" placeholder="MP-S2"/>
+            <input type="text" class="rounded-full p-3" value="{{stock[0].classe}}" placeholder="LMEN 2"/>
 
           </div>
         </div>
       </div>
       <div class="flex space-x-8">
         <div class="flex flex-col">
-          <label for="nom"><div class="text-xl font-semibold text-gray-650">Nom</div> </label>
+          <label for="nom"><div class="text-xl font-semibold text-gris-texte">Nom</div> </label>
           <div class="flex items-center w-full bg-white rounded-full">
             <input type="text" class="rounded-full p-3" value="{{stock[0].nom}}" placeholder="MBAYE" />
 
           </div>
         </div>
+
+        <div class="flex space-x-8">
         <div class="flex flex-col">
           <label for="Prenom"
-            ><div class="text-xl font-semibold text-gray-650">Prénom</div>
+            ><div class="text-xl font-semibold text-gris-texte">Prénom</div>
           </label>
           <div class="flex items-center w-full bg-white rounded-full">
             <input type="text" class="rounded-full p-3" value="{{stock[0].prenom}}" placeholder="ABDOU" />
 
           </div>
         </div>
-
+      </div>
       </div>
       <div class="flex flex-col">
         <label for="Prenom"
-          ><div class="text-xl font-semibold text-gray-650">Payeur</div>
+          ><div class="text-xl font-semibold text-gris-texte">Payeur</div>
         </label>
         <div class="flex items-center  rounded-full">
           <select name="" [formControl]="responsable" class="border w-1/2 py-1 rounde-lg" id="">
@@ -194,7 +196,7 @@
       <div class="flex flex-col items-center space-y-8">
         <div class="flex flex-col items-center">
           <label for="Prenom"
-            ><div class="text-xl font-bold text-white">LIBELLE</div>
+            ><div class="text-xl font-bold text-white">Libellé</div>
           </label>
           <div class="flex items-center mt-2  w-full bg-white rounded-full">
            <select class="w-full rounded-lg py-2 px-2" [formControl]="libelle" id="">
@@ -207,58 +209,52 @@
           </div>
         </div>
         <div class="flex flex-col space-y-2 w-[80%]">
-          <div class="flex flex-col items-center">
-            <label for="Prenom"
-              ><div class="text-md font-bold text-white">
-                Montant de la facture
-              </div>
+          <div class="flex flex-col mb-5  items-center">
+            <label for="Prenom"><div class="text-xl font-bold text-white">
+              Montant</div>
             </label>
-            <input type="text" class="w-full border rounded-full p-3" [formControl]="montant" placeholder="1 255 000 fcfa"
+            <input type="text" class="w-full border rounded-full p-3" [formControl]="montant" placeholder="1 255 000 FCFA"
   />
           </div>
+          <div class="flex flex-col items-center mt-1">
+            <label for="Prenom"><div class="text-xl font-bold text-white">
+              Type de versement</div>
+            </label>
+          
+          <div class="flex justify-between space-x-2 space-y-1 text-white ">
+            <div class=" flex flex-col mt-1 items-center">
+              <label for="">Espèce</label>
+             <input type="radio" name="test" id="">
+            </div>
+            <div class=" flex flex-col items-center">
+              <label for="">Chèque</label>
+              <a (click)="affichepaiem() "><input type="radio" name="test" id=""></a>
+            </div>
+            <div class=" flex flex-col items-center">
+              <label for="">Virement</label>
+              <a (click)="affichepaiem() "> <input type="radio" name="test" id=""></a>
+            </div>
+            <div class="flex flex-col items-center">
+              <label for="">Banque</label>
+              <input type="radio" name="test" id="">
+            </div>
+          </div>
+          <div>
+            <ng-container *ngIf="paiemen==true"  [ngTemplateOutlet]="paiement" ></ng-container>
+          </div>
+
+          </div>
           <div class="flex flex-col items-center">
-            <label for="Prenom"
-              ><div class="text-md font-bold text-white">
-               Date
+            <label for="Prenom">
+              <div class="text-md font-bold text-white">
+                Date
               </div>
             </label>
             <div class="">
-              <input
-                type="date"
-                class="rounded-full p-3 border"
-                placeholder="01/01/2022" [formControl]="date"
-              />
-
-            </div>
-            <div class="flex flex-col items-center mt-1">
-              <label for="Prenom"
-              ><div class="text-md font-bold text-white">
-               Type de versement
-              </div>
-            </label>
-            <div class="flex justify-between space-x-2 space-y-1 text-white ">
-              <div class=" flex flex-col mt-1 items-center">
-                <label for="">Espece</label>
-               <input type="radio" name="test" id="">
-              </div>
-              <div class=" flex flex-col items-center">
-                <label for="">Cheque</label>
-                <a (click)="affichepaiem() "><input type="radio" name="test" id=""></a>
-              </div>
-              <div class=" flex flex-col items-center">
-                <label for="">Virement</label>
-                <a (click)="affichepaiem() "> <input type="radio" name="test" id=""></a>
-              </div>
-              <div class="flex flex-col items-center">
-                <label for="">Banque</label>
-                <input type="radio" name="test" id="">
-              </div>
-            </div>
-            <div>
-              <ng-container *ngIf="paiemen==true"  [ngTemplateOutlet]="paiement" ></ng-container>
+              <input type="date" class="rounded-full p-3 border" placeholder="01/01/2022" [formControl]="date"/>
             </div>
 
-            </div>
+            
           </div>
         </div>
       </div>
@@ -323,7 +319,7 @@
 <ng-template #fraismodule>
   <div class="flex flex-col  space-y-4">
     <div class="flex items-center space-x-2 my-[20px]  ">
-      <label for="" class="text-xl font-semibold text-gray-650">Nº Carte étudiant</label>
+      <label for="" class="text-xl font-semibold text-gris-texte">Nº Carte étudiant</label>
       <input type="text" class="rounded-full p-3" [formControl]="code" placeholder="numero etudiant "/>
       <button class="bg-bleudusite border-2 py-3 px-8 w-[20%] rounded-[20px]" (click)="affiche() ">
         <span class="text-white" >Chercher</span>

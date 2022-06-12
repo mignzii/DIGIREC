@@ -4,21 +4,18 @@
     <div class="py-10 w-2/3">
       <svg id="back_Icon_black" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
         <rect id="back_Icon_black_background" data-name="back_Icon_black background" width="64" height="64" fill="rgba(0,0,0,0)"/>
-        <g id="back_Icon">
-          <path id="Back_Chevron" data-name="Back Chevron" d="M.628,23.122a2.14,2.14,0,0,1,0-3.026L20.112.612A2.14,2.14,0,0,1,23.093.568l.584.55a2.14,2.14,0,0,1,.056,3.058L6.561,21.609l17.186,17.35A2.14,2.14,0,0,1,23.718,42l-.624.606a2.14,2.14,0,0,1-3-.022Z" transform="translate(20.141 11.556)" fill="#022060"/>
-          <rect id="Rectangle_10" data-name="Rectangle 10" width="64" height="64" fill="#022060" opacity="0"/>
-        </g>
+
       </svg>
-      <p class="" style="font-size: 35px; color: #3596D2;">DIGIREC ESMT</p>
+      <p class="text-bleudusite font-bold text-4xl">DIGIREC ESMT</p>
       <div class="bg-gris-clair  rounded-lg shadow-md flex flex-col py-6 px-6 space-y-8 justify-center ">
          <div class="flex space-x-3" >
          <a routerLink="/versement/{{res[0].id_personnel}}" > <div  class="bg-bleudusite cursor-pointer  rounded-full" style="background-color: #3596D2; width: 350px; padding: 15px;">
-            <p class="text-center flex items-center " style="font-size: 25px;"> <span class="material-icons mr-2" style="font-size: 30px;">
+            <p class="text-center flex items-center " style="font-size: 25px; font-weight: 500;"> <span class="material-icons mr-2" style="font-size: 30px; font-weight: bold;">
               mode_edit_outline
               </span> Nouveau versement</p>
           </div></a>
           <div class="bg-bleudusite  rounded-full" style="background-color: #3596D2; width: 350px; padding: 15px;">
-            <p class="text-center flex items-center  space-x-1" style="font-size: 25px;"><span class="material-icons mr-2" style="font-size: 30px;">
+            <p class="text-center flex items-center  space-x-1" style="font-size: 25px; font-weight: 500;"><span class="material-icons mr-2" style="font-size: 30px;">
               assignment_ind
               </span>Nouvelle Facture</p>
           </div>
@@ -26,12 +23,12 @@
          </div>
          <div class="flex space-x-3">
          <a routerLink="/statistique"> <div class=" w-full rounded-full" style="background-color: #3596D2; width: 350px; padding: 15px;">
-            <p class="text-center items-center   flex" style="font-size: 25px;"><span class="material-icons mr-2" style="font-size: 30px;">
+            <p class="text-center items-center   flex" style="font-size: 25px; font-weight: 500;"><span class="material-icons mr-2" style="font-size: 30px;">
               difference
               </span>Etat - Reporting</p>
           </div></a>
           <a routerLink="/recherche" class="cursor-pointer"><div class="bg-bleudusite w-full rounded-full" style="background-color: #3596D2; width: 350px; padding: 15px;">
-            <p class="text-center items-center  flex" style="font-size: 25px;">
+            <p class="text-center items-center  flex" style="font-size: 25px; font-weight: 500;">
               <span style="font-size: 30px;" class="material-icons mr-2 ">
                 assignment_ind
                 </span>Info Etudiant</p>
@@ -40,10 +37,10 @@
          </div>
         <div class="flex">
           <a routerLink="/ajoutetudiant" class="cursor-pointer"><div class="bg-bleudusite w-full rounded-full" style="background-color: #3596D2; width: 350px; padding: 15px;">
-            <p class="text-center items-center  flex" style="font-size: 25px;">
+            <p class="text-center items-center  flex" style="font-size: 25px; font-weight: 500;">
               <span style="font-size: 30px;" class="material-icons mr-2 ">
                 assignment_ind
-                </span>Ajouter Etudiant</p>
+                </span>Ajouter un étudiant</p>
           </div></a>
         </div>
       </div>
@@ -56,36 +53,36 @@
             <div class="py-3 px-3 ">
               <p class="flex "><span class="material-icons  rounded-full shadow-xl px-1 py-1">
                 account_circle
-                </span> {{res[0].prenom}} {{res[0].nom}} </p>
+                </span> <span class="mt-1.5 text-sm font-semibold">{{res[0].prenom}} {{res[0].nom}}</span> </p>
             </div>
             <div class="py-3 px-3 ">
               <p class="flex"><span class="material-icons rounded-full shadow-xl px-1 py-1" >
                 email
-                </span>{{res[0].email}} </p>
+                </span> <span class="mt-1.5 text-sm font-semibold">{{res[0].email}}</span> </p>
             </div>
             <div class="py-3 px-3 ">
               <p class="flex items-center "><span class="material-icons rounded-full shadow-xl px-1 py-1">
                 phone
-                </span> +221{{res[0].telephone}} </p>
+                </span> <span class="mt-1.5 text-sm font-semibold">+221{{res[0].telephone}}</span> </p>
             </div>
             <div class="py-3 px-3 ">
               <p class="flex space-x-1"><span class="material-icons rounded-full shadow-xl px-1 py-1">
                 fmd_good
-                </span>{{res[0].adresse}}</p>
+                </span><span class="mt-1.5 text-sm font-semibold">{{res[0].adresse}}</span></p>
             </div>
           </div>
-         <div class="bg-blanc text-bleuclair px-3 py-3 rounded-lg">
-          <div class="flex flex-col ">
-            <p >Département</p>
-            <p style="color: #778899; font-weight: 550;">{{res[0].Departement}}</p>
+         <div class="bg-blanc text-bleuclair px-6 py-3 rounded-lg">
+          <div class="flex flex-col">
+            <p class="font-semibold">Département</p>
+            <p class="font-semibold text-gris-texte">{{res[0].Departement}}</p>
+          </div>
+          <div class="flex flex-col">
+            <p class="font-semibold">Service</p>
+            <p class="font-semibold text-gris-texte">{{res[0].Service}}</p>
           </div>
           <div class="flex flex-col ">
-            <p>Service</p>
-            <p style="color: #778899; font-weight: 550;">{{res[0].Service}}</p>
-          </div>
-          <div class="flex flex-col ">
-            <p>Fonction</p>
-            <p style="color: #778899; font-weight: 550;">{{res[0].Fonction}}</p>
+            <p class="font-semibold">Fonction</p>
+            <p class="font-semibold text-gris-texte">{{res[0].Fonction}}</p>
           </div>
          </div>
         </div>
@@ -113,11 +110,14 @@
               </g>
             </svg>
 
-            <div class="flex flex-col space-y-1 ">
-             <div class="flex space-x-1"> <span>BICIS |</span> <span style="font-size: 12px ;">SN010 0152 0077 7104 00069</span></div>
-             <div class="flex space-x-1"> <span>BSIC |</span> <span style="font-size: 12px ;" >SN012 0128 3028 3360 00031</span></div>
-             <div class="flex space-x-1"> <span>CBEAO |</span> <span style="font-size: 12px ;" >SN111 0100 1060 0542 00012</span></div>
+            <div class="flex flex-col space-y-2">
+             <div class="flex space-x-1 "> <span class="text-s font-semibold">BICIS &nbsp;&nbsp;&nbsp;|</span> <span class="text-s font-semibold">077-7104-00069</span></div>
+             <div class="flex space-x-1"> <span class="text-s font-semibold">BSIC &nbsp;&nbsp;&nbsp;&nbsp;|</span> <span class="text-s font-semibold">028-3360-00031</span></div>
+             <div class="flex space-x-1"> <span class="text-s font-semibold">CBEAO |</span> <span class="text-s font-semibold">060-0542-00012</span></div>
             </div>
+          </div>
+          <div>
+            <br>
           </div>
           <div class="flex space-x-2 items-center ">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38" height="38" viewBox="0 0 68 68">
@@ -181,10 +181,10 @@
               </g>
             </svg>
 
-            <p style="color: #4fccf7;" >{{res[0].tag}}</p>
+            <p class="text-sm font-semibold text-bleuclair">{{res[0].tag}}</p>
           </div>
           <div class="flex justify-end">
-            <span>esmt.sn</span>
+            <span class="text-sm font-semibold">esmt.sn</span>
           </div>
         </div>
       </div>

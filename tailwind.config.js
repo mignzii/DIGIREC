@@ -12,6 +12,7 @@ module.exports = {
       "verte":"#72B920",
       "texte-r":"#F26013",
       "blanc":"#ffffff",
+      "gris-texte":"#707070",
      },},
   },
 

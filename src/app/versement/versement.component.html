@@ -7,19 +7,19 @@
   <div class="flex my-2 space-x-4">
     <div class="flex flex-col space-y-1 items-center justify-center">
       <label for="" class="text-xl text-gris-texte font-semibold">Frais de Dossier</label>
-    <a (click)="dossier() "><input type="radio" name="frais"  value="Frais de Dossier" id=""></a>
+    <a (click)="dossier() "><input type="radio" class="w-6 h-6" name="frais"  value="Frais de Dossier" id=""></a>
     </div>
     <div class="flex flex-col space-y-1 items-center justify-center">
       <label for="" class="text-xl text-gris-texte  font-semibold">Frais de Scolarite</label>
-     <a (click)="scolarite() "> <input type="radio" checked name="frais" value="Frais de Scolarite"  id=""></a>
+     <a (click)="scolarite() "> <input type="radio" class="w-6 h-6" checked name="frais" value="Frais de Scolarite"  id=""></a>
     </div>
     <div class="flex flex-col space-y-1 items-center justify-center">
       <label for="" class="text-xl text-gris-texte  font-semibold">Frais de Formation/Certification</label>
-      <a (click)="certif() "><input type="radio" name="frais"  value="Frais de Formation/Certification" id=""></a>
+      <a (click)="certif() "><input type="radio" name="frais" class="w-6 h-6"  value="Frais de Formation/Certification" id=""></a>
     </div>
     <div class="flex flex-col space-y-1 items-center justify-center">
       <label for="" class="text-xl text-gris-texte font-semibold">Frais de réinscription </label>
-      <a (click)="module() "><input type="radio" name="frais" value="Frais de rattrapage module"  id=""></a>
+      <a (click)="module() "><input type="radio" name="frais" class="w-6 h-6" value="Frais de rattrapage module"  id=""></a>
     </div>
   </div>
 
@@ -220,23 +220,23 @@
             <label for="Prenom"><div class="text-xl font-bold text-white">
               Type de versement</div>
             </label>
-          
+
           <div class="flex justify-between space-x-2 space-y-1 text-white ">
             <div class=" flex flex-col mt-1 items-center">
               <label for="">Espèce</label>
-             <input type="radio" name="test" id="">
+             <input type="radio" class="w-6 h-6" name="test" id="">
             </div>
             <div class=" flex flex-col items-center">
               <label for="">Chèque</label>
-              <a (click)="affichepaiem() "><input type="radio" name="test" id=""></a>
+              <a (click)="affichepaiem() "><input type="radio" class="w-6 h-6" name="test" id=""></a>
             </div>
             <div class=" flex flex-col items-center">
               <label for="">Virement</label>
-              <a (click)="affichepaiem() "> <input type="radio" name="test" id=""></a>
+              <a (click)="affichepaiem() "> <input type="radio" class="w-6 h-6" name="test" id=""></a>
             </div>
             <div class="flex flex-col items-center">
               <label for="">Banque</label>
-              <input type="radio" name="test" id="">
+              <input type="radio" class="w-6 h-6" name="test" id="">
             </div>
           </div>
           <div>
@@ -254,7 +254,7 @@
               <input type="date" class="rounded-full p-3 border text-gris-texte" placeholder="01/01/2022" [formControl]="date"/>
             </div>
 
-            
+
           </div>
         </div>
       </div>

@@ -15,17 +15,20 @@ public serveurresponse:any
   }
   login=new FormControl()
   password=new FormControl()
+  ancienpass=new FormControl()
   public test=sessionStorage.getItem('iduser')
   update(){
     this.personnel.envoie={
       login:this.login.value,
       id:this.test,
-      password:this.password.value
+      password:this.password.value,
+      ancienpass:this.ancienpass.value
     }
     this.personnel.miseajour().subscribe(data=>{
       console.log(data)
       this.serveurresponse=data
     })
+
   }
 
 }

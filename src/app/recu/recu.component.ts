@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EtudiantsService } from '../services/etudiants.service';
+import { PaiementService } from '../services/paiement.service';
 
 @Component({
   selector: 'app-recu',
@@ -9,12 +10,14 @@ import { EtudiantsService } from '../services/etudiants.service';
 })
 export class RecuComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute , public info:EtudiantsService) { }
+  constructor(private route:ActivatedRoute , public info:EtudiantsService , private paie:PaiementService) { }
   public user=sessionStorage.getItem('iduser')
 code=this.route.snapshot.params['code']
 montant=this.route.snapshot.params['mont']
 libelle=this.route.snapshot.params['libelle']
+date=this.route.snapshot.params['date']
 res:any
+public idfacture:any
 
   ngOnInit(): void {
 
@@ -22,15 +25,12 @@ res:any
       this.res=data
     })
     console.log(this.user)
-    console.log(this.numCommande)
+    this.paie.getmaxid().subscribe(data=>{
+      this.idfacture=data[0].idfacture
+      console.log(this.idfacture)
+    })
   }
-  public a = Math.floor(Math.random()*10);
-  public r = Math.floor(Math.random()*10);
-  public b = Math.floor(Math.random()*10);
-  public c = Math.floor(Math.random()*10);
-  public d = Math.floor(Math.random()*10);
-  public e = Math.floor(Math.random()*10);
-  numCommande=this.a +'' +this.b +''+ this.r +'' +this.c+this.d+this.e
+
 
   ele:string="impression"
    PrintElem(elem:any){

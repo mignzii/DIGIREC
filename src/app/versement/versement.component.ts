@@ -84,15 +84,14 @@ affiche(){
 
 }
 
-public a = Math.random()*10
 public serveurresponse:any
 postversement(){
   this.paie.reponse={
     "num_etudiant": this.code.value,
-     "id_facture": this.code.value + this.a  ,
       "libelle": this.libelle.value,
        "montant": this.montant.value,
-        "date_emission": this.date.value
+        "date_emission": this.date.value,
+        "operation":'Credit'
   }
   this.paie.postpaie().subscribe(data=>{
     this.serveurresponse=data

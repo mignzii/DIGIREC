@@ -97,7 +97,7 @@
   <!-- Link to open the modal -->
 <ng-template #bon>
   <p>Votre enregistrement a ete effectue avec succés</p>
-  <a routerLink="/recu/{{code.value}}/{{montant.value}}/{{libelle.value}}" rel="modal:close" (click)="miseajour() "><p class="text-bleudusite">Imprimer le reçu</p></a>
+  <a routerLink="/recu/{{code.value}}/{{montant.value}}/{{libelle.value}}/{{date.value}}" rel="modal:close" (click)="miseajour() "><p class="text-bleudusite">Imprimer le reçu</p></a>
 </ng-template>
 <ng-template #mauvais>
   <p>Votre enregistrement n'a pas ete effectue avec succes</p>

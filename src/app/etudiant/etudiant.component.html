@@ -18,13 +18,13 @@
               <div class="md:col-span-1">
                 <div class="px-4 sm:px-0">
                   <br>
-                  
-                  
+
+
                   <h3 class="text-lg font-medium leading-6 text-gray-600">Année Scolaire</h3>
                   <p class="text-gray-600">2021-2022</p>
                   <br><br><br><br><br>
                   <h3 class="text-lg font-medium leading-6 text-gray-600">Informations etudiants</h3>
-                  <p class="text-gray-600" style="line-height: 1.5em;" >Merci de remplir ce formulaire pour tout étudiant qui n'est 
+                  <p class="text-gray-600" style="line-height: 1.5em;" >Merci de remplir ce formulaire pour tout étudiant qui n'est
                     pas présent dans la base de données.
                     Si l'étudiant y est déjà, l'enregistrement ne s'effectuera pas.
                   </p>
@@ -112,7 +112,7 @@
                               <option>MPTD 2</option>
                               <option>MPTM</option>
                             </optgroup>
-                            
+
                             <optgroup label="Cours en ligne">
                               <option>MDSIA/MS2D</option>
                               <option>MPRN</option>
@@ -186,7 +186,173 @@
   <ng-container *ngIf="serveurresponse==false"[ngTemplateOutlet]="mauvais" ></ng-container>
 </div>
 <ng-template #bon>
-  <p>Votre enregistrement a ete effectue avec succés</p>
+  <div id="mysection" style=" display:flex ;flex-direction: column; border: rgb(156 163 175) ;
+border-radius: 1rem;padding-top: 1.5rem; padding-bottom: 1.5rem; padding-right: 2rem; padding-left: 2rem;
+      background-color: white;
+      position: relative;" >
+        <svg class="print:hidden" style=" position:absolute; top:8px; left:8px; " xmlns="http://www.w3.org/2000/svg" width="125" height="120" viewBox="0 0 148 141" >
+          <g id="Groupe_2735" data-name="Groupe 2735" transform="translate(0.129 -0.027)">
+            <rect id="Rectangle_25" data-name="Rectangle 25" width="141" height="17" transform="translate(6.871 0.027)" fill="#72b920"/>
+            <rect id="Rectangle_26" data-name="Rectangle 26" width="141" height="17" transform="translate(-0.129 141.027) rotate(-90)" fill="#3596d2"/>
+          </g>
+        </svg>
+
+        <p  style="font-weight: 700; padding: 15px; margin: 20px;display: flex; align-items: center; justify-content: center;  ">Ecole superieure Multinationale des telecommunications</p>
+        <div  style="padding: 8px; margin-left: 30px; display: flex; align-items: center; justify-content: center; "><svg xmlns="http://www.w3.org/2000/svg" width="299" height="17" viewBox="0 0 299 17">
+          <g id="Groupe_2739" data-name="Groupe 2739" transform="translate(-1081 -342)">
+            <g id="Groupe_2737" data-name="Groupe 2737" transform="translate(1380.076 342.129) rotate(90)">
+              <rect id="Rectangle_26" data-name="Rectangle 26" width="299" height="17" transform="translate(-0.129 299.076) rotate(-90)" fill="#3596d2"/>
+            </g>
+            <g id="Groupe_2738" data-name="Groupe 2738" transform="translate(1380.076 342.129) rotate(90)">
+              <rect id="Rectangle_26-2" data-name="Rectangle 26" width="160" height="17" transform="translate(-0.129 160.076) rotate(-90)" fill="#72b920"/>
+            </g>
+          </g>
+        </svg>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="print:hidden" width="130" height="130" viewBox="0 0 148 141"  style="position:absolute; bottom:8px; right: 8px;">
+          <g id="Groupe_2736" data-name="Groupe 2736" transform="translate(148 141) rotate(180)">
+            <rect id="Rectangle_25" data-name="Rectangle 25" width="141" height="17" transform="translate(7 0)" fill="#3596d2"/>
+            <rect id="Rectangle_26" data-name="Rectangle 26" width="141" height="17" transform="translate(0 141) rotate(-90)" fill="#4fccf7"/>
+          </g>
+        </svg>
+
+        <div  style="display:flex; justify-content: space-between;  margin-bottom: 5px; ">
+        <p  >Facture No <span class="font-bold">{{idfacture}} </span> </p>
+        <div >
+          <p class="flex justify-between ">Date de Facturation : <span class="font-bold"> {{date}}</span></p>
+          <p class="flex justify-between">Echeance : <span class="font-bold">{{date}}</span></p>
+          <p class="flex justify-between">Code client : <span class="font-bold">{{this.carte.value}}</span></p>
+        </div>
+      </div>
+      <!-- elements grand div -->
+        <div  style="display:flex ; justify-content: space-between; margin-bottom: 10px;  ">
+         <div style="width: 91px;">
+           <div >
+          <p style="margin-bottom: 2px;" >Nom : </p>
+        </div>
+        <div >
+          <p style="margin-bottom: 2px;" >Prenom : </p>
+        </div>
+        <div >
+          <p style="margin-bottom: 2px;" >Email :  </p>
+
+        </div>
+        <div class="mb-3" >
+          <p style="margin-bottom: 2px;" >Classe : </p>
+
+        </div>
+        <div >
+          <p style="margin-bottom: 2px;" >Objet : </p>
+
+        </div>
+        <div >
+          <p style="margin-bottom: 2px;" >Montant :  </p>
+
+        </div>
+
+      </div>
+         <div style="width: 220px;">
+           <div>
+            <p style="margin-bottom: 2px;" >{{this.nom.value}}</p>
+           </div>
+           <div>
+            <p style="margin-bottom: 2px;"  >{{this.prenom.value}}</p>
+           </div>
+           <div>
+            <p style="margin-bottom: 2px;" >{{this.email.value}}</p>
+           </div>
+           <div style="margin-bottom: 12px;">
+            <p style="margin-bottom: 2px;" >{{this.classe.value}}</p>
+           </div>
+           <div >
+            <p style="margin-bottom: 2px;" >Frais de Dossier</p>
+           </div>
+           <div>
+            <p style="margin-bottom: 2px;" >{{this.montant.value}} F</p>
+           </div>
+
+         </div>
+        </div>
+       <div style="display: flex;align-items: center; justify-content: center; flex-direction: column; ">
+        <span>Rocade Fann Bel Air,Dakar,Liberte Senegal</span>
+        <span>33 8645778 - 337599076</span>
+       </div>
+        <div class="flex items-center space-x-20 mr-7 w-full" style="display: flex;   width: 100%;" >
+          <div>
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="45" viewBox="0 0 320 65">
+            <defs>
+              <filter id="Ellipse_15" x="127" y="0" width="65" height="65" filterUnits="userSpaceOnUse">
+                <feOffset dy="3" input="SourceAlpha"/>
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feFlood flood-opacity="0.161"/>
+                <feComposite operator="in" in2="blur"/>
+                <feComposite in="SourceGraphic"/>
+              </filter>
+              <filter id="Ellipse_13" x="0" y="0" width="65" height="65" filterUnits="userSpaceOnUse">
+                <feOffset dy="3" input="SourceAlpha"/>
+                <feGaussianBlur stdDeviation="3" result="blur-2"/>
+                <feFlood flood-opacity="0.161"/>
+                <feComposite operator="in" in2="blur-2"/>
+                <feComposite in="SourceGraphic"/>
+              </filter>
+              <filter id="Ellipse_14" x="63" y="0" width="66" height="65" filterUnits="userSpaceOnUse">
+                <feOffset dy="3" input="SourceAlpha"/>
+                <feGaussianBlur stdDeviation="3" result="blur-3"/>
+                <feFlood flood-opacity="0.161"/>
+                <feComposite operator="in" in2="blur-3"/>
+                <feComposite in="SourceGraphic"/>
+              </filter>
+            </defs>
+            <g id="Groupe_2719" data-name="Groupe 2719" transform="translate(-1419 -723.386)">
+              <text id="_esmtofficiel" data-name="@esmtofficiel" transform="translate(1614 761.386)" fill="#4fccf7" font-size="20" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">@esmtofficiel</tspan></text>
+              <g id="Groupe_2718" data-name="Groupe 2718" transform="translate(1428 729)">
+                <g id="Groupe_2715" data-name="Groupe 2715" transform="translate(126.994)">
+                  <g transform="matrix(1, 0, 0, 1, -135.99, -5.61)" filter="url(#Ellipse_15)">
+                    <circle id="Ellipse_15-2" data-name="Ellipse 15" cx="23.5" cy="23.5" r="23.5" transform="translate(136 6)" fill="#fff"/>
+                  </g>
+                  <g id="icone-linkedin" transform="translate(13.268 12.32)">
+                    <g id="Groupe_2713" data-name="Groupe 2713" transform="translate(0.08 6.414)">
+                      <path id="Tracé_2556" data-name="Tracé 2556" d="M9.81,25.034H5V9H9.81Zm17.637,0h-4.81V16.469c0-2.232-.8-3.343-2.371-3.343a2.37,2.37,0,0,0-2.439,1.868v10.04h-4.81S13.081,10.6,13.017,9h3.8l.293,3.207h.1a5.354,5.354,0,0,1,4.724-2.69,4.979,4.979,0,0,1,3.988,1.6,6.938,6.938,0,0,1,1.53,4.858Z" transform="translate(-5 -9)" fill="#185072"/>
+                    </g>
+                    <g id="Groupe_2714" data-name="Groupe 2714" transform="translate(0 0)">
+                      <ellipse id="Ellipse_20" data-name="Ellipse 20" cx="2.485" cy="2.405" rx="2.485" ry="2.405"/>
+                    </g>
+                  </g>
+                </g>
+                <g id="Groupe_2717" data-name="Groupe 2717">
+                  <g transform="matrix(1, 0, 0, 1, -9, -5.61)" filter="url(#Ellipse_13)">
+                    <circle id="Ellipse_13-2" data-name="Ellipse 13" cx="23.5" cy="23.5" r="23.5" transform="translate(9 6)" fill="#fff"/>
+                  </g>
+                  <path id="icone-facebook" d="M30.174,14.592H26.022V11.869a1.109,1.109,0,0,1,1.155-1.261h2.93v-4.5L26.072,6.1c-4.48,0-5.5,3.353-5.5,5.5v3H17.982v4.633h2.591V32.334h5.449V19.225H29.7Z" transform="translate(-0.923 5.277)" fill="#0e5072"/>
+                </g>
+                <g id="Groupe_2716" data-name="Groupe 2716" transform="translate(63.497)">
+                  <g transform="matrix(1, 0, 0, 1, -72.5, -5.61)" filter="url(#Ellipse_14)">
+                    <ellipse id="Ellipse_14-2" data-name="Ellipse 14" cx="24" cy="23.5" rx="24" ry="23.5" transform="translate(72 6)" fill="#fff"/>
+                  </g>
+                  <path id="icone-twitter" d="M32.25,13.085a11.706,11.706,0,0,1-3.379.926,5.894,5.894,0,0,0,2.587-3.255,11.777,11.777,0,0,1-3.736,1.428A5.888,5.888,0,0,0,17.7,17.55,16.7,16.7,0,0,1,5.571,11.4a5.89,5.89,0,0,0,1.821,7.855,5.866,5.866,0,0,1-2.665-.736c0,.024,0,.049,0,.075a5.888,5.888,0,0,0,4.72,5.769,5.915,5.915,0,0,1-1.55.206,5.829,5.829,0,0,1-1.107-.106,5.89,5.89,0,0,0,5.5,4.086,11.871,11.871,0,0,1-8.71,2.436,16.648,16.648,0,0,0,9.018,2.643c10.822,0,16.739-8.964,16.739-16.739q0-.382-.016-.762A11.916,11.916,0,0,0,32.25,13.085Z" transform="translate(8.746 3.89)" fill="#4fccf7"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="flex items-center  ">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 34.766 34.766">
+            <g id="icone-web" transform="matrix(0.899, 0.438, -0.438, 0.899, 189.522, -123.405)">
+              <path id="Tracé_2557" data-name="Tracé 2557" d="M16,3A13,13,0,1,0,29,16,13,13,0,0,0,16,3Zm6.69,16.91A24.39,24.39,0,0,0,23,16a23.72,23.72,0,0,0-.32-3.91C25.37,13.08,27,14.58,27,16S25.31,19,22.69,19.91ZM5,16c0-1.47,1.69-2.95,4.31-3.91A24.39,24.39,0,0,0,9,16a23.72,23.72,0,0,0,.32,3.91C6.63,18.92,5,17.42,5,16ZM11.5,6A14.2,14.2,0,0,0,9.82,9.82,14.19,14.19,0,0,0,6,11.49,11,11,0,0,1,11.5,6ZM6,20.5a14.63,14.63,0,0,0,4.32,1.8h.09A23.4,23.4,0,0,0,16,23a16.959,16.959,0,0,0,1.76-.06,1,1,0,1,0-.14-2Q16.83,21,16,21a20.92,20.92,0,0,1-4.52-.47A21.33,21.33,0,0,1,11,16c0-6.48,2.64-11,5-11,1,0,2,.76,2.89,2.14a1,1,0,1,0,1.69-1.06.86.86,0,0,0-.07-.1A11,11,0,0,1,26,11.5a14.94,14.94,0,0,0-4.48-1.84h0A23.21,23.21,0,0,0,16,9a16.958,16.958,0,0,0-1.76.06,1,1,0,1,0,.14,2Q15.18,11,16,11a20.92,20.92,0,0,1,4.52.47A21.33,21.33,0,0,1,21,16c0,6.48-2.64,11-5,11-1,0-2-.76-2.89-2.14a1,1,0,1,0-1.69,1.06.86.86,0,0,0,.07.1A11,11,0,0,1,6,20.5ZM20.5,26a14.2,14.2,0,0,0,1.68-3.85A14.19,14.19,0,0,0,26,20.51,11,11,0,0,1,20.5,26Z" transform="translate(-109 186)" fill="#72b920"/>
+            </g>
+          </svg>
+
+          <svg class="" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 77 30">
+          <text id="esmt.sn" transform="translate(0 24)" fill="#72b920" font-size="22" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">esmt.sn</tspan></text>
+        </svg>
+        </div>
+
+        </div>
+  </div>
+    <div>
+       <a href="#ex1" rel="modal:close"><button (click)="PrintElem('mysection') " class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">imprimer</button></a>
+    </div>
 </ng-template>
 <ng-template #mauvais>
   <p>Votre enregistrement n'a pas ete effectue avec succes</p>

@@ -63,7 +63,8 @@ router.post('/postetudiant', (request,response)=>{
         request.body.montant,request.body.annee,request.body.bailleur]
   ]
   db.query('INSERT INTO etudiant (prenom,nom,num_etudiant,telephone,email,dateNaiss,nationalite,classe,formation,montant,annee_scolaire,id_bailleur) VALUES ?', [values], (err)=>{
-      if(err) response.send(err)
+      if(err) {response.send(false)
+      console.log(err)}
       else response.send(true)
   })
 })

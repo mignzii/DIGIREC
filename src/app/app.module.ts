@@ -36,6 +36,7 @@ import { DropdownComponent } from './dropdown/dropdown.component';
 import { EtudiantComponent } from './etudiant/etudiant.component';
 import { DroitephotoComponent } from './droitephoto/droitephoto.component';
 import { ParametreComponent } from './parametre/parametre.component';
+import { EcriturecomptableComponent } from './ecriturecomptable/ecriturecomptable.component';
 
 const appRoutes : Routes =[
   {path:'',component:PageacceuilComponent},
@@ -47,7 +48,7 @@ const appRoutes : Routes =[
   {path:'etudiant',component:ListeDesEtudiantsComponent},
   {path:'debiteur',component:ListeEtudiantComponent},
   {path:'recouvrement',component:ReccouvrementComponent},
-  {path:'recu/:code/:mont/:libelle',component:RecuComponent},
+  {path:'recu/:code/:mont/:libelle/:date',component:RecuComponent},
   {path:'dashboard/:num',component:TableaudebordComptableComponent},
   {path:'statistique',component:StatistiquesComponent},
   {path:'profil/:id',component:ProfilComponent},
@@ -57,6 +58,7 @@ const appRoutes : Routes =[
   {path:'debiteurpartranche',component:DebiteurpartrancheComponent},
   {path:'ajoutetudiant',component:EtudiantComponent},
   {path:'parametre',component:ParametreComponent},
+  {path:'ecriture',component:EcriturecomptableComponent},
 
 ]
 
@@ -81,7 +83,8 @@ const appRoutes : Routes =[
     DropdownComponent,
     EtudiantComponent,
     DroitephotoComponent,
-    ParametreComponent
+    ParametreComponent,
+    EcriturecomptableComponent
   ],
   imports: [
     BrowserModule,MatProgressSpinnerModule,NgxPrintModule,NgxPrintElementModule,

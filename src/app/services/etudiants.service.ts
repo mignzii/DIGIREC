@@ -16,7 +16,7 @@ public url6="http://localhost:6001/etudiant/postetudiant"
 
 
   constructor(private http:HttpClient) { }
-  public data:any
+  public data:any=new FormData()
 
   recupinfoetudiant(id:any):Observable<any>{
     return this.http.get(`${this.url}/${id}`)

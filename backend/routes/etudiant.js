@@ -2,7 +2,9 @@
 
 import express from 'express'
 import mysql from 'mysql'
-
+import RootPath from 'app-root-path'
+import multer from 'multer'
+import path from 'path'
 // Creation des variables ................................................
 
 const router = express.Router()
@@ -16,6 +18,19 @@ db.connect((err) =>{
     if(err) throw err
     console.log("Connexion DB: OK")
 })
+// middelware multer
+var storage = multer.diskStorage({
+  destination: (req, file, callBack) => {
+      callBack(null, RootPath+'/image')     // './public/images/' directory name where save the file
+  },
+  filename: (req, file, callBack) => {
+      callBack(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+  }
+})
+
+var upload = multer({
+  storage: storage
+});
 
 // Les routes disponibles .................................................
 
@@ -55,18 +70,25 @@ router.get('/',(req,response)=>{
   } )
 } )
 // inserer un etudiant
-router.post('/postetudiant', (request,response)=>{
+router.post('/postetudiant', upload.single('image'), (request,response)=>{
+  if (!request.file) {
+    console.log("No file upload");
+}else{
+  console.log(request.file.filename)
+ let imgsrc = 'http://127.0.0.1:3000/image/'+ request.file.filename
   let values = [
       [request.body.prenom,request.body.nom,request.body.carte,
         request.body.telephone,request.body.email,request.body.datenaiss,
         request.body.pays,request.body.classe,request.body.formation,
-        request.body.montant,request.body.annee,request.body.bailleur]
+        request.body.montant,request.body.annee,request.body.bailleur,
+        imgsrc]
   ]
-  db.query('INSERT INTO etudiant (prenom,nom,num_etudiant,telephone,email,dateNaiss,nationalite,classe,formation,montant,annee_scolaire,id_bailleur) VALUES ?', [values], (err)=>{
+  db.query('INSERT INTO etudiant (prenom,nom,num_etudiant,telephone,email,dateNaiss,nationalite,classe,formation,montant,annee_scolaire,id_bailleur,photo) VALUES ?', [values], (err)=>{
       if(err) {response.send(false)
       console.log(err)}
       else response.send(true)
   })
+}
 })
 // mise a jour etudiant
 router.put('/mign',(request,response)=>{

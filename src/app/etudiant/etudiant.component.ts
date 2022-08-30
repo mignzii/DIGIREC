@@ -12,6 +12,7 @@ export class EtudiantComponent implements OnInit {
 public serveurresponse:any
 dateau=new Date()
 public idfacture:any
+fichierAEnvoyer: File | null =null
   constructor(private etudiant:EtudiantsService , public paie:PaiementService ) { }
  prenom=new FormControl()
  nom=new FormControl()
@@ -27,6 +28,12 @@ public idfacture:any
  bailleur=new FormControl()
  date=this.dateau.getDate() +"/" + (this.dateau.getMonth()+1) +"/" + this.dateau.getFullYear()
 
+ onFileSelect(event:any) {
+  if (event.target.files.length > 0) {
+     this.fichierAEnvoyer = event.target.files[0];
+   console.log(this.fichierAEnvoyer)
+  }
+}
 public envoie:any
   ngOnInit(): void {
     this.paie.getmaxid().subscribe(data=>{
@@ -49,20 +56,19 @@ public envoie:any
 
   }
   postetudian(){
-    this.etudiant.data ={
-      prenom:this.prenom.value,
-      nom:this.nom.value,
-      carte:this.carte.value,
-      telephone:this.telephone.value,
-      email:this.email.value,
-      datenaiss:this.datenaiss.value,
-      pays:this.pays.value,
-      classe:this.classe.value,
-      formation:this.formation.value,
-      montant:this.montant.value,
-      annee:this.annee.value,
-      bailleur:this.bailleur.value
-       }
+       this.etudiant.data.append("prenom",this.prenom.value)
+       this.etudiant.data.append("nom",this.nom.value)
+       this.etudiant.data.append("carte",this.carte.value)
+       this.etudiant.data.append("telephone",this.telephone.value)
+       this.etudiant.data.append("email",this.email.value)
+       this.etudiant.data.append("datenaiss",this.datenaiss.value)
+       this.etudiant.data.append("pays",this.pays.value)
+       this.etudiant.data.append("classe",this.classe.value)
+       this.etudiant.data.append("formation",this.formation.value)
+       this.etudiant.data.append("montant",this.montant.value)
+       this.etudiant.data.append("annee",this.annee.value)
+       this.etudiant.data.append("bailleur",this.bailleur.value)
+       this.etudiant.data.append("image",this.fichierAEnvoyer)
        this.etudiant.postetudiant().subscribe(data=>{
         this.serveurresponse=data
         console.log(this.serveurresponse)

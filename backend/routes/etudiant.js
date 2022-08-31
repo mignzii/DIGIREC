@@ -9,10 +9,10 @@ import path from 'path'
 
 const router = express.Router()
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "digirec_esmt"
+  host: "mysql-digirec-esmt.alwaysdata.net",
+  user: "279564",
+  password: "Petiteecole2022",
+  database: "digirec-esmt_digirec_esmt"
 })
 db.connect((err) =>{
     if(err) throw err
@@ -75,7 +75,7 @@ router.post('/postetudiant', upload.single('image'), (request,response)=>{
     console.log("No file upload");
 }else{
   console.log(request.file.filename)
- let imgsrc = 'http://127.0.0.1:3000/image/'+ request.file.filename
+ let imgsrc = RootPath+'/image'+ request.file.filename
   let values = [
       [request.body.prenom,request.body.nom,request.body.carte,
         request.body.telephone,request.body.email,request.body.datenaiss,

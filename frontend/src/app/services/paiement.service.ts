@@ -7,11 +7,11 @@ import { Observable,
   providedIn: 'root'
 })
 export class PaiementService {
-  public apiurl='http://localhost:6001/facture'
-  public apiurl2='http://localhost:6001/facture/debiteur'
-  public apiurl1='http://localhost:6001/etudiant/mign'
-  public apiurl3='http://localhost:6001/facture/getfacture'
-  public apiurl4='http://localhost:6001/facture/maxfacture'
+  public apiurl='https://infinite-dusk-49322.herokuapp.com/facture'
+  public apiurl2='https://infinite-dusk-49322.herokuapp.com/facture/debiteur'
+  public apiurl1='https://infinite-dusk-49322.herokuapp.com/etudiant/mign'
+  public apiurl3='https://infinite-dusk-49322.herokuapp.com/facture/getfacture'
+  public apiurl4='https://infinite-dusk-49322.herokuapp.com/facture/maxfacture'
 
   public reponse:any
   public envoie:any

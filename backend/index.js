@@ -13,7 +13,7 @@ import bailleurRoutes from './routes/bailleur.js'
 // Creation de l'application ........................................
 
 const app = express()
-const PORT =  6001
+const PORT =  process.env.PORT || 6001 ;
 app.use(cors())
 app.use(bodyParser.json())
 app.use((req, res, next) => {

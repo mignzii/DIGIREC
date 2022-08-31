@@ -7,12 +7,12 @@ import { Observable,
   providedIn: 'root'
 })
 export class EtudiantsService {
-public url="http://localhost:6001/etudiant"
-public url1="http://localhost:6001/bailleur"
-public url2="http://localhost:6001/etudiant/test/montantprevisionnel"
+public url="https://infinite-dusk-49322.herokuapp.com/etudiant"
+public url1="https://infinite-dusk-49322.herokuapp.com/bailleur"
+public url2="https://infinite-dusk-49322.herokuapp.com/etudiant/test/montantprevisionnel"
 
-public url5="http://localhost:6001/etudiant/test4/totalmontant"
-public url6="http://localhost:6001/etudiant/postetudiant"
+public url5="https://infinite-dusk-49322.herokuapp.com/etudiant/test4/totalmontant"
+public url6="https://infinite-dusk-49322.herokuapp.com/etudiant/postetudiant"
 
 
   constructor(private http:HttpClient) { }

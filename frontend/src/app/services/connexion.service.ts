@@ -8,7 +8,7 @@ import { Observable, observable
 export class ConnexionService {
 
   constructor(private http:HttpClient) { }
-  public apiurl="http://localhost:6001/membrepersonnel"
+  public apiurl="https://infinite-dusk-49322.herokuapp.com/membrepersonnel"
   recupone(id:any):Observable<any>{
     return this.http.get(`${this.apiurl}/${id}`)
   }

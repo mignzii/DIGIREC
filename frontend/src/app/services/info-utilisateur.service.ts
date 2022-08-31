@@ -8,8 +8,8 @@ import { Observable, observable
 })
 export class InfoUtilisateurService {
   public envoie:any
-  public apiurl="http://localhost:6001/personnel"
-  public apiurl1="http://localhost:6001/personnel/update"
+  public apiurl="https://infinite-dusk-49322.herokuapp.com/personnel"
+  public apiurl1="https://infinite-dusk-49322.herokuapp.com/personnel/update"
   constructor(private http:HttpClient) {
    }
    recupinfo(id:string):Observable<any>{

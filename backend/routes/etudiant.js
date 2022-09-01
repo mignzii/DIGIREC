@@ -75,7 +75,7 @@ router.post('/postetudiant', upload.single('image'), (request,response)=>{
     console.log("No file upload");
 }else{
   console.log(request.file.filename)
- let imgsrc = RootPath+'/image'+ request.file.filename
+ let imgsrc = RootPath+'/image/'+ request.file.filename
   let values = [
       [request.body.prenom,request.body.nom,request.body.carte,
         request.body.telephone,request.body.email,request.body.datenaiss,

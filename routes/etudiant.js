@@ -21,7 +21,7 @@ db.connect((err) =>{
 // middelware multer
 var storage = multer.diskStorage({
   destination: (req, file, callBack) => {
-      callBack(null, RootPath+'/image')     // './public/images/' directory name where save the file
+      callBack(null, '/app/image/')     // './public/images/' directory name where save the file
   },
   filename: (req, file, callBack) => {
       callBack(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
@@ -88,12 +88,20 @@ router.get('/dernieretudiant/inscrit/annee',(req,response)=>{
   } )
 } )
 // inserer un etudiant
+// test insretion d'image 
+router.post('/envoyerimage',upload.single('image'), (request,response)=>{
+  if (!request.file) {
+    console.log("No file upload");
+}else{
+  console.log("bien")
+}
+} )
 router.post('/postetudiant', upload.single('image'), (request,response)=>{
   if (!request.file) {
     console.log("No file upload");
 }else{
   console.log(request.file.filename)
- let imgsrc = RootPath+'/image/'+ request.file.filename
+ let imgsrc =  request.file.filename
   let values = [
       [request.body.prenom,request.body.nom,request.body.carte,
         request.body.telephone,request.body.email, request.body.adresse,request.body.datenaiss,

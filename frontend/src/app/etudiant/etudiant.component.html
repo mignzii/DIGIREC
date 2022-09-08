@@ -1,194 +1,261 @@
 <div class="grid grid-cols-8 h-full text-blanc ">
   <app-sidebar></app-sidebar>
   <div class="col-span-7 bg-gris-clair flex  space-x-4 w-full px-5 h-auto">
-    <div class="py-10 w-full  ">
+    <div class="py-10 ">
       <p class="font-bold leading-6 tracking-wider py-1 " style="font-size: 35px; color: #3596D2;">DIGIREC ESMT</p>
-      <div class="bg-gris-clair  rounded-lg shadow-md flex flex-col py-6 px-6 space-y-8  ">
-        <div class="w-full flex space-x-1">
-        <div class="   py-1 w-1/2   items-center rounded-lg  px-2  ">
-          <p class=" bg-bleudusite text-xl px-2 text-white font-semibold py-2 rounded-lg w-full " >AJOUTER UN ETUDIANT </p>
+      <div class="w-full  flex">
+        <div class="bg-gris-clair w-5/6  rounded-lg shadow-md flex flex-col py-6 px-6 space-y-8  ">
+          <div class="w-full flex space-x-1">
+          <div class="   py-1 w-1/2   items-center rounded-lg  px-2  ">
 
-      </div>
+            <p class=" bg-bleudusite text-xl px-2 text-white font-semibold py-2 rounded-lg w-full " >AJOUTER UN ETUDIANT </p>
 
-      </div>
-      <div class="flex space-x-2">
-        <div class="bg-white w-full py-2 px-2 rounded-lg ">
-          <div class="mt-10 sm:mt-0">
-            <div class="md:grid md:grid-cols-3 md:gap-6">
-              <div class="md:col-span-1">
-                <div class="px-4 sm:px-0">
-                  <br>
-
-
-                  <h3 class="text-lg font-medium leading-6 text-gray-600">Année Scolaire</h3>
-                  <p class="text-gray-600">2021-2022</p>
-                  <br><br><br><br><br>
-                  <h3 class="text-lg font-medium leading-6 text-gray-600">Informations etudiants</h3>
-                  <p class="text-gray-600" style="line-height: 1.5em;" >Merci de remplir ce formulaire pour tout étudiant qui n'est
-                    pas présent dans la base de données.
-                    Si l'étudiant y est déjà, l'enregistrement ne s'effectuera pas.
-                  </p>
-
-                </div>
-              </div>
-              <div class="mt-5 md:mt-0 md:col-span-2">
-
-                  <div class="shadow overflow-hidden sm:rounded-md">
-                    <div class="px-4 py-5 bg-white sm:p-6">
-                      <div class="grid grid-cols-6 gap-6">
-                        <div class="col-span-6 sm:col-span-3">
-                          <label for="first-name" class="block text-sm font-medium text-gray-700">Prénom</label>
-                          <input type="text" [formControl]="prenom" id="first-name" autocomplete="given-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
-                        </div>
-
-                        <div class="col-span-6 sm:col-span-3">
-                          <label for="last-name" class="block text-sm font-medium text-gray-700">Nom</label>
-                          <input type="text" [formControl]="nom" id="last-name" autocomplete="family-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
-
-                        </div>
-                        <div class="col-span-6 sm:col-span-3">
-                          <label for="first-name" class="block text-sm font-medium text-gray-700">N° Carte</label>
-                          <input type="text" [formControl]="carte" id="first-name" autocomplete="given-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
-                        </div>
-
-                        <div class="col-span-6 sm:col-span-3">
-                          <label for="last-name" class="block text-sm font-medium text-gray-700">Téléphone</label>
-                          <input type="text" [formControl]="telephone" id="last-name" autocomplete="family-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
-
-                        </div>
-                        <div class="col-span-6 sm:col-span-3">
-                          <label for="last-name" class="block text-sm font-medium text-gray-700">Photo de profil</label>
-                          <input type="file" id="file" (change)="onFileSelect($event)" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
-
-                        </div>
-
-                        <div class="col-span-6 sm:col-span-4 mt-1">
-                          <label for="email-address" class="block text-sm font-medium text-gray-700">Adresse email</label>
-                          <input type="text" [formControl]="email" id="email-address" autocomplete="email" class="mt-1 border  focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
-                          <label for="last-name" class="block text-sm font-medium mt-1 text-gray-700">Date de naissance</label>
-                          <input type="date" [formControl]="datenaiss" id="last-name" autocomplete="family-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
-                        </div>
-
-                        <div class="col-span-6 sm:col-span-3">
-                          <label for="country" class="block text-sm font-medium text-gray-700">Nationalité</label>
-                          <select id="country" [formControl]="pays" autocomplete="country-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black ">
-                            <option>Béninois</option>
-                            <option>Burkinabé</option>
-                            <option>Camerounais</option>
-                            <option>Cap-Verdien</option>
-                            <option>Congolais - Kinshasa</option>
-                            <option>Congolais - RDC</option>
-                            <option>Côte d'Ivoire</option>
-                            <option>Gabonnais</option>
-                            <option>Gambienne</option>
-                            <option>Ghana</option>
-                            <option>Guinéen - Conakry</option>
-                            <option>Guinéeen - Bissau</option>
-                            <option>Guinéen Equatoriale</option>
-                            <option>Libéria</option>
-                            <option>Nigerien</option>
-                            <option>Nigérian</option>
-                            <option>Sénégalais</option>
-                            <option>Sierra-Leonais</option>
-                            <option>Tchadien</option>
-                            <option>Togolais</option>
-                          </select>
-                        </div>
-
-                        <div class="col-span-6">
-                          <label for="classe" class="block text-sm font-medium text-gray-700">Classe</label>
-                          <select id="classe" [formControl]="classe" autocomplete="classe-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black ">
-                            <optgroup label="Cours du Jour">
-                              <option>CPS 1</option>
-                              <option>CPS 2</option>
-                              <option>LMEN 1</option>
-                              <option>LMEN 2</option>
-                              <option>LMEN 3</option>
-                              <option>LTI 1</option>
-                              <option>LTI 2</option>
-                              <option>LTI 3</option>
-                              <option>LP 3</option>
-                              <option>INGC 1</option>
-                              <option>INGC 2</option>
-                              <option>INGC 3</option>
-                              <option>MPSI 1</option>
-                              <option>MPSI 2</option>
-                              <option>MPTD 1</option>
-                              <option>MPTD 2</option>
-                              <option>MPTM</option>
-                            </optgroup>
-
-                            <optgroup label="Cours en ligne">
-                              <option>MDSIA/MS2D</option>
-                              <option>MPRN</option>
-                              <option>MTIS</option>
-                            </optgroup>
-
-                            <optgroup label="Cours du soir">
-                              <option>MPSI 1 - CS</option>
-                              <option>MPSI 2 - CS</option>
-                              <option>MPTD 1 - CS</option>
-                              <option>MPTD 2 - CS</option>
-                              <option>MPTM</option>
-                              <option>IGIT 1</option>
-                              <option>IGIT 2</option>
-                            </optgroup>
-
-                          </select>
-                        </div>
-                        <div class="col-span-6">
-                          <label for="formation" class="block text-sm font-medium text-gray-700">Domaine</label>
-                          <select id="formation" [formControl]="formation" autocomplete="classe-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black ">
-                            <option>Management</option>
-                            <option>Télécoms/TICs</option>
-                          </select>
-                        </div>
-
-                        <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                          <label for="city" class="block text-sm font-medium text-gray-700">Montant Formation</label>
-                          <input type="text" [formControl]="montant" id="city" autocomplete="address-level2" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 text-black">
-                        </div>
-
-                        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                          <label for="region" class="block text-sm font-medium text-gray-700">Année Scolaire</label>
-                          <input type="text" [formControl]="annee" id="region" autocomplete="address-level1" class="border mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 text-black">
-                        </div>
-
-                        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                          <label for="postal-code" class="block text-sm font-medium text-gray-700">Id Bailleur</label>
-                          <input type="text" [formControl]="bailleur" id="postal-code" autocomplete="postal-code" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full border shadow-sm sm:text-sm border-gray-300 rounded-md py-2 text-black">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                      <a href="#ex1" rel="modal:open" class=" "> <button (click)="postetudian() " class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Enregistrer</button></a>
-                    </div>
-                  </div>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="hidden sm:block" aria-hidden="true">
-            <div class="py-5">
-              <div class="border-t border-gray-200"></div>
-            </div>
-          </div>
         </div>
 
-    </div>
-      </div>
+        </div>
+        <div class="flex space-x-2">
+          <div class="bg-white w-full py-2 px-2 rounded-lg ">
+            <div class="mt-10 sm:mt-0">
+              <div class="md:grid md:grid-cols-3 md:gap-6">
+                <div class="md:col-span-1">
+                  <div class="px-4 sm:px-0">
+                    <br>
 
-    </div>
-    <div class="w-1/6 py-10">
-      <app-dropdown></app-dropdown>
-    </div>
+
+                    <h3 class="text-lg font-medium leading-6 text-gray-600">Année Scolaire</h3>
+                    <p class="text-gray-600">2021-2022</p>
+                    <br><br><br><br><br>
+                    <h3 class="text-lg font-medium leading-6 text-gray-600">Informations etudiants</h3>
+                    <p class="text-gray-600" style="line-height: 1.5em;" >Merci de remplir ce formulaire pour tout étudiant qui n'est
+                      pas présent dans la base de données.
+                      Si l'étudiant y est déjà, l'enregistrement ne s'effectuera pas.
+                    </p>
+
+                  </div>
+                </div>
+                <div class="mt-5 md:mt-0 md:col-span-2">
+
+                    <div class="shadow overflow-hidden sm:rounded-md">
+                      <div class="px-4 py-5 bg-white sm:p-6">
+                        <div class="grid grid-cols-6 gap-6">
+                          <div class="col-span-6 sm:col-span-3">
+                            <label for="first-name" class="block text-sm font-medium text-gray-700">Prénom</label>
+                            <input type="text" [formControl]="prenom" id="first-name" autocomplete="given-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
+                          </div>
+
+                          <div class="col-span-6 sm:col-span-3">
+                            <label for="last-name" class="block text-sm font-medium text-gray-700">Nom</label>
+                            <input type="text" [formControl]="nom" id="last-name" autocomplete="family-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
+
+                          </div>
+                          <div class="col-span-6 sm:col-span-3">
+                            <label for="first-name" class="block text-sm font-medium text-gray-700">N° Carte</label>
+                            <input type="text" readonly value="CE{{idetudiantpasse}} " id="first-name" autocomplete="given-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
+                          </div>
+
+                          <div class="col-span-6 sm:col-span-3">
+                            <label for="last-name" class="block text-sm font-medium text-gray-700">Téléphone</label>
+                            <input type="text" [formControl]="telephone" id="last-name" autocomplete="family-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
+
+                          </div>
+                          <div class="col-span-6 sm:col-span-3">
+                            <label for="last-name" class="block text-sm font-medium text-gray-700">Photo de profil</label>
+                            <input type="file" id="file" (change)="onFileSelect($event)" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
+
+                          </div>
+
+                          <div class="col-span-6 sm:col-span-4 mt-1">
+                            <label for="email-address" class="block text-sm font-medium text-gray-700">Adresse email</label>
+                            <input type="text" [formControl]="email" id="email-address" autocomplete="email" class="mt-1 border  focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
+                            <label for="last-name" class="block text-sm font-medium mt-1 text-gray-700">Date de naissance</label>
+                            <input type="date" [formControl]="datenaiss" id="last-name" autocomplete="family-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
+                          </div>
+
+                          <div class="col-span-6 sm:col-span-3">
+                            <label for="country" class="block text-sm font-medium text-gray-700">Nationalité</label>
+                            <select id="country" [formControl]="pays" autocomplete="country-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black ">
+                              <option>Béninois</option>
+                              <option>Burkinabé</option>
+                              <option>Camerounais</option>
+                              <option>Cap-Verdien</option>
+                              <option>Congolais - Kinshasa</option>
+                              <option>Congolais - RDC</option>
+                              <option>Côte d'Ivoire</option>
+                              <option>Gabonnais</option>
+                              <option>Gambienne</option>
+                              <option>Ghana</option>
+                              <option>Guinéen - Conakry</option>
+                              <option>Guinéeen - Bissau</option>
+                              <option>Guinéen Equatoriale</option>
+                              <option>Libéria</option>
+                              <option>Nigerien</option>
+                              <option>Nigérian</option>
+                              <option>Sénégalais</option>
+                              <option>Sierra-Leonais</option>
+                              <option>Tchadien</option>
+                              <option>Togolais</option>
+                            </select>
+                          </div>
+
+                          <div class="col-span-6">
+                            <label for="classe" class="block text-sm font-medium text-gray-700">Classe</label>
+                            <select id="classe" [formControl]="classe" autocomplete="classe-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black ">
+                              <optgroup label="Cours du Jour">
+                                <option>CPS 1</option>
+                                <option>CPS 2</option>
+                                <option>LMEN 1</option>
+                                <option>LMEN 2</option>
+                                <option>LMEN 3</option>
+                                <option>LTI 1</option>
+                                <option>LTI 2</option>
+                                <option>LTI 3</option>
+                                <option>LP 3</option>
+                                <option>INGC 1</option>
+                                <option>INGC 2</option>
+                                <option>INGC 3</option>
+                                <option>MPSI 1</option>
+                                <option>MPSI 2</option>
+                                <option>MPTD 1</option>
+                                <option>MPTD 2</option>
+                                <option>MPTM</option>
+                              </optgroup>
+
+                              <optgroup label="Cours en ligne">
+                                <option>MDSIA/MS2D</option>
+                                <option>MPRN</option>
+                                <option>MTIS</option>
+                              </optgroup>
+
+                              <optgroup label="Cours du soir">
+                                <option>MPSI 1 - CS</option>
+                                <option>MPSI 2 - CS</option>
+                                <option>MPTD 1 - CS</option>
+                                <option>MPTD 2 - CS</option>
+                                <option>MPTM</option>
+                                <option>IGIT 1</option>
+                                <option>IGIT 2</option>
+                              </optgroup>
+
+                            </select>
+                          </div>
+                          <div class="col-span-6 sm:col-span-3">
+                            <label for="first-name" class="block text-sm font-medium text-gray-700">Domicile</label>
+                            <input type="text" [formControl]="adresse" id="first-name" autocomplete="given-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
+                          </div>
+                          <div class="col-span-6">
+                            <label for="formation" class="block text-sm font-medium text-gray-700">Département</label>
+                            <select id="formation" [formControl]="formation" autocomplete="classe-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black ">
+                              <option>Management</option>
+                              <option>Télécoms/TICs</option>
+                            </select>
+                          </div>
+
+
+                          <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+                            <label for="city" class="block text-sm font-medium text-gray-700">Montant Formation</label>
+                            <input type="text" [formControl]="montant" id="city" autocomplete="address-level2" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 text-black">
+                          </div>
+
+                          <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                            <label for="region" class="block text-sm font-medium text-gray-700">Année Scolaire</label>
+                            <input type="text" [formControl]="annee" id="region" autocomplete="address-level1" class="border mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 text-black">
+                          </div>
+
+                          <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                            <label for="postal-code" class="block text-sm font-medium text-gray-700">Id Bailleur</label>
+                            <input type="text" readonly value="CEP{{idbailleurpasse}}" id="postal-code" autocomplete="postal-code" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full border shadow-sm sm:text-sm border-gray-300 rounded-md py-2 text-black">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="px-4 py-3 bg-gray-50  sm:px-6">
+                       <p class="text-black text-lg underline ">Informations sur le Bailleur </p>
+                      </div>
+                    </div>
+                    <div class="mt-5 md:mt-0 md:col-span-2">
+
+                      <div class="shadow overflow-hidden sm:rounded-md">
+                        <div class="px-4 py-5 bg-white sm:p-6">
+                          <div class="grid grid-cols-6 gap-6">
+                            <div class="col-span-6 sm:col-span-3">
+                              <label for="first-name" class="block text-sm font-medium text-gray-700">Prénom</label>
+                              <input type="text" [formControl]="prenombailleur" id="first-name" autocomplete="given-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
+                            </div>
+
+                            <div class="col-span-6 sm:col-span-3">
+                              <label for="last-name" class="block text-sm font-medium text-gray-700">Nom</label>
+                              <input type="text" [formControl]="nombailleur" id="last-name" autocomplete="family-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
+
+                            </div>
+                            <div class="col-span-6 sm:col-span-3">
+                              <label for="first-name" class="block text-sm font-medium text-gray-700">N° Bailleur</label>
+                              <input type="text" readonly value="CEP{{idbailleurpasse}}"   id="first-name" autocomplete="given-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
+                            </div>
+
+                            <div class="col-span-6 sm:col-span-3">
+                              <label for="last-name" class="block text-sm font-medium text-gray-700">Téléphone</label>
+                              <input type="text" [formControl]="telephonebailleur" id="last-name" autocomplete="family-name" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
+
+                            </div>
+
+                            <div class="col-span-6 sm:col-span-4 mt-1">
+                              <label for="email-address" class="block text-sm font-medium text-gray-700">Adresse email</label>
+                              <input type="text" [formControl]="emailbailleur" id="email-address" autocomplete="email" class="mt-1 border  focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
+
+                            </div>
+
+
+                            <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+                              <label for="city" class="block text-sm font-medium text-gray-700">Poste  Occupe</label>
+                              <input type="text" [formControl]="poste" id="city" autocomplete="address-level2" class="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 text-black">
+                            </div>
+                            <div class="col-span-6 sm:col-span-4 mt-1">
+                              <label for="email-address" class="block text-sm font-medium text-gray-700">Domicile</label>
+                              <input type="text" [formControl]="domicile"  class="mt-1 border  focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-1 text-black">
+
+                            </div>
+
+
+                            <div class="col-span-6 sm:col-span-3 mt-1 mb-2">
+                              <label for="formation" class="block text-sm font-medium text-gray-700">Rôle</label>
+                              <select id="formation" [formControl]="role" autocomplete="classe-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black ">
+                                <option>Père </option>
+                                <option>Mère</option>
+                                <option>Tuteur/Tutrice</option>
+                              </select>
+                            </div>
+                        </div>
+                        <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                          <a href="#ex1" rel="modal:open" class=" "> <button (click)="postetudian() " class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Enregistrer</button></a>
+                        </div>
+                      </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="hidden sm:block" aria-hidden="true">
+              <div class="py-5">
+                <div class="border-t border-gray-200"></div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+        </div>
+
+        </div>
+      <div class="w-1/6 py-10">
+        <app-dropdown></app-dropdown>
+      </div>
+      </div>
 
   </div>
 </div>
 <div id="ex1" class="modal">
-  <ng-container *ngIf="serveurresponse==true"[ngTemplateOutlet]="bon" ></ng-container>
-  <ng-container *ngIf="serveurresponse==false"[ngTemplateOutlet]="mauvais" ></ng-container>
+  <ng-container *ngIf="serveurreponsebailleur==true"[ngTemplateOutlet]="bon" ></ng-container>
+  <ng-container *ngIf="serveurreponsebailleur==false"[ngTemplateOutlet]="mauvais" ></ng-container>
 </div>
 <ng-template #bon>
   <div id="mysection" style=" display:flex ;flex-direction: column; border: rgb(156 163 175) ;
@@ -227,7 +294,7 @@ border-radius: 1rem;padding-top: 1.5rem; padding-bottom: 1.5rem; padding-right: 
         <div >
           <p class="flex justify-between ">Date de Facturation : <span class="font-bold"> {{date}}</span></p>
           <p class="flex justify-between">Echeance : <span class="font-bold">{{date}}</span></p>
-          <p class="flex justify-between">Code client : <span class="font-bold">{{this.carte.value}}</span></p>
+          <p class="flex justify-between">Code client : <span class="font-bold">CE{{this.idetudiantpasse}}</span></p>
         </div>
       </div>
       <!-- elements grand div -->

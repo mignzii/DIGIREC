@@ -10,13 +10,13 @@ import { PaiementService } from '../services/paiement.service';
 })
 export class EtudiantComponent implements OnInit {
 public serveurresponse:any
+public serveurreponsebailleur:any
 dateau=new Date()
 public idfacture:any
 fichierAEnvoyer: File | null =null
   constructor(private etudiant:EtudiantsService , public paie:PaiementService ) { }
  prenom=new FormControl()
  nom=new FormControl()
- carte=new FormControl()
  telephone=new FormControl()
  email=new FormControl()
  datenaiss=new FormControl()
@@ -24,9 +24,18 @@ fichierAEnvoyer: File | null =null
  classe=new FormControl()
  formation=new FormControl()
  montant=new FormControl()
+ adresse=new FormControl()
  annee=new FormControl()
  bailleur=new FormControl()
  date=this.dateau.getDate() +"/" + (this.dateau.getMonth()+1) +"/" + this.dateau.getFullYear()
+
+ prenombailleur=new FormControl()
+ nombailleur=new FormControl()
+ telephonebailleur=new FormControl()
+ emailbailleur=new FormControl()
+ poste=new FormControl()
+ domicile=new FormControl()
+ role=new FormControl()
 
  onFileSelect(event:any) {
   if (event.target.files.length > 0) {
@@ -35,15 +44,29 @@ fichierAEnvoyer: File | null =null
   }
 }
 public envoie:any
+public idetudiantpasse:any
+public idbailleurpasse:any
   ngOnInit(): void {
     this.paie.getmaxid().subscribe(data=>{
       this.idfacture=data[0].idfacture+1
       console.log(this.idfacture)
     })
+    this.etudiant.recupidetudiant().subscribe(data=>{
+      console.log(data)
+      this.idetudiantpasse=parseFloat(data.message)+1
+      console.log(typeof(this.idetudiantpasse))
+      console.log(this.idetudiantpasse)
+    })
+    this.etudiant.recupidbailleur().subscribe(data=>{
+      console.log(data)
+      this.idbailleurpasse=parseFloat(data.message)+1
+      console.log(typeof(this.idbailleurpasse))
+      console.log(this.idbailleurpasse)
+    })
   }
   postversement(){
     this.paie.reponse={
-      "num_etudiant": this.carte.value,
+      "num_etudiant":"CE"+this.idetudiantpasse,
         "libelle": "facture",
          "montant": this.montant.value,
           "date_emission": (this.dateau.getDate() +"/" + (this.dateau.getMonth()+1) +"/" + this.dateau.getFullYear()),
@@ -53,29 +76,49 @@ public envoie:any
 
       console.log("ca marche nickel")
     })
-
+  }
+  postbailleur(){
+    this.etudiant.databailleur={
+      prenombailleur:this.prenombailleur.value,
+      nombailleur:this.nombailleur.value,
+      telephone:this.telephonebailleur.value,
+      numbailleur:"CEP"+this.idbailleurpasse,
+      email:this.emailbailleur.value,
+      poste:this.poste.value,
+      domicile:this.domicile.value,
+      role:this.role.value
+     }
+     this.etudiant.postbailleur().subscribe(data=>{
+      console.log(data)
+      this.serveurreponsebailleur=data
+     })
   }
   postetudian(){
        this.etudiant.data.append("prenom",this.prenom.value)
        this.etudiant.data.append("nom",this.nom.value)
-       this.etudiant.data.append("carte",this.carte.value)
+       this.etudiant.data.append("carte","CE"+this.idetudiantpasse)
        this.etudiant.data.append("telephone",this.telephone.value)
        this.etudiant.data.append("email",this.email.value)
        this.etudiant.data.append("datenaiss",this.datenaiss.value)
        this.etudiant.data.append("pays",this.pays.value)
        this.etudiant.data.append("classe",this.classe.value)
+       this.etudiant.data.append("adresse",this.adresse.value)
        this.etudiant.data.append("formation",this.formation.value)
        this.etudiant.data.append("montant",this.montant.value)
        this.etudiant.data.append("annee",this.annee.value)
-       this.etudiant.data.append("bailleur",this.bailleur.value)
+       this.etudiant.data.append("bailleur","CEP"+this.idbailleurpasse)
        this.etudiant.data.append("image",this.fichierAEnvoyer)
        this.etudiant.postetudiant().subscribe(data=>{
         this.serveurresponse=data
         console.log(this.serveurresponse)
         if(this.serveurresponse){
           console.log(data)
-          this.postversement()
-        }else this.serveurresponse=false
+          this.postbailleur()
+          if(this.serveurreponsebailleur){
+            this.postversement()
+          }
+
+        }else this.serveurreponsebailleur=false
 
        })
   }

@@ -28,6 +28,33 @@ router.get('/:idbailleur',(request,response)=>{
     response.send(result)
 })
 })
+// recuperer id bailleur du dernier etudiant inscrit
+router.get('/dernierbailleur/bailleurinscrit',(req,response)=>{
+  db.query('SELECT MAX(id_bailleur) as derniercode FROM bailleur;',(err,result)=>{
+    if (err) throw err
+   else{
+    let a=result[0].derniercode
+    let b =a.replace("CEP","")
+    response.json({message:b})
+    console.log(b)
+   }
+  } )
+} )
+// inserer un etudiant
+router.post('/postbailleur', (request,response)=>{
+  let values = [
+      [request.body.prenombailleur,request.body.nombailleur,request.body.numbailleur,
+        request.body.telephone,request.body.email,
+        request.body.poste,request.body.domicile,request.body.role,
+        ]
+  ]
+  db.query('INSERT INTO bailleur (prenom,nom,id_bailleur,tel,mail,poste_occupe,adresse,role) VALUES ?', [values], (err)=>{
+      if(err) {response.send(false)
+      console.log(err)}
+      else response.send(true)
+  })
+
+})
 
 // Exportation de la route ................................................
 

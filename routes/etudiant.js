@@ -42,6 +42,12 @@ router.get('/:idetudiant',(request,response)=>{
     if(err) throw err
     response.send(result)
 })
+// route pour image
+  router.get('/image/afficher/:imagelink',(request,response)=>{
+    let values =request.params.imagelink
+    console.log(RootPath+'/image/'+values)
+    response.sendFile(RootPath+'/image/'+values)
+  })
 })// liste montant previsionel
 router.get('/test/montantprevisionnel',(request,response)=>{
   db.query('SELECT SUM(montant)as montanttotalformation,SUM(totalversement)as totalversclasse,SUM(montantEtat)as totalvers ,classe FROM etudiant GROUP BY classe', (err,result)=>{
@@ -69,21 +75,33 @@ router.get('/',(req,response)=>{
     console.log('result')
   } )
 } )
+// recuperer id etudiant du dernier etudiant inscrit
+router.get('/dernieretudiant/inscrit/annee',(req,response)=>{
+  db.query('SELECT MAX(num_etudiant) as derniercode FROM etudiant;',(err,result)=>{
+    if (err) throw err
+   else{
+    let a=result[0].derniercode
+    let b =a.replace("CE","")
+    response.json({message:b})
+    console.log(b)
+   }
+  } )
+} )
 // inserer un etudiant
 router.post('/postetudiant', upload.single('image'), (request,response)=>{
   if (!request.file) {
     console.log("No file upload");
 }else{
   console.log(request.file.filename)
- let imgsrc = RootPath+'/image'+ request.file.filename
+ let imgsrc = RootPath+'/image/'+ request.file.filename
   let values = [
       [request.body.prenom,request.body.nom,request.body.carte,
-        request.body.telephone,request.body.email,request.body.datenaiss,
+        request.body.telephone,request.body.email, request.body.adresse,request.body.datenaiss,
         request.body.pays,request.body.classe,request.body.formation,
         request.body.montant,request.body.annee,request.body.bailleur,
         imgsrc]
   ]
-  db.query('INSERT INTO etudiant (prenom,nom,num_etudiant,telephone,email,dateNaiss,nationalite,classe,formation,montant,annee_scolaire,id_bailleur,photo) VALUES ?', [values], (err)=>{
+  db.query('INSERT INTO etudiant (prenom,nom,num_etudiant,telephone,email, Adreesse,dateNaiss,nationalite,classe,formation,montant,annee_scolaire,id_bailleur,photo) VALUES ?', [values], (err)=>{
       if(err) {response.send(false)
       console.log(err)}
       else response.send(true)

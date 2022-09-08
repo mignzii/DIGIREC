@@ -45,7 +45,7 @@ router.get('/:idetudiant',(request,response)=>{
 // route pour image
   router.get('/image/afficher/:imagelink',(request,response)=>{
     let values =request.params.imagelink
-    console.log(RootPath+'/image/'+values)
+    console.log(RootPath+'app/image/'+values)
     response.sendFile(RootPath+'/image/'+values)
   })
 })// liste montant previsionel

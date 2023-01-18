@@ -5,6 +5,9 @@ import mysql from 'mysql'
 import RootPath from 'app-root-path'
 import multer from 'multer'
 import path from 'path'
+import Excel from 'exceljs'
+
+
 // Creation des variables ................................................
 
 const router = express.Router()
@@ -21,7 +24,7 @@ db.connect((err) =>{
 // middelware multer
 var storage = multer.diskStorage({
   destination: (req, file, callBack) => {
-      callBack(null, '/app/image/')     // './public/images/' directory name where save the file
+      callBack(null, 'image/')     // './public/images/' directory name where save the file
   },
   filename: (req, file, callBack) => {
       callBack(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
@@ -31,6 +34,50 @@ var storage = multer.diskStorage({
 var upload = multer({
   storage: storage
 });
+
+// Methodes export excel ....................................................
+function createExcelFile() {
+  // Create a new workbook
+  const workbook = new Excel.Workbook();
+
+  // Add a sheet to the workbook
+  const sheet = workbook.addWorksheet('Sheet1');
+
+  // Set the column names
+  sheet.columns = [
+    { header: 'Classe', key: 'classe' },
+    { header: 'Prévisionnel', key: 'montanttotalformation' },
+    { header: 'CA', key: 'totalversclasse' },
+    { header: 'A Recouvrer', key: 'totalvers' },
+    
+  
+  ];
+
+  // Query the database to retrieve the data
+  db.query('SELECT SUM(montant)as montanttotalformation,SUM(totalversement)as totalversclasse,SUM(montantEtat)as totalvers ,classe FROM etudiant GROUP BY classe', (error, results) => {
+    if (error) throw error;
+
+    // Add the data to the sheet
+    sheet.addRows(results);
+
+    // Save the workbook to an Excel file
+    workbook.xlsx.writeFile('file.xlsx').then(() => {
+      console.log('Excel file created successfully.');
+    });
+  });
+}
+router.get('/download', (req, res) => {
+  createExcelFile();
+  res.sendFile(RootPath+'/file.xlsx', (error) => {
+    if (error) {
+      console.log(error);
+      res.status(500).send(error);
+    } else {
+      console.log('Excel file downloaded successfully.');
+    }
+  });
+});
+
 
 // Les routes disponibles .................................................
 
@@ -45,7 +92,7 @@ router.get('/:idetudiant',(request,response)=>{
 // route pour image
   router.get('/image/afficher/:imagelink',(request,response)=>{
     let values =request.params.imagelink
-    console.log(RootPath+'/app/image/'+values)
+    console.log(RootPath+'/image/'+values)
     response.sendFile(RootPath+'/image/'+values)
   })
 })// liste montant previsionel
@@ -129,7 +176,31 @@ let e=request.body.responsable
     else  return response.send(true)
 })
 } )
-//requete de trie
+//requete d 'update etudiant
+
+router.put('/updateetuidant',(request,reponse)=>{
+  
+   let vprenom=request.body.prenom
+   let vnom =request.body.nom
+   let vcarte=request.body.carte
+   let vtelelephone=request.body.telephone
+   let vemail= request.body.email
+   let vadresse=request.body.adresse
+   let vdatenaissa= request.body.datenaiss
+   let vpays=request.body.pays
+   let vclasse=request.body.classe
+   let vformation=request.body.formation
+   let vmontant= request.body.montant
+   let vannee= request.body.annee
+   let vbailleur =request.body.bailleur
+   let vimage= request.body.imgsrc
+   db.query(`UPDATE etudiant SET prenom=${vprenom},nom=${vnom},num_etudiant=${vcarte},telephone=${vtelelephone},email=${vemail}, Adreesse=${vadresse}
+   ,dateNaiss=${vdatenaissa},nationalite=${vpays},classe=${vclasse},formation=${vformation},montant=${vmontant},annee_scolaire=${vannee},id_bailleur=${vbailleur},photo=${vimage} WHERE num_etudiant='${vcarte}'` ,(err)=>{
+    if(err) {reponse.send(false)
+              console.log(err)}
+    else  return reponse.send(true)
+})
+})
 
 // Exportation de la route ................................................
 

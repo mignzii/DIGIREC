@@ -58,9 +58,9 @@ function createExcelFile() {
 router.post('/', (request,response)=>{
   let values1 = [
     [request.body.libelle,request.body.date_emission,request.body.num_etudiant,
-    request.body.id_fournisseur, request.body.montant]
+    request.body.id_fournisseur, request.body.montant,request.body.typeoperation,request.body.banque,request.body.reference]
 ]
-db.query('INSERT INTO facture (libelle,date_emission,num_etudiant,id_fournisseur,montantcredit) VALUES ?',[values1],(err)=>{
+db.query('INSERT INTO facture (libelle,date_emission,num_etudiant,id_fournisseur,montantcredit,Type_versement,Nom_banque,Reference) VALUES ?',[values1],(err)=>{
     if(err) {response.send(false)
               console.log(err)}
     else  response.send(true)

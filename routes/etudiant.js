@@ -92,6 +92,7 @@ router.get('/:idetudiant',(request,response)=>{
 // route pour image
   router.get('/image/afficher/:imagelink',(request,response)=>{
     let values =request.params.imagelink
+    console.log(values)
     console.log(RootPath+'/image/'+values)
     response.sendFile(RootPath+'/image/'+values)
   })
@@ -154,9 +155,9 @@ router.post('/postetudiant', upload.single('image'), (request,response)=>{
         request.body.telephone,request.body.email, request.body.adresse,request.body.datenaiss,
         request.body.pays,request.body.classe,request.body.formation,
         request.body.montant,request.body.annee,request.body.bailleur,
-        imgsrc]
+        imgsrc ,request.body.statut]
   ]
-  db.query('INSERT INTO etudiant (prenom,nom,num_etudiant,telephone,email, Adreesse,dateNaiss,nationalite,classe,formation,montant,annee_scolaire,id_bailleur,photo) VALUES ?', [values], (err)=>{
+  db.query('INSERT INTO etudiant (prenom,nom,num_etudiant,telephone,email, Adreesse,dateNaiss,nationalite,classe,formation,montant,annee_scolaire,id_bailleur,photo ,statut) VALUES ?', [values], (err)=>{
       if(err) {response.send(false)
       console.log(err)}
       else response.send(true)

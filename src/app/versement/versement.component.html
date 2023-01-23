@@ -104,8 +104,24 @@
   <p>Veuillez revoir les informations fournies</p>
 </ng-template>
 <ng-template  #paiement>
-  <p>test</p>
-  <input type="text">
+  <div class="flex flex-col space-y-1 ">
+    <div class="flex flex-col">
+      <label for="nombanque" class="text-white">Banque</label>
+      <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+        <select id="Banque" [formControl]="banque"  autocomplete="classe-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black ">
+          <option>SGBS</option>
+          <option>CBAO</option>
+          <option>BSIC</option>
+          <option>FBNB</option>
+        </select>
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <label for="reference"  class="text-white">Reférence</label>
+      <input class="rounded-full p-3" type="text" [formControl]="reference" id="">
+    </div>
+  </div>
+ 
 </ng-template>
 <ng-template #fraisdosiier>
   <div class="flex flex-col  space-y-4">
@@ -224,19 +240,19 @@
           <div class="flex justify-between space-x-2 space-y-1 text-white ">
             <div class=" flex flex-col mt-1 items-center">
               <label for="">Espèce</label>
-             <input type="radio" class="w-6 h-6" name="test" id="">
+              <a (click)="affichecontraire() "> <input type="radio" class="w-6 h-6" value="Espece" [formControl]="type" ></a> 
             </div>
             <div class=" flex flex-col items-center">
               <label for="">Chèque</label>
-              <a (click)="affichepaiem() "><input type="radio" class="w-6 h-6" name="test" id=""></a>
+              <a (click)="affichepaiem() "><input type="radio" value="Cheque" class="w-6 h-6" [formControl]="type" ></a> 
             </div>
             <div class=" flex flex-col items-center">
               <label for="">Virement</label>
-              <a (click)="affichepaiem() "> <input type="radio" class="w-6 h-6" name="test" id=""></a>
+              <a (click)="affichepaiem() "> <input type="radio" value="Virement" class="w-6 h-6" [formControl]="type"  ></a>
             </div>
             <div class="flex flex-col items-center">
               <label for="">Banque</label>
-              <input type="radio" class="w-6 h-6" name="test" id="">
+             <a (click)="affichepaiem() "><input type="radio" value="Banque" class="w-6 h-6" [formControl]="type" ></a> 
             </div>
           </div>
           <div>
@@ -429,7 +445,7 @@
               ><div class="text-xl font-bold text-white">LIBELLE</div>
             </label>
             <div class="flex items-center mt-2  w-full bg-white rounded-full">
-             <select class="w-full rounded-lg py-2 px-2" [formControl]="libelle" id="">
+             <select class="w-full rounded-lg py-2 px-2" [formControl]="libelle" >
                <option value="Frais de Dossier">Frais de Dossier</option>
                <option value="Frais de Scolarite">Frais de Scolarite</option>
                <option value="Frais de Scolarite">Frais de Formation/Certification</option>

@@ -33,6 +33,7 @@ export class HistoriqueetudiantComponent implements OnInit {
       pageLength: 2
     };
     this.paie.getoneinfo(this.code).subscribe(data=>{
+      console.log(this.code)
       this.rec=data
       console.log("bonkou")
       console.log(this.rec)

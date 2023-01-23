@@ -5,74 +5,11 @@
          <p class="font-bold leading-6 tracking-wider py-1 " style="font-size: 35px; color: #3596D2;">DIGIREC ESMT</p>
         <span class="flex"> <span class="font-bold leading-6 rounded-sm tracking-wider py-1 bg-bleudusite px-2 " style="font-size: 18px; color:white ;">SITUATION ETUDIANT  </span><span class="bg-verte px-1 rounded-sm">2021 / 2022</span></span>
          <div class="bg-gris-clair  rounded-lg shadow-md flex flex-col py-6 px-6 space-y-8  ">
-         <div class="flex space-x-2">
-           <div class="bg-white   px-2 py-3 rounded-2xl">
-           <div class="my-2">
-            <span class="bg-bleudusite px-3 py-3 font-semibold rounded-xl ">Nouveaux Inscrits</span>
-           </div>
-             <div class="mt-4 pb-2 border-2 border-gray-300 px-2 rounded-xl shadow-xl">
-               <p class="text-center my-2 text-bleudusite">Etat des paiements</p>
-               <div class="flex divide-x-2 px-2 rounded-3xl ">
-                 <div class="bg-red-400 rounded-l-3xl px-2" [ngClass]="{first:res[0].nbredeversement==1 || res[0].nbredeversement==2 || res[0].nbredeversement==3 } ">Versement 1</div>
-                 <div class="bg-red-400 px-2" [ngClass]="{first:res[0].nbredeversement==2 || res[0].nbredeversement==3  } ">Versement 2</div>
-                 <div class="bg-red-400 rounded-r-3xl px-2" [ngClass]="{first:res[0].nbredeversement==3} ">Versement 3</div>
-               </div>
-              
-                 <div class="flex flex-col py-2 space-y-2" *ngFor="let item of res">
-                   <div class="flex space-x-1 items-center">
-                     <p class="rounded-full px-2 py-2 shadow-xl">
-                       <svg xmlns="http://www.w3.org/2000/svg" width="20.741" height="20.741" viewBox="0 0 20.741 20.741">
-                       <g id="_6598184_bill_finance_payment_receipt_sale_icon" data-name="6598184_bill_finance_payment_receipt_sale_icon" transform="translate(-1 -1)">
-                         <path id="Tracé_2573" data-name="Tracé 2573" d="M9.939,19.107H4.111a.691.691,0,0,1,0-1.383H9.469A6.872,6.872,0,0,1,9.3,16.21,7.017,7.017,0,0,1,9.518,14.5H4.111a.691.691,0,0,1,0-1.383h5.925a6.955,6.955,0,0,1,3.408-3.229H4.111a.691.691,0,0,1,0-1.383H13.79a.691.691,0,0,1,.581,1.051A7.031,7.031,0,0,1,16.21,9.3a4.587,4.587,0,0,1,.691.035V3.074A2.074,2.074,0,0,0,14.827,1H3.074A2.074,2.074,0,0,0,1,3.074V19.667a2.074,2.074,0,0,0,2.074,2.074h8.988a6.914,6.914,0,0,1-2.122-2.634ZM4.111,3.9H13.79a.691.691,0,1,1,0,1.383H4.111a.691.691,0,0,1,0-1.383Z" transform="translate(0)" fill="#3596d2"/>
-                         <path id="Tracé_2574" data-name="Tracé 2574" d="M20.531,15a5.531,5.531,0,1,0,5.531,5.531A5.531,5.531,0,0,0,20.531,15ZM18.8,18.111h.069a.691.691,0,1,1-.069,0Zm3.457,4.84a.692.692,0,0,1-.069-1.383h.069a.691.691,0,0,1,0,1.383Zm.491-3.657L19.293,22.75a.694.694,0,1,1-.982-.982l3.457-3.457a.694.694,0,1,1,.982.982Z" transform="translate(-4.321 -4.321)" fill="#3596d2"/>
-                       </g>
-                     </svg>
-   
-                     </p>
-                     <p class="text-bleudusite"> {{item.montant}} FCFA</p>
-                   </div>
-                   <div class="flex space-x-1 items-center">
-   
-                     <p class="rounded-full px-2 py-2 shadow-xl">
-                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                         <path id="_3671753_currency_dollar_icon" data-name="3671753_currency_dollar_icon" d="M10,20A10,10,0,1,1,20,10,10,10,0,0,1,10,20Zm1-5h1a3,3,0,0,0,0-6H7.99a1,1,0,0,1,0-2H14V5H11V3H9V5H8a3,3,0,0,0,0,6h4a1,1,0,0,1,0,2H6v2H9v2h2Z" fill="#3596d2"/>
-                       </svg>
-   
-                     </p>
-                       <p class="text-orange-500">{{item.montantEtat}} FCFA</p>
-                   </div>
-                   <div class="flex space-x-1">
-                     <p class="rounded-full px-2 py-2 shadow-xl">
-                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 18">
-                         <g id="icone-restant" transform="translate(-0.001 -12)">
-                           <path id="Tracé_2571" data-name="Tracé 2571" d="M41.562,18.44a1.5,1.5,0,0,0-2.121,0l-.653.653A9.009,9.009,0,0,0,30,12,8.888,8.888,0,0,0,24.6,13.84a1.5,1.5,0,0,0,1.811,2.391A5.917,5.917,0,0,1,30,15a5.989,5.989,0,0,1,5.668,4.119l-.993-.791a1.5,1.5,0,1,0-1.869,2.344l3.759,3a1.5,1.5,0,0,0,2-.111l3-3a1.5,1.5,0,0,0,0-2.121Z" transform="translate(-18)" fill="#3596d2"/>
-                           <path id="Tracé_2572" data-name="Tracé 2572" d="M15.6,43.774A5.917,5.917,0,0,1,12,45a5.989,5.989,0,0,1-5.668-4.119l.993.791a1.5,1.5,0,1,0,1.869-2.344l-3.759-3a1.5,1.5,0,0,0-2,.111l-3,3a1.5,1.5,0,1,0,2.121,2.121l.653-.653A9.009,9.009,0,0,0,12,48a8.888,8.888,0,0,0,5.405-1.84A1.5,1.5,0,1,0,15.6,43.774Z" transform="translate(0 -18.004)" fill="#3596d2"/>
-                         </g>
-                       </svg>
-   
-   
-                     </p>
-                     <p class="text-bleudusite">{{item.totalversement}} FCFA</p>
-                   </div>
-                 </div>
-                 <div class="flex w-full space-x-2 justify-center text-black ">
-                    <div class="flex flex-col  items-center">
-                      <input type="radio" name="paiement" id="espece" value="espece" checked class="m-2 w-8 h-8">
-                      <label for="Espece" class="text-black ">Standard</label>
-                    </div>
-                    <div class="flex flex-col  items-center">
-                      <input type="radio" name="paiement" id="cheque" value="cheque" class="m-2 w-8 h-8">
-                      <label for="cheque" class="text-black ">Boursier</label>
-                    </div>
-                 
-                  </div>
-                
-             </div>
-           </div>
-           <div class="bg-white w-full px-2 py-3 my-2 rounded-2xl">
+         <div class="">
+           <div class="bg-white  px-2 py-3 my-2 rounded-2xl">
             <span class="bg-bleudusite  px-3 py-3 font-semibold rounded-xl   ">{{res[0].prenom}} {{res[0].nom}}</span>
-            <div class="w-full shadow-md mt-2   py-2 px-1 flex-wrap flex space-x-1 ">
-                <table class="w-1/3 border font-bold" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+            <div class=" shadow-md mt-2 w-full   py-2 px-1  flex space-x-1 ">
+                <table  class=" w-1/2 border font-bold h-8" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
                   <thead>
                     <tr>
                       <th class="border-2  text-bleudusite text-center font-bold py-1">Journal</th>
@@ -110,15 +47,13 @@
          </div>
    
        </div>
-       <div class="w-1/6 py-10" >
-         <app-dropdown></app-dropdown>
-       </div>
+    
    
      </div>
      
    </div>
    <ng-template #facture1>
-    <div class="mt-4">
+   <!--  <div class="mt-4">
       <table class="w-full  border font-bold">
         <thead>
           <tr>
@@ -149,13 +84,14 @@
           </tr>
         </tbody>
       </table>
-    </div>
-    <div id="mysection" style=" display:flex ;flex-direction: column; border: rgb(156 163 175) ;
-                border-radius: 1rem;padding-top: 1.5rem; padding-bottom: 1.5rem; padding-right: 2rem; padding-left: 2rem;
+    </div>-->
+                 <div class="flex flex-col space-y-1">
+                  <div id="mysection" class="w-96 h-[520px] bg-white" style=" display:flex ;flex-direction: column; border: rgb(156 163 175) ;
+                border-radius: 1rem;padding-top: 1rem; padding-bottom: 1.5rem; padding-right: 2rem; padding-left: 2rem;
                  align-items: center; justify-content: center; color: #000;
                       background-color: white;
                       position: relative;" >
-                        <svg class="print:hidden" style=" position:absolute; top:8px; left:8px; " xmlns="http://www.w3.org/2000/svg" width="125" height="120" viewBox="0 0 148 141" >
+                        <svg class="print:hidden" style=" position:absolute; top:20px; left:8px; " xmlns="http://www.w3.org/2000/svg" width="125" height="120" viewBox="0 0 148 141" >
                           <g id="Groupe_2735" data-name="Groupe 2735" transform="translate(0.129 -0.027)">
                             <rect id="Rectangle_25" data-name="Rectangle 25" width="141" height="17" transform="translate(6.871 0.027)" fill="#72b920"/>
                             <rect id="Rectangle_26" data-name="Rectangle 26" width="141" height="17" transform="translate(-0.129 141.027) rotate(-90)" fill="#3596d2"/>
@@ -183,7 +119,7 @@
                         </svg>
                 
                         <div  style="display:flex ;flex-direction: column; align-items: center; ">
-                        <span>Recu No <span class="font-bold">{{facture_etudiant[0].id_facture}}  </span> </span>
+                        <span>Facture No <span class="font-bold">{{facture_etudiant[0].id_facture}}  </span> </span>
                         <span class="font-bold">{{facture_etudiant[0].date_emission}}</span>
                       </div>
                       <!-- elements grand div -->
@@ -244,7 +180,7 @@
                         <span>Rocade Fann Bel Air,Dakar,Liberte Senegal</span>
                         <span>33 8645778 - 337599076</span>
                        </div>
-                        <div class="flex items-center space-x-20 w-full" style="display: flex;   width: 100%;" >
+                        <div class="flex items-center w-full" style="display: flex;   width: 100%;" >
                           <div>
                           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="45" viewBox="0 0 320 65">
                             <defs>
@@ -316,7 +252,8 @@
                 
                         </div>
                        </div>
-                       <div class="flex space-x-10 mt-[50px] ">
+                        
+                       <div class="flex  mt-[50px] ">
                         <div>
                         <button (click)="PrintElem('mysection') " class="bg-bleudusite border-2 py-3 px-8 rounded-[20px]">
                           <span class="text-white">Imprimer</span>
@@ -331,6 +268,8 @@
                 
                 
                       </div>
+                 </div>
+                    -->
    </ng-template>
    <ng-template #recu>
     <div class="mt-4">
@@ -459,7 +398,7 @@
             <span>Rocade Fann Bel Air,Dakar,Liberte Senegal</span>
             <span>33 8645778 - 337599076</span>
            </div>
-            <div class="flex items-center space-x-20 w-full" style="display: flex;   width: 100%;" >
+            <div class="flex items-center  w-full" style="display: flex;   width: 100%;" >
               <div>
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="45" viewBox="0 0 320 65">
                 <defs>
@@ -543,7 +482,7 @@
                 <span class="text-white">Nouveau versement</span>
               </button></a>
             </div>
-    
+            
     
           </div>
    </ng-template>

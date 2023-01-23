@@ -11,8 +11,11 @@ export class DownloadfileService {
 
   constructor(private http: HttpClient) { }
   
-  downloadFile(): Observable<Blob> {
-    return this.http.get('http://localhost:6001/facture/download', { responseType: 'blob' });
+  downloadFile(): Observable<any>{
+    return this.http.get('http://localhost:6001/facture/download');
+  }
+  downloadFiletrue(): Observable<Blob>{
+    return this.http.get('http://localhost:6001/facture/downloadfile', { responseType: 'blob' });
   }
   downloadFileCA(): Observable<Blob> {
     return this.http.get('http://localhost:6001/etudiant/download', { responseType: 'blob' });

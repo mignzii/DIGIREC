@@ -149,6 +149,14 @@
                               <option>Télécoms/TICs</option>
                             </select>
                           </div>
+                          <div class="col-span-6">
+                            <label for="formation" class="block text-sm font-medium text-gray-700">Statut</label>
+                            <select id="formation" [formControl]="statut" autocomplete="classe-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black ">
+                              <option>Boursier</option>
+                              <option>Enfant parent d'eleve </option>
+                              <option>Espece </option>
+                            </select>
+                          </div>
 
 
                           <div class="col-span-6 sm:col-span-6 lg:col-span-2">
@@ -157,8 +165,13 @@
                           </div>
 
                           <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                            <label for="region" class="block text-sm font-medium text-gray-700">Année Scolaire</label>
-                            <input type="text" [formControl]="annee" id="region" autocomplete="address-level1" class="border mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 text-black">
+                            <label for="formation" class="block text-sm font-medium text-gray-700">Année Scolaire</label>
+                            <select id="formation" [formControl]="annee" autocomplete="classe-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black ">
+                              <option>2021-2022</option>
+                              <option>2022-2023</option>
+                              <option>2024-2025</option>
+                              <option>2026-2027</option>
+                            </select>
                           </div>
 
                           <div class="col-span-6 sm:col-span-3 lg:col-span-2">
@@ -430,3 +443,10 @@ border-radius: 1rem;padding-top: 1.5rem; padding-bottom: 1.5rem; padding-right: 
   <p>Votre enregistrement n'a pas ete effectue avec succes</p>
   <p>Veuillez revoir les informations fournies</p>
 </ng-template>
+
+
+<!-- Ajouter input boursier ou standard -->
+<!-- type banque ajouter mini formulaire -->
+<!-- Habib thiam rounde 50rem -->
+<!-- centre Habib thiam -->
+<!-- diminuer le rounded -->

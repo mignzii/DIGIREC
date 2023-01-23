@@ -27,6 +27,9 @@ export class VersementComponent implements OnInit {
   libelle=new FormControl()
   date=new FormControl()
   responsable=new FormControl()
+  type=new FormControl()
+  banque=new FormControl()
+  reference=new FormControl()
   public test=sessionStorage.getItem('iduser')
   ngOnInit(): void {
     console.log(this.test)
@@ -38,6 +41,9 @@ export class VersementComponent implements OnInit {
     this.paiemen=true
     console.log(this.paiemen)
 
+  }
+  affichecontraire(){
+    this.paiemen=false
   }
   dossier(){
 this.FD=true
@@ -91,7 +97,10 @@ postversement(){
       "libelle": this.libelle.value,
        "montant": this.montant.value,
         "date_emission": this.date.value,
-        "operation":'Credit'
+        "typeoperation":this.type.value,
+        "banque":this.reference.value,
+        "reference":this.banque.value,
+        
   }
   this.paie.postpaie().subscribe(data=>{
     this.serveurresponse=data

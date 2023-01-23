@@ -27,6 +27,7 @@ fichierAEnvoyer: File | null =null
  adresse=new FormControl()
  annee=new FormControl()
  bailleur=new FormControl()
+ statut=new FormControl()
  date=this.dateau.getDate() +"/" + (this.dateau.getMonth()+1) +"/" + this.dateau.getFullYear()
 
  prenombailleur=new FormControl()
@@ -73,7 +74,7 @@ public idbailleurpasse:any
           "operation":'Débiteur'
     }
     this.paie.postpaie1().subscribe(data=>{
-
+      console.log(data)
       console.log("ca marche nickel")
     })
   }
@@ -91,6 +92,12 @@ public idbailleurpasse:any
      this.etudiant.postbailleur().subscribe(data=>{
       console.log(data)
       this.serveurreponsebailleur=data
+      if(this.serveurreponsebailleur){
+        this.postversement()
+      }
+      else{
+        console.log("probleme")
+      }
      })
   }
   postetudian(){
@@ -106,6 +113,7 @@ public idbailleurpasse:any
        this.etudiant.data.append("formation",this.formation.value)
        this.etudiant.data.append("montant",this.montant.value)
        this.etudiant.data.append("annee",this.annee.value)
+       this.etudiant.data.append("statut",this.statut.value)
        this.etudiant.data.append("bailleur","CEP"+this.idbailleurpasse)
        this.etudiant.data.append("image",this.fichierAEnvoyer)
        this.etudiant.postetudiant().subscribe(data=>{
@@ -114,11 +122,9 @@ public idbailleurpasse:any
         if(this.serveurresponse){
           console.log(data)
           this.postbailleur()
-          if(this.serveurreponsebailleur){
-            this.postversement()
-          }
 
-        }else this.serveurreponsebailleur=false
+        }
+        else this.serveurreponsebailleur=false
 
        })
   }

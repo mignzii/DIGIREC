@@ -40,6 +40,7 @@ import { EcriturecomptableComponent } from './ecriturecomptable/ecriturecomptabl
 import { HistoriqueetudiantComponent } from './historiqueetudiant/historiqueetudiant.component';
 import { PaginationPipePipe } from './pagination-pipe.pipe';
 import { ExporttoexelComponent } from './exporttoexel/exporttoexel.component';
+import { ModifprofilComponent } from './modifprofil/modifprofil.component';
 
 const appRoutes : Routes =[
   {path:'',component:PageacceuilComponent},
@@ -91,7 +92,8 @@ const appRoutes : Routes =[
     EcriturecomptableComponent,
     HistoriqueetudiantComponent,
     PaginationPipePipe,
-    ExporttoexelComponent
+    ExporttoexelComponent,
+    ModifprofilComponent
   ],
   imports: [
     BrowserModule,MatProgressSpinnerModule,NgxPrintModule,NgxPrintElementModule,

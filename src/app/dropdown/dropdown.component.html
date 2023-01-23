@@ -1,8 +1,8 @@
 
   <div class=" rounded-lg flex flex-col shadow-md px-5 py-2 ">
     <div>
-      <img src="../../assets/pic2.jpg" width="158px" height="158px" class="rounded-md mx-auto" alt="">
-      <p  class="text-bleudusite w-full flex text-xl font-semibold" *ngFor="let item of responsable">{{item.prenom}} {{item.nom}} </p>
+      <img src="../../assets/pic2.jpg" width="158px" height="158px" class="rounded-full mx-auto" alt="">
+      <p  class="text-bleudusite w-full flex  justify-center items-center text-center text-xl font-semibold" *ngFor="let item of responsable">{{item.prenom}} {{item.nom}} </p>
 
     </div>
     <button mat-button [matMenuTriggerFor]="beforeMenu" class="custom-menu bg-bleudusite rounded-lg my-2">Profil</button>

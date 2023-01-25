@@ -31,9 +31,13 @@ public res:any
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then(() => {
-        this.onDownloadClicktoast()
+        confirmButtonText: 'Oui!'
+      }).then((result) => {
+        if(result.isConfirmed){
+          this.onDownloadClicktoast()
+        }
+        
+       
       })
         // The file is received, create a link to download it
       

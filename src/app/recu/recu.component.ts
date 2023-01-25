@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EtudiantsService } from '../services/etudiants.service';
 import { PaiementService } from '../services/paiement.service';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-recu',
   templateUrl: './recu.component.html',
@@ -10,7 +10,7 @@ import { PaiementService } from '../services/paiement.service';
 })
 export class RecuComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute , public info:EtudiantsService , private paie:PaiementService) { }
+  constructor(private route:ActivatedRoute , public info:EtudiantsService , private paie:PaiementService , private location:Location) { }
   public user=sessionStorage.getItem('iduser')
 code=this.route.snapshot.params['code']
 montant=this.route.snapshot.params['mont']
@@ -29,6 +29,9 @@ public idfacture:any
       this.idfacture=data[0].idfacture
       console.log(this.idfacture)
     })
+  }
+  retour(){
+    this.location.back()
   }
 
 

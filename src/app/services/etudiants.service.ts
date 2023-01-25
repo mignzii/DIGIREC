@@ -15,6 +15,7 @@ public url8="http://localhost:6001/bailleur/postbailleur"
 public url9="http://localhost:6001/bailleur/dernierbailleur/bailleurinscrit"
 public url5="http://localhost:6001/etudiant/test4/totalmontant"
 public url6="http://localhost:6001/etudiant/postetudiant"
+public url10="http://localhost:6001/etudiant/updateetuidant"
 
 
   constructor(private http:HttpClient) { }
@@ -47,7 +48,8 @@ public url6="http://localhost:6001/etudiant/postetudiant"
   recupidbailleur():Observable<any>{
     return this.http.get(this.url9)
   }
-
-
+  updateetudiant():Observable<any>{
+    return this.http.put(this.url10,this.data)
+  }
 
 }

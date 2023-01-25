@@ -65,6 +65,7 @@ const appRoutes : Routes =[
   {path:'ecriture',component:EcriturecomptableComponent},
   {path:'historiqueetudiant/:idetudiant',component:HistoriqueetudiantComponent},
   {path:'exporttoexcel',component:ExporttoexelComponent},
+  {path:'modifier/:idetudiant',component:ModifprofilComponent}
 ]
 
 @NgModule({

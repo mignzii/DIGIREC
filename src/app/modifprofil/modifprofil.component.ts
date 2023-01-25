@@ -104,6 +104,8 @@ public res1:any
    
     this.info.updateetudiant().subscribe(data=>{
       console.log(data)
+      this.serveurreponsebailleur=data
+      console.log(this.serveurreponsebailleur)
     })
 }
 updatebailleur(){
@@ -122,7 +124,7 @@ updatebailleur(){
  
   this.info.updateetudiant().subscribe(data=>{
     console.log(data)
-    this.serveurreponsebailleur=data
+   
   })
 }
 

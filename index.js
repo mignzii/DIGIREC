@@ -1,7 +1,6 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
-import entrepriseRoutes from './routes/entreprise.js'
 import etudiantRoutes from './routes/etudiant.js'
 import factureRoutes from './routes/facture.js'
 import fournisseurRoutes from './routes/fournisseur.js'
@@ -25,7 +24,6 @@ app.use((req, res, next) => {
 // Activation des modules ...........................................
 
 app.use(bodyParser.json())
-app.use('/entreprise',entrepriseRoutes)
 app.use('/etudiant',etudiantRoutes)
 app.use('/facture',factureRoutes)
 app.use('/fournisseur',fournisseurRoutes)

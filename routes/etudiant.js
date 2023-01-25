@@ -194,9 +194,9 @@ router.put('/updateetuidant',(request,reponse)=>{
    let vmontant= request.body.montant
    let vannee= request.body.annee
    let vbailleur =request.body.bailleur
-   let vimage= request.body.imgsrc
-   db.query(`UPDATE etudiant SET prenom=${vprenom},nom=${vnom},num_etudiant=${vcarte},telephone=${vtelelephone},email=${vemail}, Adreesse=${vadresse}
-   ,dateNaiss=${vdatenaissa},nationalite=${vpays},classe=${vclasse},formation=${vformation},montant=${vmontant},annee_scolaire=${vannee},id_bailleur=${vbailleur},photo=${vimage} WHERE num_etudiant='${vcarte}'` ,(err)=>{
+  
+   db.query(`UPDATE etudiant SET prenom='${vprenom}',nom='${vnom}',num_etudiant='${vcarte}',telephone='${vtelelephone}',email='${vemail}', Adreesse='${vadresse}'
+   ,dateNaiss='${vdatenaissa}',nationalite='${vpays}',classe='${vclasse}',formation='${vformation}',montant='${vmontant}',annee_scolaire='${vannee}',id_bailleur='${vbailleur}' WHERE num_etudiant='${vcarte}'` ,(err)=>{
     if(err) {reponse.send(false)
               console.log(err)}
     else  return reponse.send(true)

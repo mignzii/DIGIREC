@@ -15,15 +15,15 @@
             </div>
             <div class="flex w-full justify-between text-black ">
               <div class="flex flex-col  items-center">
-                <input type="radio" name="paiement" id="espece" value="espece" class="m-2 w-8 h-8">
-                <label for="Espece" class="text-black ">Espece</label>
+                <input type="radio"[checked]="espce" name="paiement" id="espece" value="espece" class="m-2 w-8 h-8">
+                <label for="Espece"  class="text-black ">Espece</label>
               </div>
               <div class="flex flex-col  items-center">
-                <input type="radio" name="paiement" id="cheque" value="cheque" class="m-2 w-8 h-8">
+                <input type="radio" [checked]="boursier" name="paiement" id="cheque" value="cheque" class="m-2 w-8 h-8">
                 <label for="cheque" class="text-black ">Boursier</label>
               </div>
               <div class="flex flex-col  items-center">
-                <input type="radio" name="paiement" id="bordereau" value="bordereau"  class="m-2 w-8 h-8">
+                <input type="radio" [checked]="parent" name="paiement" id="bordereau" value="bordereau"  class="m-2 w-8 h-8">
                 <label for="bordereau" class="text-black">Enfant parent d'eleve</label>
               </div>
 

@@ -37,7 +37,6 @@ public res:any
           this.onDownloadClicktoast()
         }
         
-       
       })
         // The file is received, create a link to download it
       

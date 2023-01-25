@@ -14,6 +14,9 @@ export class ProfilComponent implements OnInit {
 code=this.route.snapshot.params['id']
 public res:any
 public res1:any
+espce:boolean=false
+boursier:boolean=false
+parent:boolean=false
   ngOnInit(): void {
     this.info.recupinfoetudiant(this.code).subscribe(data=>{
       this.res=data
@@ -22,13 +25,19 @@ public res1:any
         this.info.recupbailleur(this.res[0].id_bailleur).subscribe((data)=>{
           this.res1=data
           console.log(this.res1)
-
+          if(this.res[0].statut=="Boursier"){
+            this.boursier=true
+          }
+          else if(this.res[0].statut=="Enfant parent d'eleve"){
+            this.parent=true
+          }
+          else {
+            this.espce=true
+          }
         })
       }
     })
-
-
-
+   
   }
 
 }

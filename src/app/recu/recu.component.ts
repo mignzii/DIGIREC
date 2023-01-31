@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { EtudiantsService } from '../services/etudiants.service';
 import { PaiementService } from '../services/paiement.service';
 import { Location } from '@angular/common';
+import { InfoUtilisateurService } from '../services/info-utilisateur.service';
 @Component({
   selector: 'app-recu',
   templateUrl: './recu.component.html',
@@ -10,16 +11,22 @@ import { Location } from '@angular/common';
 })
 export class RecuComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute , public info:EtudiantsService , private paie:PaiementService , private location:Location) { }
+  constructor(private route:ActivatedRoute ,private utilisateur:InfoUtilisateurService, public info:EtudiantsService , private paie:PaiementService , private location:Location) { }
   public user=sessionStorage.getItem('iduser')
+  public responsable:any
 code=this.route.snapshot.params['code']
 montant=this.route.snapshot.params['mont']
 libelle=this.route.snapshot.params['libelle']
 date=this.route.snapshot.params['date']
 res:any
 public idfacture:any
-
+public url:any
   ngOnInit(): void {
+    this.url=sessionStorage.getItem('iduser')
+    this.utilisateur.recupinfo(this.url ).subscribe(data=>{
+      this.responsable=data
+      console.log(this.responsable)
+    })
 
     this.info.recupinfoetudiant(this.code).subscribe(data=>{
       this.res=data

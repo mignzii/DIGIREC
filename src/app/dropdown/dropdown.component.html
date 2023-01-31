@@ -5,7 +5,7 @@
       <p  class="text-bleudusite w-full flex  justify-center items-center text-center text-xl font-semibold" *ngFor="let item of responsable">{{item.prenom}} {{item.nom}} </p>
 
     </div>
-    <button mat-button [matMenuTriggerFor]="beforeMenu" class="custom-menu bg-bleudusite rounded-lg my-2">Profil</button>
+    <button mat-button [matMenuTriggerFor]="beforeMenu" class="custom-menu bg-bleudusite text-white rounded-lg my-2">Profil</button>
     <mat-menu class="w-[225px] bg-white  "  #beforeMenu="matMenu" xPosition="before">
       <div class="px-2 mx-1 my-1 flex flex-col space-y-2">
         <p class="font-semibold text-bleudusite text-lg" >{{item.prenom}} {{item.nom}}</p>

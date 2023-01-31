@@ -191,11 +191,11 @@ border-radius: 1rem;padding-top: 1.5rem; padding-bottom: 1.5rem; padding-right: 
       class="absolute top-6 right-6 flex flex-col border p-3 rounded-[20px] bg-gray-100"
     >
       <img
-        src="https://www.etudiant.ma/uploads/ckeditor/pictures/170/content_etudiant-universitaires.png"
+      [src]="'http://localhost:6001/personnel/image/afficher/'+responsable[0].photo"
         alt=""
         class="rounded-full h-20"
       />
-      <span class="text-bleudusite">DIOP KADY</span>
+      <span class="text-bleudusite text-center py-1">{{responsable[0].prenom}} {{responsable[0].nom}}</span>
     </div>
 
     <span

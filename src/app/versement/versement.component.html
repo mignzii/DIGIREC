@@ -97,7 +97,7 @@
   <!-- Link to open the modal -->
 <ng-template #bon>
   <p>Votre enregistrement a été effectue avec succés</p>
-  <a routerLink="/recu/{{code.value}}/{{montant.value}}/{{libelle.value}}/{{date.value}}" rel="modal:close" (click)="miseajour() "><p class="text-bleudusite">Imprimer le reçu</p></a>
+  <a routerLink="/recu/{{code.value}}/{{montant.value}}/Frais de Scolarité /{{date.value}}" rel="modal:close" (click)="miseajour() "><p class="text-bleudusite">Imprimer le reçu</p></a>
 </ng-template>
 <ng-template #mauvais>
   <p>Votre enregistrement n'a pas été effectue avec succes</p>
@@ -189,17 +189,7 @@
         </div>
       </div>
       </div>
-      <div class="flex flex-col">
-        <label for="Prenom"
-          ><div class="text-xl font-semibold text-gris-texte">Payeur</div>
-        </label>
-        <div class="flex items-center  rounded-full">
-          <select name="" [formControl]="responsable" class="border text-gris-texte w-1/2 py-1 rounde-lg" id="">
-            <option value="Entreprise">Entreprise</option>
-            <option value="Particulier">Particulier</option>
-          </select>
-        </div>
-      </div>
+      
      <div class="flex space-x-2">
       <a href="#ex1" rel="modal:open" class=" ">  <button (click)="postversement() " class="bg-bleudusite border-2 py-3 px-8 w-[100%] rounded-[20px]">
         <span class="text-white">Enregistrer</span>
@@ -210,20 +200,7 @@
     </div>
     <div class="bg-bleudusite p-8 mt-8 ml-2 mr-20 rounded-[10%] shadow-md">
       <div class="flex flex-col items-center space-y-8">
-        <div class="flex flex-col items-center">
-          <label for="Prenom"
-            ><div class="text-xl font-bold text-white">Libellé</div>
-          </label>
-          <div class="flex items-center mt-2  w-full bg-white rounded-full">
-           <select class="w-full rounded-lg py-2 px-2" [formControl]="libelle" id="">
-             <option value="Frais de Dossier">Frais de Dossier</option>
-             <option value="Frais de Scolarite">Frais de Scolarite</option>
-             <option value="Frais de Scolarite">Frais de Formation/Certification</option>
-             <option value="Frais de Scolarite">Frais de rattrapage module</option>
-           </select>
-
-          </div>
-        </div>
+       
         <div class="flex flex-col space-y-2 w-[80%]">
           <div class="flex flex-col mb-5  items-center">
             <label for="Prenom"><div class="text-xl font-bold text-white">

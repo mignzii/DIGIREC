@@ -94,7 +94,7 @@ public serveurresponse:any
 postversement(){
   this.paie.reponse={
     "num_etudiant": this.code.value,
-      "libelle": this.libelle.value,
+      "libelle": "Frais de scolarité",
        "montant": this.montant.value,
         "date_emission": this.date.value,
         "typeoperation":this.type.value,

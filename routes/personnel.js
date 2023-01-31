@@ -2,6 +2,9 @@
 
 import express from 'express'
 import mysql from 'mysql'
+import RootPath from 'app-root-path'
+import multer from 'multer'
+import path from 'path'
 
 // Creation des variables ................................................
 
@@ -17,6 +20,19 @@ db.connect((err) =>{
     console.log("Connexion DB: OK")
 })
 
+// multer middelwars
+var storage = multer.diskStorage({
+  destination: (req, file, callBack) => {
+      callBack(null, RootPath+'/image')     // './public/images/' directory name where save the file
+  },
+  filename: (req, file, callBack) => {
+      callBack(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+  }
+})
+
+var upload = multer({
+  storage: storage
+});
 // Les routes disponibles .................................................
 router.get('/',(request,response)=>{
   db.query('SELECT * FROM personnel', (err,result)=>{
@@ -65,6 +81,28 @@ router.put('/update',(request,response)=>{
       else  return response.send(true)
   })*/
   } )
+
+  router.put("/updateprofile", upload.single('image'), (req, res) => {
+    if (!req.file) {
+        console.log("No file upload");
+    } else {
+        console.log(req.file.filename)
+        let d=req.body.id
+        var imgsrc =  req.file.filename
+        db.query(`UPDATE personnel SET  photo='${imgsrc}' WHERE id_personnel='${d}'` ,(err)=>{
+          if(err) {res.send(false)
+                    console.log(err)}
+          else  return  res.send(true)
+      })} })
+  
+  // route pour image
+  router.get('/image/afficher/:imagelink',(request,response)=>{
+    let values =request.params.imagelink
+    console.log(values)
+    console.log(RootPath+'/image/'+values)
+    response.sendFile(RootPath+'/image/'+values)
+  })
+  
 
 // Exportation de la route ................................................
 

@@ -61,14 +61,122 @@ function createExcelFile() {
     sheet.addRows(results);
 
     // Save the workbook to an Excel file
-    workbook.xlsx.writeFile('file.xlsx').then(() => {
+    workbook.xlsx.writeFile('CA.xlsx').then(() => {
       console.log('Excel file created successfully.');
     });
   });
 }
-router.get('/download', (req, res) => {
-  createExcelFile();
-  res.sendFile(RootPath+'/file.xlsx', (error) => {
+// Methodes export excel ....................................................
+function createExcelFileForTranche() {
+  // Create a new workbook
+  const workbook = new Excel.Workbook();
+
+  // Add a sheet to the workbook
+  const sheet1 = workbook.addWorksheet('Tranche 1');
+  const sheet2=workbook.addWorksheet('Tranche 2');
+  const sheet3=workbook.addWorksheet('Tranche 3');
+  
+
+  // Set the column names
+  sheet1.columns = [
+    { header: 'IDENTIFIANT', key:'num_etudiant' },
+    { header: 'CLASSE', key:'classe' },
+    { header: 'NOM & PRENOM', key:'fullname' },
+    { header: 'FACTURE', key:'montant' },
+    { header: 'TOTAL VERSEMENT', key:'totalversement' },
+    { header: 'RELIQUAT', key:'montantEtat' },
+    
+  
+  ];
+  // Set the column names
+  sheet2.columns = [
+    { header: 'IDENTIFIANT', key:'num_etudiant' },
+    { header: 'CLASSE', key:'classe' },
+    { header: 'NOM & PRENOM', key:'fullname' },
+    { header: 'FACTURE', key:'montant' },
+    { header: 'TOTAL VERSEMENT', key:'totalversement' },
+    { header: 'RELIQUAT', key:'montantEtat' },
+  
+  ];
+  sheet3.columns = [
+    { header: 'IDENTIFIANT', key:'num_etudiant' },
+    { header: 'CLASSE', key:'classe' },
+    { header: 'NOM & PRENOM', key:'fullname' },
+    { header: 'FACTURE', key:'montant' },
+    { header: 'TOTAL VERSEMENT', key:'totalversement' },
+    { header: 'RELIQUAT', key:'montantEtat' },
+  
+  ];
+// tableau des differentes sheets
+let tablesheet=[sheet1,sheet2,sheet3];
+
+db.query("SELECT * FROM etudiant where etatSolde='debiteur'", (error, results) => {
+  if (error) throw error;
+  
+  let resultattranche1=results;
+  let promiseArray = [];
+  for (let index = 1; index < 4; index++) {
+    console.log("------------------------------------------");
+    console.log("-------Tour de Boucle------------------", index);
+    promiseArray.push(Promise.all(resultattranche1.map(async (objection) => ({
+      ...objection, 
+      'montantEtat': (parseFloat(((objection.montant) / 3) * index) - objection.totalversement),
+      'fullname': (objection.nom + '' + objection.prenom)
+    }))).then((resolvedData) => {
+      let filteredData = resolvedData.filter((obj) => obj.montantEtat >= 0);
+      console.log(filteredData.length);
+      console.log(filteredData);
+      console.log('mercu');
+      tablesheet[index-1].addRows(filteredData);
+    }));
+  }
+
+  Promise.all(promiseArray).then(() => {
+    workbook.xlsx.writeFile('tranche.xlsx').then(() => {
+      console.log('Excel file created successfully.');
+    });
+  });
+
+
+})
+}
+function createfilforDebiteur() {
+  // Create a new workbook
+  const workbook = new Excel.Workbook();
+
+  // Add a sheet to the workbook
+  const sheet1 = workbook.addWorksheet('Debiteur');
+
+  // Set the column names
+  sheet1.columns = [
+    { header: 'IDENTIFIANT', key:'num_etudiant' },
+    { header: 'CLASSE', key:'classe' },
+    { header: ' NOM', key:'nom' },
+    { header: 'PRENOM', key:'prenom' },
+    { header: 'FACTURE', key:'montant' },
+    { header: 'TOTAL VERSEMENT', key:'totalversement' },
+    { header: 'RELIQUAT', key:'montantEtat' },
+  ];
+
+  // Query the database to retrieve the data
+  db.query("SELECT * FROM etudiant where etatSolde='debiteur'", (error, results) => {
+    if (error) throw error;
+
+    // Add the data to the sheet
+    sheet1.addRows(results);
+
+    // Save the workbook to an Excel file
+    workbook.xlsx.writeFile('Debiteur.xlsx').then(() => {
+      console.log('Excel file created successfully.');
+    });
+  });
+}
+router.get('/createdownloadCA',(req,res)=>{
+  createExcelFile()
+  res.send(true)
+})
+router.get('/downloadCA', (req, res) => {
+  res.sendFile(RootPath+'/CA.xlsx', (error) => {
     if (error) {
       console.log(error);
       res.status(500).send(error);
@@ -77,8 +185,36 @@ router.get('/download', (req, res) => {
     }
   });
 });
-
-
+router.get('/createdownloadtranche',(req,res)=>{
+  createExcelFileForTranche()
+  res.send(true)
+})
+router.get('/downloadtranche', (req, res) => {
+  
+  res.sendFile(RootPath+'/tranche.xlsx', (error) => {
+    if (error) {
+      console.log(error);
+      res.status(500).send(error);
+    } else {
+      console.log('Excel file downloaded successfully.');
+    }
+  });
+});
+router.get('/createdownloaddebiteur',(req,res)=>{
+  createfilforDebiteur()
+  res.send(true)
+})
+router.get('/downloaddebiteur', (req, res) => {
+  
+  res.sendFile(RootPath+'/Debiteur.xlsx', (error) => {
+    if (error) {
+      console.log(error);
+      res.status(500).send(error);
+    } else {
+      console.log('Excel file downloaded successfully.');
+    }
+  });
+});
 // Les routes disponibles .................................................
 
 router.get('/:idetudiant',(request,response)=>{

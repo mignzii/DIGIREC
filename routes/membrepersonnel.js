@@ -72,6 +72,27 @@ router.post("/post", upload.single('image'), (req, res) => {
       })
   }
 });
+router.put("/updateprofile", upload.single('image'), (req, res) => {
+  if (!req.file) {
+      console.log("No file upload");
+  } else {
+      console.log(req.file.filename)
+      let d=req.body.id
+      var imgsrc =  req.file.filename
+      db.query(`UPDATE membrepersonnel SET  photo='${imgsrc}' WHERE id_personnel='${d}'` ,(err)=>{
+        if(err) {res.send(false)
+                  console.log(err)}
+        else  return  res.send(true)
+    })} })
+
+// route pour image
+router.get('/image/afficher/:imagelink',(request,response)=>{
+  let values =request.params.imagelink
+  console.log(values)
+  console.log(RootPath+'/image/'+values)
+  response.sendFile(RootPath+'/image/'+values)
+})
+
 
 // Exportation de la route ................................................
 

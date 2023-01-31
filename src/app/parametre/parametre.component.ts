@@ -11,6 +11,8 @@ export class ParametreComponent implements OnInit {
 
   constructor(private personnel:InfoUtilisateurService) { }
 public serveurresponse:any
+public serveurside:any
+fichierAEnvoyer: File | null =null
   ngOnInit(): void {
   }
   login=new FormControl()
@@ -29,6 +31,20 @@ public serveurresponse:any
       this.serveurresponse=data
     })
 
+  }
+  onFileSelect(event:any) {
+    if (event.target.files.length > 0) {
+       this.fichierAEnvoyer = event.target.files[0];
+     console.log(this.fichierAEnvoyer)
+    }
+  }
+  updateprofil(){
+    this.personnel.data.append("id", sessionStorage.getItem('iduser'))
+    this.personnel.data.append("image",this.fichierAEnvoyer)
+    this.personnel.miseajourphoto().subscribe((data)=>{
+      console.log(data) 
+      this.serveurside=data
+    })
   }
 
 }

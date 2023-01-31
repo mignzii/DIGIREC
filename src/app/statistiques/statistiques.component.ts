@@ -42,12 +42,65 @@ public res:any
       
     });
   }
+  onDownloadClick2() {
+    this.downloadfile.createfiletranche().subscribe(data => { 
+      console.log(data)
+      Swal.fire({
+        text: "Voulez vous vraiment Télécharger ce fichier ?",
+        icon: 'info',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Oui!'
+      }).then((result) => {
+        if(result.isConfirmed){
+          this.onDownloadClicktoast2()
+        }
+        
+      })
+        // The file is received, create a link to download it
+      
+    });
+  }
+  onDownloadClick3() {
+    this.downloadfile.createfileCA().subscribe(data => { 
+      console.log(data)
+      Swal.fire({
+        text: "Voulez vous vraiment Télécharger ce fichier ?",
+        icon: 'info',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Oui!'
+      }).then((result) => {
+        if(result.isConfirmed){
+          this.onDownloadClickCA()
+        }
+        
+      })
+        // The file is received, create a link to download it
+      
+    });
+  }
   onDownloadClicktoast() {
     this.downloadfile.downloadFiletrue().subscribe(event => { 
         // The file is received, create a link to download it
         const link = document.createElement('a');
         link.href = URL.createObjectURL(event);
-        link.download = 'Chiffre_Affaire.xlsx'; // Set the file name
+        link.download = 'EcritureComptable.xlsx'; // Set the file name
+
+        // Add the link to the DOM and click it to download the file
+        document.body.appendChild(link);
+        link.click();
+      
+    });
+  }
+  onDownloadClicktoast2() {
+    this.downloadfile.downloadFileteanche().subscribe(event => { 
+        // The file is received, create a link to download it
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(event);
+        link.download = 'tranche.xlsx'; // Set the file name
 
         // Add the link to the DOM and click it to download the file
         document.body.appendChild(link);

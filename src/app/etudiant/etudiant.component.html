@@ -76,24 +76,21 @@
                             <select id="country" [formControl]="pays" autocomplete="country-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black ">
                               <option>Béninois</option>
                               <option>Burkinabé</option>
-                              <option>Camerounais</option>
-                              <option>Cap-Verdien</option>
-                              <option>Congolais - Kinshasa</option>
-                              <option>Congolais - RDC</option>
-                              <option>Côte d'Ivoire</option>
+                              <option>Camerounaise</option>
+                              <option>Cap-Verdienne</option>
+                              <option>Congolaise - Kinshasa</option>
+                              <option>Congolaise - RDC</option>
                               <option>Gabonnais</option>
                               <option>Gambienne</option>
-                              <option>Ghana</option>
-                              <option>Guinéen - Conakry</option>
-                              <option>Guinéeen - Bissau</option>
+                              <option>Ghanaenne</option>
+                              <option>Guinéenne - Conakry</option>
+                              <option>Guinéeenne - Bissau</option>
                               <option>Guinéen Equatoriale</option>
-                              <option>Libéria</option>
-                              <option>Nigerien</option>
-                              <option>Nigérian</option>
-                              <option>Sénégalais</option>
-                              <option>Sierra-Leonais</option>
-                              <option>Tchadien</option>
-                              <option>Togolais</option>
+                              <option>Ivoirienne</option>
+                              <option>Nigerienne</option>
+                              <option>Sénégalaise</option>
+                              <option>Tchadienne</option>
+                              <option>Togolaise</option>
                             </select>
                           </div>
 
@@ -121,9 +118,12 @@
                               </optgroup>
 
                               <optgroup label="Cours en ligne">
-                                <option>MDSIA/MS2D</option>
-                                <option>MPRN</option>
-                                <option>MTIS</option>
+                                <option>MDSIA 1</option>
+                                <option>MS2D 1</option>
+                                <option>MPRN 1</option>
+                                <option>MPRN 2</option>
+                                <option>MTIS 1</option>
+                                <option>MTIS 2</option>
                               </optgroup>
 
                               <optgroup label="Cours du soir">
@@ -152,9 +152,61 @@
                           <div class="col-span-6">
                             <label for="formation" class="block text-sm font-medium text-gray-700">Statut</label>
                             <select id="formation" [formControl]="statut" autocomplete="classe-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black ">
-                              <option>Boursier</option>
-                              <option>Enfant parent d'eleve </option>
-                              <option>Espece </option>
+                              
+                              <optgroup label="Bénin">
+                                <option>CIOSPB</option>
+                                <option>MESR</option>
+                              </optgroup>
+
+                              <optgroup label="Guinée équatoriale">
+                                <option>ARN</option>
+                              </optgroup>
+
+                              <optgroup label="Mali">
+                                <option>AMRTP</option>
+                                <option>Police Malienne</option>                                 
+                              </optgroup>
+
+                              <optgroup label="Mauritanie">
+                                <option>Autorité de régulation de la mauritanie</option>                           
+                              </optgroup>                              
+
+                              <optgroup label="Niger">
+                                <option>ANAB</option>
+                              </optgroup>
+
+                              <optgroup label="Sénégal">
+                                <option>3FPT</option>
+                                <option>BOM</option>
+                                <option>Commune de Fann Point-E - Amitié</option>
+                                <option>DGB</option>
+                                <option>Mermoz Sacré-Coeur</option>
+                                <option>Ministère de la justice</option>
+                                <option>Ministère de la santé et de l'action sociale</option>
+                                <option>ONFP</option>
+                                <option>Police Sénégalaise</option>
+                                <option>Ville de Dakar</option>
+                                <option>Ville de Pikine</option>
+                              </optgroup>
+
+                              <optgroup label="Tchad">
+                                <option>ARCEP</option>
+                              </optgroup>
+
+                              <optgroup label="Togo">
+                                <option>Gouvernement du TOGO</option>
+                              </optgroup>
+
+                              <optgroup label="Autres">
+                                <option>BID</option>
+                                <option>LUX-DEV</option>
+                                <option>UEMOA</option>                                
+                                <option>ESMT</option>
+                              </optgroup>
+
+                              
+
+                              
                             </select>
                           </div>
 

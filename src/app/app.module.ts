@@ -41,31 +41,33 @@ import { HistoriqueetudiantComponent } from './historiqueetudiant/historiqueetud
 import { PaginationPipePipe } from './pagination-pipe.pipe';
 import { ExporttoexelComponent } from './exporttoexel/exporttoexel.component';
 import { ModifprofilComponent } from './modifprofil/modifprofil.component';
+import { CanActivate } from '@angular/router';
+import { AuthGuardService as authGuard  } from './services/auth-guard.service';
 
 const appRoutes : Routes =[
   {path:'',component:PageacceuilComponent},
   {path:'page-accueil',component:PageacceuilComponent},
   {path:'connexion',component:ConnexionComponent},
-  {path:'recherche',component:RechercheComponent},
-  {path:'facturation',component:FacturationComponent},
-  {path:'versement/:numcomptable',component:VersementComponent},
-  {path:'etudiant',component:ListeDesEtudiantsComponent},
-  {path:'debiteur',component:ListeEtudiantComponent},
-  {path:'recouvrement',component:ReccouvrementComponent},
-  {path:'recu/:code/:mont/:libelle/:date',component:RecuComponent},
-  {path:'dashboard/:num',component:TableaudebordComptableComponent},
-  {path:'statistique',component:StatistiquesComponent},
-  {path:'profil/:id',component:ProfilComponent},
-  {path:'premieretranche',component:PremieretrancheComponent},
-  {path:'secondtranche',component:SecondtrancheComponent},
-  {path:'troisiemetranche',component:TroisiemetrancheComponent},
-  {path:'debiteurpartranche',component:DebiteurpartrancheComponent},
-  {path:'ajoutetudiant',component:EtudiantComponent},
-  {path:'parametre',component:ParametreComponent},
-  {path:'ecriture',component:EcriturecomptableComponent},
-  {path:'historiqueetudiant/:idetudiant',component:HistoriqueetudiantComponent},
-  {path:'exporttoexcel',component:ExporttoexelComponent},
-  {path:'modifier/:idetudiant',component:ModifprofilComponent}
+  {path:'recherche',component:RechercheComponent,canActivate:[authGuard]},
+  {path:'facturation',component:FacturationComponent,canActivate:[authGuard]},
+  {path:'versement/:numcomptable',component:VersementComponent,canActivate:[authGuard]},
+  {path:'etudiant',component:ListeDesEtudiantsComponent,canActivate:[authGuard]},
+  {path:'debiteur',component:ListeEtudiantComponent,canActivate:[authGuard]},
+  {path:'recouvrement',component:ReccouvrementComponent,canActivate:[authGuard]},
+  {path:'recu/:code/:mont/:libelle/:date',component:RecuComponent,canActivate:[authGuard]},
+  {path:'dashboard/:num',component:TableaudebordComptableComponent,canActivate:[authGuard]},
+  {path:'statistique',component:StatistiquesComponent,canActivate:[authGuard]},
+  {path:'profil/:id',component:ProfilComponent,canActivate:[authGuard]},
+  {path:'premieretranche',component:PremieretrancheComponent ,canActivate:[authGuard]},
+  {path:'secondtranche',component:SecondtrancheComponent,canActivate:[authGuard]},
+  {path:'troisiemetranche',component:TroisiemetrancheComponent,canActivate:[authGuard]},
+  {path:'debiteurpartranche',component:DebiteurpartrancheComponent,canActivate:[authGuard]},
+  {path:'ajoutetudiant',component:EtudiantComponent,canActivate:[authGuard]},
+  {path:'parametre',component:ParametreComponent,canActivate:[authGuard]},
+  {path:'ecriture',component:EcriturecomptableComponent,canActivate:[authGuard]},
+  {path:'historiqueetudiant/:idetudiant',component:HistoriqueetudiantComponent,canActivate:[authGuard]},
+  {path:'exporttoexcel',component:ExporttoexelComponent,canActivate:[authGuard]},
+  {path:'modifier/:idetudiant',component:ModifprofilComponent,canActivate:[authGuard]}
 ]
 
 @NgModule({

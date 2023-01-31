@@ -11,14 +11,19 @@ export class PremieretrancheComponent implements OnInit {
   public rec:any
   public reliquat:any
 
-  dtOptions: DataTables.Settings = {};
+  dtOptions: any = {};
   dtTrigger: Subject<any> = new Subject<any>();
   constructor(private lidtedebit:EtudiantsService) { }
 
   ngOnInit(): void {
     this.dtOptions = {
       pagingType: 'full_numbers',
-      pageLength: 2
+      pageLength: 2,
+      processing:true,
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'print'
+    ]
     };
     this.lidtedebit.recupdebiteur().subscribe(async (data)=>{
       console.log(data)

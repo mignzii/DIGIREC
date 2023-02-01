@@ -36,6 +36,9 @@ function createExcelFile() {
     { header: 'Compte Général', key: 'montantEtat' },
     { header: 'Debit', key: 'montant' },
     { header: 'Crédit', key: 'montantcredit' },
+    { header: 'Type Versement', key: 'Type_versement' },
+    { header: 'Nom Banque', key: 'Nom_banque' },
+    { header: 'Reference', key: 'Reference' },
   ];
 
   // Query the database to retrieve the data

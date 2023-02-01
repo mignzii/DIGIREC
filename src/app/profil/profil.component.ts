@@ -25,15 +25,7 @@ parent:boolean=false
         this.info.recupbailleur(this.res[0].id_bailleur).subscribe((data)=>{
           this.res1=data
           console.log(this.res1)
-          if(this.res[0].statut=="Boursier"){
-            this.boursier=true
-          }
-          else if(this.res[0].statut=="Enfant parent d'eleve"){
-            this.parent=true
-          }
-          else {
-            this.espce=true
-          }
+         
         })
       }
     })

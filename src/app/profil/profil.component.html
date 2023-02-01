@@ -13,18 +13,11 @@
               <div class="bg-red-400 text-xs  px-1" [ngClass]="{first:res[0].nbredeversement==2 || res[0].nbredeversement==3  } ">Versement 2</div>
               <div class="bg-red-400 text-xs  rounded-r-3xl px-1" [ngClass]="{first:res[0].nbredeversement==3} ">Versement 3</div>
             </div>
-            <div class="flex w-full justify-between text-black ">
-              <div class="flex flex-col  items-center">
-                <input type="radio"[checked]="espce" [disabled]="!espce" name="paiement" id="espece" value="espece" class="m-2 w-8 h-8">
-                <label for="Espece"  class="text-black ">Espece</label>
-              </div>
-              <div class="flex flex-col  items-center">
-                <input type="radio" [checked]="boursier" [disabled]="!boursier" name="paiement" id="cheque" value="cheque" class="m-2 w-8 h-8">
-                <label for="cheque" class="text-black ">Boursier</label>
-              </div>
-              <div class="flex flex-col  items-center">
-                <input type="radio" [checked]="parent" [disabled]="!parent" name="paiement" id="bordereau" value="bordereau"  class="m-2 w-8 h-8">
-                <label for="bordereau" class="text-black">Enfant parent d'eleve</label>
+            <div class=" w-1/2 px-2 ">
+            
+              <div class="bg-bleudusite flex mt-2 justify-center flex-col px-1  rounded-lg">
+                <p class="text-white">Statut</p>
+                <p>{{res[0].statut}} </p>
               </div>
 
             </div>

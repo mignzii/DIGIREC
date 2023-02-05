@@ -7,16 +7,16 @@
       <div class="flex space-x-2">
         <div class="bg-white   px-2 py-3 rounded-2xl">
           <div class="">
-            <p class="text-center text-bleudusite">Etat des paiements</p>
+            <p class="text-center text-bleudusite font-semibold">Etat des paiements</p>
             <div class="flex divide-x-2 px-2 rounded-3xl ">
-              <div class="bg-red-400 rounded-l-3xl text-xs px-1" [ngClass]="{first:res[0].nbredeversement==1 || res[0].nbredeversement==2 || res[0].nbredeversement==3 } ">Versement 1</div>
-              <div class="bg-red-400 text-xs  px-1" [ngClass]="{first:res[0].nbredeversement==2 || res[0].nbredeversement==3  } ">Versement 2</div>
-              <div class="bg-red-400 text-xs  rounded-r-3xl px-1" [ngClass]="{first:res[0].nbredeversement==3} ">Versement 3</div>
+              <div class="bg-red-500 font-semibold rounded-l-3xl text-xs px-1" [ngClass]="{first:res[0].nbredeversement==1 || res[0].nbredeversement==2 || res[0].nbredeversement==3 } ">Versement 1</div>
+              <div class="bg-red-500 font-semibold text-xs  px-1" [ngClass]="{first:res[0].nbredeversement==2 || res[0].nbredeversement==3  } ">Versement 2</div>
+              <div class="bg-red-500 font-semibold text-xs  rounded-r-3xl px-1" [ngClass]="{first:res[0].nbredeversement==3} ">Versement 3</div>
             </div>
             <div class=" w-1/2 px-2 ">
             
-              <div class="bg-bleudusite flex mt-2 justify-center flex-col px-1  rounded-lg">
-                <p class="text-white">Statut</p>
+              <div class="bg-bleudusite font-semibold flex mt-2 justify-center flex-col px-1 rounded-lg">
+                <p class="text-white font-semibold ">Prise en charge par :</p>
                 <p>{{res[0].statut}} </p>
               </div>
 
@@ -32,30 +32,31 @@
                   </svg>
 
                   </p>
-                  <p class="text-bleudusite"> {{item.montant}} FCFA</p>
+                  <p class="text-bleudusite font-semibold"> {{item.montant}} FCFA</p>
                 </div>
                 <div class="flex space-x-1 items-center">
 
                   <p class="rounded-full px-2 py-2 shadow-xl">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                      <path id="_3671753_currency_dollar_icon" data-name="3671753_currency_dollar_icon" d="M10,20A10,10,0,1,1,20,10,10,10,0,0,1,10,20Zm1-5h1a3,3,0,0,0,0-6H7.99a1,1,0,0,1,0-2H14V5H11V3H9V5H8a3,3,0,0,0,0,6h4a1,1,0,0,1,0,2H6v2H9v2h2Z" fill="#3596d2"/>
-                    </svg>
-
-                  </p>
-                    <p class="text-orange-500">{{item.montantEtat}} FCFA</p>
-                </div>
-                <div class="flex space-x-1">
-                  <p class="rounded-full px-2 py-2 shadow-xl">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 18">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" color="red" viewBox="0 0 24 18">
                       <g id="icone-restant" transform="translate(-0.001 -12)">
                         <path id="Tracé_2571" data-name="Tracé 2571" d="M41.562,18.44a1.5,1.5,0,0,0-2.121,0l-.653.653A9.009,9.009,0,0,0,30,12,8.888,8.888,0,0,0,24.6,13.84a1.5,1.5,0,0,0,1.811,2.391A5.917,5.917,0,0,1,30,15a5.989,5.989,0,0,1,5.668,4.119l-.993-.791a1.5,1.5,0,1,0-1.869,2.344l3.759,3a1.5,1.5,0,0,0,2-.111l3-3a1.5,1.5,0,0,0,0-2.121Z" transform="translate(-18)" fill="#3596d2"/>
                         <path id="Tracé_2572" data-name="Tracé 2572" d="M15.6,43.774A5.917,5.917,0,0,1,12,45a5.989,5.989,0,0,1-5.668-4.119l.993.791a1.5,1.5,0,1,0,1.869-2.344l-3.759-3a1.5,1.5,0,0,0-2,.111l-3,3a1.5,1.5,0,1,0,2.121,2.121l.653-.653A9.009,9.009,0,0,0,12,48a8.888,8.888,0,0,0,5.405-1.84A1.5,1.5,0,1,0,15.6,43.774Z" transform="translate(0 -18.004)" fill="#3596d2"/>
                       </g>
                     </svg>
+                    
+
+                  </p>
+                    <p class="text-red-500 font-semibold">{{item.montantEtat}} FCFA</p>
+                </div>
+                <div class="flex space-x-1">
+                  <p class="rounded-full px-2 py-2 shadow-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                      <path id="_3671753_currency_dollar_icon" data-name="3671753_currency_dollar_icon" d="M10,20A10,10,0,1,1,20,10,10,10,0,0,1,10,20Zm1-5h1a3,3,0,0,0,0-6H7.99a1,1,0,0,1,0-2H14V5H11V3H9V5H8a3,3,0,0,0,0,6h4a1,1,0,0,1,0,2H6v2H9v2h2Z" fill="#3596d2"/>
+                    </svg>
 
 
                   </p>
-                  <p class="text-bleudusite">{{item.totalversement}} FCFA</p>
+                  <p class="text-bleudusite font-semibold">{{item.totalversement}} FCFA</p>
                 </div>
               </div>
              
@@ -213,8 +214,8 @@
           <div class="flex flex-col justify-center items-center " >
             <img [src]="'http://localhost:6001/etudiant/image/afficher/' + res[0].photo"  class="rounded-full mx-auto w-32 h-32 " alt="">
            <div class="flex space-x-1">
-            <p class="text-bleudusite text-center  text-lg">{{res[0].prenom}} </p>
-            <p class="text-bleudusite text-center  text-lg">{{res[0].nom}} </p>
+            <p class="text-bleudusite text-center font-semibold text-lg">{{res[0].prenom}} </p>
+            <p class="text-bleudusite text-center font-semibold text-lg">{{res[0].nom}} </p>
             <p></p>
            </div>
 
@@ -222,11 +223,11 @@
           <div class="bg-white text-black  rounded-lg px-1 py-2">
             <div class="flex space-y-2 flex-col">
               <div class="flex flex-col space-y-1">
-                <p class="text-bleuclair font-semibold">Niveau en cours</p>
+                <p class="text-bleudusite font-semibold">Niveau en cours</p>
                 <p>{{res[0].classe}} </p>
               </div>
               <div class="flex flex-col space-y-1">
-                <p class="text-bleuclair font-semibold">Filiere</p>
+                <p class="text-bleudusite font-semibold">Filière</p>
                 <p>{{res[0].formation}} </p>
               </div>
             </div>
@@ -235,10 +236,11 @@
     </div>
       </div>
       <div class=" flex justify-end  space-x-1"> 
-        <span routerLink="/historiqueetudiant/{{code}}" class="bg-bleudusite my-2 px-3 py-3 rounded-lg hover:cursor-pointer  ">
+        <span routerLink="/historiqueetudiant/{{code}}" class="bg-bleudusite my-2 px-3 py-3 rounded-lg hover:cursor-pointer font-semibold ">
           Historique
         </span>
-        <span class="bg-bleudusite  my-2 px-3 py-3  hover:cursor-pointer rounded-lg text-center" routerLink="/modifier/{{code}}">Modifier Profil</span>
+        <i class="fas fa-book"></i>
+        <span class="bg-bleudusite  my-2 px-3 py-3  hover:cursor-pointer rounded-lg text-center font-semibold" routerLink="/modifier/{{code}}">Modifier Profil</span>
       </div>
     </div>
     <div class="w-1/6 py-10" >

@@ -33,6 +33,7 @@ password = new FormControl()
         sessionStorage.setItem('isconnect',"true")
         sessionStorage.setItem('iduser',this.info[0].id_personnel)
         this.url=sessionStorage.getItem('iduser')
+        console.log("test")
         console.log(this.url)
         location.href = `https://digirec-esmt.vercel.app/dashboard/${this.url}`;
       }

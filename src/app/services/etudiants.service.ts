@@ -7,15 +7,15 @@ import { Observable,
   providedIn: 'root'
 })
 export class EtudiantsService {
-public url="http://localhost:6001/etudiant"
-public url1="http://localhost:6001/bailleur"
-public url2="http://localhost:6001/etudiant/test/montantprevisionnel"
-public url7="http://localhost:6001/etudiant/dernieretudiant/inscrit/annee"
-public url8="http://localhost:6001/bailleur/postbailleur"
-public url9="http://localhost:6001/bailleur/dernierbailleur/bailleurinscrit"
-public url5="http://localhost:6001/etudiant/test4/totalmontant"
-public url6="http://localhost:6001/etudiant/postetudiant"
-public url10="http://localhost:6001/etudiant/updateetuidant"
+public url="https://digirec.vercel.app/etudiant"
+public url1="https://digirec.vercel.app/bailleur"
+public url2="https://digirec.vercel.app/etudiant/test/montantprevisionnel"
+public url7="https://digirec.vercel.app/etudiant/dernieretudiant/inscrit/annee"
+public url8="https://digirec.vercel.app/bailleur/postbailleur"
+public url9="https://digirec.vercel.app/bailleur/dernierbailleur/bailleurinscrit"
+public url5="https://digirec.vercel.app/etudiant/test4/totalmontant"
+public url6="https://digirec.vercel.app/etudiant/postetudiant"
+public url10="https://digirec.vercel.app/etudiant/updateetuidant"
 
 
   constructor(private http:HttpClient) { }

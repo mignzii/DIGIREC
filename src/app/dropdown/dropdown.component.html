@@ -1,7 +1,7 @@
 
   <div class=" rounded-lg flex flex-col shadow-md px-5 py-2 " *ngFor="let item of responsable">
     <div class="flex flex-col justify-center items-center"> 
-      <img [src]="'http://localhost:6001/personnel/image/afficher/'+item.photo" alt=""class="rounded-full h-24 w-24"/>
+      <img [src]="'https://digirec.vercel.app/personnel/image/afficher/'+item.photo" alt=""class="rounded-full h-24 w-24"/>
       <p  class="text-bleudusite w-full flex  justify-center items-center text-center text-xl font-semibold" *ngFor="let item of responsable">{{item.prenom}} {{item.nom}} </p>
 
     </div>

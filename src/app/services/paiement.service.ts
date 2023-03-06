@@ -7,12 +7,12 @@ import { Observable,
   providedIn: 'root'
 })
 export class PaiementService {
-  public apiurl='https://digirec.vercel.app/facture'
-  public apiurl2='https://digirec.vercel.app/facture/debiteur'
-  public apiurl1='https://digirec.vercel.app/etudiant/mign'
-  public apiurl3='https://digirec.vercel.app/facture/getfacture'
-  public apiurl4='https://digirec.vercel.app/facture/maxfacture'
-  public apiurl5='https://digirec.vercel.app/facture/onefacture'
+  public apiurl='http://104.236.2.144/facture'
+  public apiurl2='http://104.236.2.144/facture/debiteur'
+  public apiurl1='http://104.236.2.144/etudiant/mign'
+  public apiurl3='http://104.236.2.144/facture/getfacture'
+  public apiurl4='http://104.236.2.144/facture/maxfacture'
+  public apiurl5='http://104.236.2.144/facture/onefacture'
 
   public reponse:any
   public envoie:any

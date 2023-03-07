@@ -8,8 +8,8 @@
         <div class="bg-gris-clair  rounded-lg shadow-md flex flex-col py-6 px-6 space-y-8  ">
           <div class="w-full justify-between flex space-x-1">
           <div class="  flex justify-between py-1  items-center rounded-lg  px-2  ">
-            <p class=" bg-bleudusite text-xl px-1 text-white font-semibold py-2 rounded-l-lg " >Ecriture Comptable de données Financiéres </p>
-            <p class="  px-2 text-white text-xl text-right py-2 font-semibold rounded-r-lg  bg-verte">Suivant une période  </p>
+            <p class=" bg-bleudusite text-xl px-1 text-white font-semibold py-2 rounded-l-lg " >Ecriture Comptable</p>
+            <p class="  px-2 text-white text-xl text-right py-2 font-semibold rounded-r-lg  bg-verte"> Comptes Etudiants </p>
         </div>
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 156 60">
@@ -39,17 +39,17 @@
                 <table class="w-full border font-bold" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
                   <thead>
                     <tr>
-                      <th class="border-2  text-gray-600 text-center font-bold py-1">Journal</th>
+                    <th class="border-2  text-gray-600 text-center font-bold py-1">Journal</th>
                     <th class="border-2   text-gray-600 text-center font-bold py-1">Identifiant</th>
-                    <th class="border-2  text-gray-600 font-bold text-center py-1">N Piece</th>
+                    <th class="border-2  text-gray-600 font-bold text-center py-1">Pièce</th>
                     <th class="border-2  text-gray-600 text-center font-bold py-1">Date</th>
-                    <th class="border-2   text-gray-600 text-center font-bold py-1">Libelle</th>
-                    <th class="border-2  text-gray-600 font-bold text-center py-1">Compte General</th>
-                    <th class="border-2   text-gray-600 text-center font-bold py-1">Debit</th>
-                    <th class="border-2   text-gray-600 text-center font-bold py-1">Credit</th>
-                    <th class="border-2  text-gray-600 font-bold text-center py-1">Type Versement</th>
-                    <th class="border-2  text-gray-600 font-bold text-center py-1">Nom Banque</th>
-                    <th class="border-2   text-gray-600 text-center font-bold py-1">Refrence</th>
+                    <th class="border-2   text-gray-600 text-center font-bold py-1">Libellé</th>
+                    <th class="border-2  text-gray-600 font-bold text-center py-1">Compte Géneral</th>
+                    <th class="border-2   text-gray-600 text-center font-bold py-1">Débit</th>
+                    <th class="border-2   text-gray-600 text-center font-bold py-1">Crédit</th>
+                    <th class="border-2  text-gray-600 font-bold text-center py-1">Type</th>
+                    <th class="border-2  text-gray-600 font-bold text-center py-1">Banque</th>
+                    <th class="border-2   text-gray-600 text-center font-bold py-1">Réf</th>
 
                     </tr>
                   </thead>
@@ -65,8 +65,9 @@
                       <td  class="py-2 text-center  text-gray-600  border"><a routerLink="/profil/{{item.num_etudiant}}">{{item.montant}}</a></td>
                       <td  class="py-2 text-center  text-gray-600 border"><a routerLink="/profil/{{item.num_etudiant}}">{{item.montantcredit}}</a> </td>
                       <td  class="py-2 text-center  text-gray-600 border"><a routerLink="/profil/{{item.num_etudiant}}">{{item.Type_versement}}</a> </td>
-                      <td  class="py-2 text-center  text-gray-600  border"><a routerLink="/profil/{{item.num_etudiant}}">{{item.Nom_banque}}</a></td>
                       <td  class="py-2 text-center  text-gray-600 border"><a routerLink="/profil/{{item.num_etudiant}}">{{item.Reference}}</a> </td>
+                      <td  class="py-2 text-center  text-gray-600  border"><a routerLink="/profil/{{item.num_etudiant}}">{{item.Nom_banque}}</a></td>
+
                       
                     </tr>
                   </tbody>

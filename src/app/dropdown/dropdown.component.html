@@ -1,23 +1,75 @@
-
-  <div class=" rounded-lg flex flex-col shadow-md px-5 py-2 " *ngFor="let item of responsable">
-    <div class="flex flex-col justify-center items-center"> 
-      <img [src]="'http://localhost:6001/personnel/image/afficher/'+item.photo" alt=""class="rounded-full h-24 w-24"/>
-      <p  class="text-bleudusite w-full flex  justify-center items-center text-center text-xl font-semibold" *ngFor="let item of responsable">{{item.prenom}} {{item.nom}} </p>
-
-    </div>
-    <button mat-button [matMenuTriggerFor]="beforeMenu" class="custom-menu bg-bleudusite text-white rounded-lg my-2">Profil</button>
-    <mat-menu class="w-[225px] bg-white  "  #beforeMenu="matMenu" xPosition="before">
-      <div class="px-2 mx-1 my-1 flex flex-col space-y-2">
-        <p class="font-semibold text-bleudusite text-lg" >{{item.prenom}} {{item.nom}}</p>
-        <p class="text-gray-700 text-sm ">Voir le profil</p>
-
-      </div>
-      <hr class="bg-bleudenuit">
-      <div class="flex flex-col space-y-2 mx-1 mt-2  px-2 text-gray-600">
-        <a routerLink="/dashboard/{{url}}" > <p class="flex space-x-2 items-center"><span><img src="../../assets/carre/tableau-de-bord.svg" class="mr-2" width="14px" height="14px" alt=""></span> Tableau de bord</p></a>
-        <a routerLink="/parametre" ><p class="flex space-x-2 items-center "><span><img src="../../assets/carre/parametres.svg" class="mr-2" width="14px" height="14px" alt=""></span> Paramètres</p></a>
-        <a href=""><p class="flex space-x-2 items-center"><span><img src="../../assets/carre/deconnexion.svg" class="mr-2" width="14px" height="14px" alt=""></span> Quitter</p></a>
-      </div>
-    </mat-menu>
+<div
+  class="rounded-lg flex flex-col shadow-md px-5 py-2"
+  *ngFor="let item of responsable"
+>
+  <div class="flex flex-col justify-center items-center">
+    <img
+      [src]="'https://starfish-app-82b5l.ondigitalocean.app/personnel/image/afficher/' + item.photo"
+      alt=""
+      class="rounded-full h-24 w-24"
+    />
+    <p
+      class="text-bleudusite w-full flex justify-center items-center text-center text-xl font-semibold"
+      *ngFor="let item of responsable"
+    >
+      {{ item.prenom }} {{ item.nom }}
+    </p>
   </div>
-
+  <button
+    mat-button
+    [matMenuTriggerFor]="beforeMenu"
+    class="custom-menu bg-bleudusite text-white rounded-lg my-2"
+  >
+    Profil
+  </button>
+  <mat-menu class="w-[225px] bg-white" #beforeMenu="matMenu" xPosition="before">
+    <div class="px-2 mx-1 my-1 flex flex-col space-y-2">
+      <p class="font-semibold text-bleudusite text-lg">
+        {{ item.prenom }} {{ item.nom }}
+      </p>
+      <p class="text-gray-700 text-sm">Voir le profil</p>
+    </div>
+    <hr class="bg-bleudenuit" />
+    <div class="flex flex-col space-y-2 mx-1 mt-2 px-2 text-gray-600">
+      <a routerLink="/dashboard/{{ url }}">
+        <p class="flex space-x-2 items-center">
+          <span
+            ><img
+              src="../../assets/carre/tableau-de-bord.svg"
+              class="mr-2"
+              width="14px"
+              height="14px"
+              alt=""
+          /></span>
+          Tableau de bord
+        </p></a
+      >
+      <a routerLink="/parametre"
+        ><p class="flex space-x-2 items-center">
+          <span
+            ><img
+              src="../../assets/carre/parametres.svg"
+              class="mr-2"
+              width="14px"
+              height="14px"
+              alt=""
+          /></span>
+          Paramètres
+        </p></a
+      >
+      <a href=""
+        ><p class="flex space-x-2 items-center">
+          <span
+            ><img
+              src="../../assets/carre/deconnexion.svg"
+              class="mr-2"
+              width="14px"
+              height="14px"
+              alt=""
+          /></span>
+          Quitter
+        </p></a
+      >
+    </div>
+  </mat-menu>
+</div>

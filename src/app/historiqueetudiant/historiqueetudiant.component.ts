@@ -51,7 +51,7 @@ export class HistoriqueetudiantComponent implements OnInit {
     this.recu_affiche=false
   }
   sortirecu(iduser:any){
-    this.facture_etudiant=this.rec.filter((item:any)=> item.libelle==='Frais de Scolarite' && item.id_facture === iduser
+    this.facture_etudiant=this.rec.filter((item:any)=> item.libelle==='Frais de scolarité' && item.id_facture === iduser
     )
     console.log(this.facture_etudiant)
     this.facture_affiche=false

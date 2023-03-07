@@ -14,9 +14,7 @@ export class ProfilComponent implements OnInit {
 code=this.route.snapshot.params['id']
 public res:any
 public res1:any
-espce:boolean=false
-boursier:boolean=false
-parent:boolean=false
+
   ngOnInit(): void {
     this.info.recupinfoetudiant(this.code).subscribe(data=>{
       this.res=data

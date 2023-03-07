@@ -7,15 +7,15 @@ import { Observable,
   providedIn: 'root'
 })
 export class EtudiantsService {
-public url="http://localhost:6001/etudiant"
-public url1="http://localhost:6001/bailleur"
-public url2="http://localhost:6001/etudiant/test/montantprevisionnel"
-public url7="http://localhost:6001/etudiant/dernieretudiant/inscrit/annee"
-public url8="http://localhost:6001/bailleur/postbailleur"
-public url9="http://localhost:6001/bailleur/dernierbailleur/bailleurinscrit"
-public url5="http://localhost:6001/etudiant/test4/totalmontant"
-public url6="http://localhost:6001/etudiant/postetudiant"
-public url10="http://localhost:6001/etudiant/updateetuidant"
+public url="https://starfish-app-82b5l.ondigitalocean.app/etudiant"
+public url1="https://starfish-app-82b5l.ondigitalocean.app/bailleur"
+public url2="https://starfish-app-82b5l.ondigitalocean.app/etudiant/test/montantprevisionnel"
+public url7="https://starfish-app-82b5l.ondigitalocean.app/etudiant/dernieretudiant/inscrit/annee"
+public url8="https://starfish-app-82b5l.ondigitalocean.app/bailleur/postbailleur"
+public url9="https://starfish-app-82b5l.ondigitalocean.app/bailleur/dernierbailleur/bailleurinscrit"
+public url5="https://starfish-app-82b5l.ondigitalocean.app/etudiant/test4/totalmontant"
+public url6="https://starfish-app-82b5l.ondigitalocean.app/etudiant/postetudiant"
+public url10="https://starfish-app-82b5l.ondigitalocean.app/etudiant/updateetuidant"
 
 
   constructor(private http:HttpClient) { }

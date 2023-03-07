@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="grid grid-cols-8 h-full text-blanc text-sm ">
  <app-sidebar></app-sidebar>
   <div class="col-span-7 bg-gris-clair flex  space-x-4 w-full px-5 h-auto">
@@ -18,31 +19,147 @@
               <div class="bg-bleudusite font-semibold flex mt-2 justify-center flex-col px-1 rounded-lg">
                 <p class="text-white font-semibold ">Structure /Entrerise :</p>
                 <p>{{res[0].statut}} </p>
-              </div>
-
-            </div>
-              <div class="flex flex-col py-2 space-y-2" *ngFor="let item of res">
-                <div class="flex space-x-1 items-center">
-                  <p class="rounded-full px-2 py-2 shadow-xl">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20.741" height="20.741" viewBox="0 0 20.741 20.741">
-                    <g id="_6598184_bill_finance_payment_receipt_sale_icon" data-name="6598184_bill_finance_payment_receipt_sale_icon" transform="translate(-1 -1)">
-                      <path id="Tracé_2573" data-name="Tracé 2573" d="M9.939,19.107H4.111a.691.691,0,0,1,0-1.383H9.469A6.872,6.872,0,0,1,9.3,16.21,7.017,7.017,0,0,1,9.518,14.5H4.111a.691.691,0,0,1,0-1.383h5.925a6.955,6.955,0,0,1,3.408-3.229H4.111a.691.691,0,0,1,0-1.383H13.79a.691.691,0,0,1,.581,1.051A7.031,7.031,0,0,1,16.21,9.3a4.587,4.587,0,0,1,.691.035V3.074A2.074,2.074,0,0,0,14.827,1H3.074A2.074,2.074,0,0,0,1,3.074V19.667a2.074,2.074,0,0,0,2.074,2.074h8.988a6.914,6.914,0,0,1-2.122-2.634ZM4.111,3.9H13.79a.691.691,0,1,1,0,1.383H4.111a.691.691,0,0,1,0-1.383Z" transform="translate(0)" fill="#3596d2"/>
-                      <path id="Tracé_2574" data-name="Tracé 2574" d="M20.531,15a5.531,5.531,0,1,0,5.531,5.531A5.531,5.531,0,0,0,20.531,15ZM18.8,18.111h.069a.691.691,0,1,1-.069,0Zm3.457,4.84a.692.692,0,0,1-.069-1.383h.069a.691.691,0,0,1,0,1.383Zm.491-3.657L19.293,22.75a.694.694,0,1,1-.982-.982l3.457-3.457a.694.694,0,1,1,.982.982Z" transform="translate(-4.321 -4.321)" fill="#3596d2"/>
-                    </g>
-                  </svg>
-
-                  </p>
-                  <p class="text-bleudusite font-semibold"> {{item.montant}} FCFA</p>
+=======
+<div class="grid grid-cols-8 h-full text-blanc text-sm">
+  <app-sidebar></app-sidebar>
+  <div class="col-span-7 bg-gris-clair flex space-x-4 w-full px-5 h-auto">
+    <div class="py-10 w-full">
+      <p
+        class="font-bold leading-6 tracking-wider py-1"
+        style="font-size: 35px; color: #3596d2"
+      >
+        DIGIREC ESMT
+      </p>
+      <div
+        class="bg-gris-clair rounded-lg shadow-md flex flex-col py-6 px-6 space-y-8"
+      >
+        <div class="flex space-x-2">
+          <div class="bg-white px-2 py-3 rounded-2xl">
+            <div class="">
+              <p class="text-center text-bleudusite">Etat des paiements</p>
+              <div class="flex divide-x-2 px-2 rounded-3xl">
+                <div
+                  class="bg-red-400 rounded-l-3xl text-xs px-1"
+                  [ngClass]="{
+                    first: res[0].totalversement >= res[0].montant / 3
+                  }"
+                >
+                  Versement 1
                 </div>
+                <div
+                  class="bg-red-400 text-xs px-1"
+                  [ngClass]="{
+                    first: res[0].totalversement >= res[0].montant / 2
+                  }"
+                >
+                  Versement 2
+                </div>
+                <div
+                  class="bg-red-400 text-xs rounded-r-3xl px-1"
+                  [ngClass]="{
+                    first: res[0].totalversement == res[0].montant / 2
+                  }"
+                >
+                  Versement 3
+                </div>
+>>>>>>> cfd754c5e576675606d93d9ae19ced3b2dff9bbc
+              </div>
+              <div class="w-1/2 px-2">
+                <div
+                  class="bg-bleudusite flex mt-2 justify-center flex-col px-1 rounded-lg"
+                >
+                  <p class="text-white">Statut</p>
+                  <p>{{ res[0].statut }}</p>
+                </div>
+              </div>
+              <div
+                class="flex flex-col py-2 space-y-2"
+                *ngFor="let item of res"
+              >
                 <div class="flex space-x-1 items-center">
-
                   <p class="rounded-full px-2 py-2 shadow-xl">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" color="red" viewBox="0 0 24 18">
-                      <g id="icone-restant" transform="translate(-0.001 -12)">
-                        <path id="Tracé_2571" data-name="Tracé 2571" d="M41.562,18.44a1.5,1.5,0,0,0-2.121,0l-.653.653A9.009,9.009,0,0,0,30,12,8.888,8.888,0,0,0,24.6,13.84a1.5,1.5,0,0,0,1.811,2.391A5.917,5.917,0,0,1,30,15a5.989,5.989,0,0,1,5.668,4.119l-.993-.791a1.5,1.5,0,1,0-1.869,2.344l3.759,3a1.5,1.5,0,0,0,2-.111l3-3a1.5,1.5,0,0,0,0-2.121Z" transform="translate(-18)" fill="#3596d2"/>
-                        <path id="Tracé_2572" data-name="Tracé 2572" d="M15.6,43.774A5.917,5.917,0,0,1,12,45a5.989,5.989,0,0,1-5.668-4.119l.993.791a1.5,1.5,0,1,0,1.869-2.344l-3.759-3a1.5,1.5,0,0,0-2,.111l-3,3a1.5,1.5,0,1,0,2.121,2.121l.653-.653A9.009,9.009,0,0,0,12,48a8.888,8.888,0,0,0,5.405-1.84A1.5,1.5,0,1,0,15.6,43.774Z" transform="translate(0 -18.004)" fill="#3596d2"/>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20.741"
+                      height="20.741"
+                      viewBox="0 0 20.741 20.741"
+                    >
+                      <g
+                        id="_6598184_bill_finance_payment_receipt_sale_icon"
+                        data-name="6598184_bill_finance_payment_receipt_sale_icon"
+                        transform="translate(-1 -1)"
+                      >
+                        <path
+                          id="Tracé_2573"
+                          data-name="Tracé 2573"
+                          d="M9.939,19.107H4.111a.691.691,0,0,1,0-1.383H9.469A6.872,6.872,0,0,1,9.3,16.21,7.017,7.017,0,0,1,9.518,14.5H4.111a.691.691,0,0,1,0-1.383h5.925a6.955,6.955,0,0,1,3.408-3.229H4.111a.691.691,0,0,1,0-1.383H13.79a.691.691,0,0,1,.581,1.051A7.031,7.031,0,0,1,16.21,9.3a4.587,4.587,0,0,1,.691.035V3.074A2.074,2.074,0,0,0,14.827,1H3.074A2.074,2.074,0,0,0,1,3.074V19.667a2.074,2.074,0,0,0,2.074,2.074h8.988a6.914,6.914,0,0,1-2.122-2.634ZM4.111,3.9H13.79a.691.691,0,1,1,0,1.383H4.111a.691.691,0,0,1,0-1.383Z"
+                          transform="translate(0)"
+                          fill="#3596d2"
+                        />
+                        <path
+                          id="Tracé_2574"
+                          data-name="Tracé 2574"
+                          d="M20.531,15a5.531,5.531,0,1,0,5.531,5.531A5.531,5.531,0,0,0,20.531,15ZM18.8,18.111h.069a.691.691,0,1,1-.069,0Zm3.457,4.84a.692.692,0,0,1-.069-1.383h.069a.691.691,0,0,1,0,1.383Zm.491-3.657L19.293,22.75a.694.694,0,1,1-.982-.982l3.457-3.457a.694.694,0,1,1,.982.982Z"
+                          transform="translate(-4.321 -4.321)"
+                          fill="#3596d2"
+                        />
                       </g>
                     </svg>
+                  </p>
+<<<<<<< HEAD
+                  <p class="text-bleudusite font-semibold"> {{item.montant}} FCFA</p>
+=======
+                  <p class="text-bleudusite">{{ item.montant }} FCFA</p>
+>>>>>>> cfd754c5e576675606d93d9ae19ced3b2dff9bbc
+                </div>
+                <div class="flex space-x-1 items-center">
+                  <p class="rounded-full px-2 py-2 shadow-xl">
+<<<<<<< HEAD
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" color="red" viewBox="0 0 24 18">
+=======
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        id="_3671753_currency_dollar_icon"
+                        data-name="3671753_currency_dollar_icon"
+                        d="M10,20A10,10,0,1,1,20,10,10,10,0,0,1,10,20Zm1-5h1a3,3,0,0,0,0-6H7.99a1,1,0,0,1,0-2H14V5H11V3H9V5H8a3,3,0,0,0,0,6h4a1,1,0,0,1,0,2H6v2H9v2h2Z"
+                        fill="#3596d2"
+                      />
+                    </svg>
+                  </p>
+                  <p class="text-orange-500">{{ item.montantEtat }} FCFA</p>
+                </div>
+                <div class="flex space-x-1">
+                  <p class="rounded-full px-2 py-2 shadow-xl">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="18"
+                      viewBox="0 0 24 18"
+                    >
+>>>>>>> cfd754c5e576675606d93d9ae19ced3b2dff9bbc
+                      <g id="icone-restant" transform="translate(-0.001 -12)">
+                        <path
+                          id="Tracé_2571"
+                          data-name="Tracé 2571"
+                          d="M41.562,18.44a1.5,1.5,0,0,0-2.121,0l-.653.653A9.009,9.009,0,0,0,30,12,8.888,8.888,0,0,0,24.6,13.84a1.5,1.5,0,0,0,1.811,2.391A5.917,5.917,0,0,1,30,15a5.989,5.989,0,0,1,5.668,4.119l-.993-.791a1.5,1.5,0,1,0-1.869,2.344l3.759,3a1.5,1.5,0,0,0,2-.111l3-3a1.5,1.5,0,0,0,0-2.121Z"
+                          transform="translate(-18)"
+                          fill="#3596d2"
+                        />
+                        <path
+                          id="Tracé_2572"
+                          data-name="Tracé 2572"
+                          d="M15.6,43.774A5.917,5.917,0,0,1,12,45a5.989,5.989,0,0,1-5.668-4.119l.993.791a1.5,1.5,0,1,0,1.869-2.344l-3.759-3a1.5,1.5,0,0,0-2,.111l-3,3a1.5,1.5,0,1,0,2.121,2.121l.653-.653A9.009,9.009,0,0,0,12,48a8.888,8.888,0,0,0,5.405-1.84A1.5,1.5,0,1,0,15.6,43.774Z"
+                          transform="translate(0 -18.004)"
+                          fill="#3596d2"
+                        />
+                      </g>
+                    </svg>
+<<<<<<< HEAD
                     
 
                   </p>
@@ -57,157 +174,327 @@
 
                   </p>
                   <p class="text-bleudusite font-semibold">{{item.totalversement}} FCFA</p>
+=======
+                  </p>
+                  <p class="text-bleudusite">{{ item.totalversement }} FCFA</p>
+>>>>>>> cfd754c5e576675606d93d9ae19ced3b2dff9bbc
                 </div>
               </div>
-             
+            </div>
           </div>
-        </div>
-        <div class="bg-white w-1/2 px-2 py-3 rounded-2xl">
-            <table class="text-black w-full " *ngFor="let et of res">
+          <div class="bg-white w-1/2 px-2 py-3 rounded-2xl">
+            <table class="text-black w-full" *ngFor="let et of res">
               <thead>
                 <tr>
-                  <th class="  text-center text-bleudusite border-r-2 border-r-gray-200"><span class="border-bleudusite   border-b-2">Informations sur l'etudiant</span> </th>
-                  <th class="text-center text-bleudusite "> <span class="border-bleudusite border-b-2"> Information sur le bailleur</span> </th>
+                  <th
+                    class="text-center text-bleudusite border-r-2 border-r-gray-200"
+                  >
+                    <span class="border-bleudusite border-b-2"
+                      >Informations sur l'etudiant</span
+                    >
+                  </th>
+                  <th class="text-center text-bleudusite">
+                    <span class="border-bleudusite border-b-2">
+                      Information sur le bailleur</span
+                    >
+                  </th>
                 </tr>
               </thead>
               <tbody *ngFor="let bai of res1">
                 <tr>
-                  <td class="py-2 border-r-2  border-r-gray-200 px-2">
+                  <td class="py-2 border-r-2 border-r-gray-200 px-2">
                     <div class="flex space-x-1 items-center">
-                    <p class="rounded-full px-2 py-2 shadow-xl">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20.032" height="20" viewBox="0 0 20.032 20">
-                        <g id="icone-name" transform="translate(-1.984 -2)">
-                          <g id="user">
-                            <ellipse id="Ellipse_21" data-name="Ellipse 21" cx="5" cy="6" rx="5" ry="6" transform="translate(7 2)" fill="#3596d2"/>
-                            <path id="Tracé_2558" data-name="Tracé 2558" d="M21.8,19.1A9.114,9.114,0,0,0,17,14.9a2.239,2.239,0,0,0-1.8.1,6.139,6.139,0,0,1-6.4,0A2.25,2.25,0,0,0,7,15a9.114,9.114,0,0,0-4.8,4.2A1.974,1.974,0,0,0,4.1,22H19.9A2.025,2.025,0,0,0,21.8,19.1Z" fill="#3596d2"/>
+                      <p class="rounded-full px-2 py-2 shadow-xl">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20.032"
+                          height="20"
+                          viewBox="0 0 20.032 20"
+                        >
+                          <g id="icone-name" transform="translate(-1.984 -2)">
+                            <g id="user">
+                              <ellipse
+                                id="Ellipse_21"
+                                data-name="Ellipse 21"
+                                cx="5"
+                                cy="6"
+                                rx="5"
+                                ry="6"
+                                transform="translate(7 2)"
+                                fill="#3596d2"
+                              />
+                              <path
+                                id="Tracé_2558"
+                                data-name="Tracé 2558"
+                                d="M21.8,19.1A9.114,9.114,0,0,0,17,14.9a2.239,2.239,0,0,0-1.8.1,6.139,6.139,0,0,1-6.4,0A2.25,2.25,0,0,0,7,15a9.114,9.114,0,0,0-4.8,4.2A1.974,1.974,0,0,0,4.1,22H19.9A2.025,2.025,0,0,0,21.8,19.1Z"
+                                fill="#3596d2"
+                              />
+                            </g>
                           </g>
-                        </g>
-                      </svg>
-
-                    </p>
-                    <div class="flex space-x-1">
-                      <p class="">{{et.nom}} </p>
-                      <p class="">{{et.prenom}}</p>
+                        </svg>
+                      </p>
+                      <div class="flex space-x-1">
+                        <p class="">{{ et.nom }}</p>
+                        <p class="">{{ et.prenom }}</p>
+                      </div>
                     </div>
-
-                  </div>
-                </td>
-                  <td class="py-2 px-2  "> <div class="flex space-x-1 items-center">
-                    <p class="rounded-full px-2 py-2 shadow-xl">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20.032" height="20" viewBox="0 0 20.032 20">
-                        <g id="icone-name" transform="translate(-1.984 -2)">
-                          <g id="user">
-                            <ellipse id="Ellipse_21" data-name="Ellipse 21" cx="5" cy="6" rx="5" ry="6" transform="translate(7 2)" fill="#3596d2"/>
-                            <path id="Tracé_2558" data-name="Tracé 2558" d="M21.8,19.1A9.114,9.114,0,0,0,17,14.9a2.239,2.239,0,0,0-1.8.1,6.139,6.139,0,0,1-6.4,0A2.25,2.25,0,0,0,7,15a9.114,9.114,0,0,0-4.8,4.2A1.974,1.974,0,0,0,4.1,22H19.9A2.025,2.025,0,0,0,21.8,19.1Z" fill="#3596d2"/>
+                  </td>
+                  <td class="py-2 px-2">
+                    <div class="flex space-x-1 items-center">
+                      <p class="rounded-full px-2 py-2 shadow-xl">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20.032"
+                          height="20"
+                          viewBox="0 0 20.032 20"
+                        >
+                          <g id="icone-name" transform="translate(-1.984 -2)">
+                            <g id="user">
+                              <ellipse
+                                id="Ellipse_21"
+                                data-name="Ellipse 21"
+                                cx="5"
+                                cy="6"
+                                rx="5"
+                                ry="6"
+                                transform="translate(7 2)"
+                                fill="#3596d2"
+                              />
+                              <path
+                                id="Tracé_2558"
+                                data-name="Tracé 2558"
+                                d="M21.8,19.1A9.114,9.114,0,0,0,17,14.9a2.239,2.239,0,0,0-1.8.1,6.139,6.139,0,0,1-6.4,0A2.25,2.25,0,0,0,7,15a9.114,9.114,0,0,0-4.8,4.2A1.974,1.974,0,0,0,4.1,22H19.9A2.025,2.025,0,0,0,21.8,19.1Z"
+                                fill="#3596d2"
+                              />
+                            </g>
                           </g>
-                        </g>
-                      </svg>
-                    </p>
-                    <div class="flex space-x-1">
-                      <p class="">{{bai.nom}} </p>
-                      <p class="">{{bai.prenom}} </p>
+                        </svg>
+                      </p>
+                      <div class="flex space-x-1">
+                        <p class="">{{ bai.nom }}</p>
+                        <p class="">{{ bai.prenom }}</p>
+                      </div>
                     </div>
-
-                  </div></td>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="py-2 border-r-2 border-r-gray-200 px-2"> <div class="flex space-x-1 items-center">
-                    <p class="rounded-full  py-2 shadow-xl">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 18">
-                        <path id="email" d="M20,3H4A4.012,4.012,0,0,0,0,7V17a4.012,4.012,0,0,0,4,4H20a4.012,4.012,0,0,0,4-4V7A4.012,4.012,0,0,0,20,3Zm1.6,5.8-7.9,5.3a3.371,3.371,0,0,1-1.7.5,3.371,3.371,0,0,1-1.7-.5L2.4,8.8a1.058,1.058,0,0,1-.2-1.4,1.058,1.058,0,0,1,1.4-.2l7.9,5.3a1.083,1.083,0,0,0,1.1,0l7.9-5.3a.984.984,0,0,1,1.4.3A1.091,1.091,0,0,1,21.6,8.8Z" transform="translate(0 -3)" fill="#3596d2"/>
-                      </svg>
-
-
-                    </p>
-                    <p class="">{{et.email}} </p>
-                  </div></td>
-                  <td class="py-2 px-2"> <div class="flex space-x-1 items-center">
-                    <p class="rounded-full px-2 py-2 shadow-xl">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 18">
-                        <path id="email" d="M20,3H4A4.012,4.012,0,0,0,0,7V17a4.012,4.012,0,0,0,4,4H20a4.012,4.012,0,0,0,4-4V7A4.012,4.012,0,0,0,20,3Zm1.6,5.8-7.9,5.3a3.371,3.371,0,0,1-1.7.5,3.371,3.371,0,0,1-1.7-.5L2.4,8.8a1.058,1.058,0,0,1-.2-1.4,1.058,1.058,0,0,1,1.4-.2l7.9,5.3a1.083,1.083,0,0,0,1.1,0l7.9-5.3a.984.984,0,0,1,1.4.3A1.091,1.091,0,0,1,21.6,8.8Z" transform="translate(0 -3)" fill="#3596d2"/>
-                      </svg>
-
-                    </p>
-                    <p class="">{{bai.mail}} </p>
-                  </div>
-                </td>
+                  <td class="py-2 border-r-2 border-r-gray-200 px-2">
+                    <div class="flex space-x-1 items-center">
+                      <p class="rounded-full py-2 shadow-xl">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="18"
+                          viewBox="0 0 24 18"
+                        >
+                          <path
+                            id="email"
+                            d="M20,3H4A4.012,4.012,0,0,0,0,7V17a4.012,4.012,0,0,0,4,4H20a4.012,4.012,0,0,0,4-4V7A4.012,4.012,0,0,0,20,3Zm1.6,5.8-7.9,5.3a3.371,3.371,0,0,1-1.7.5,3.371,3.371,0,0,1-1.7-.5L2.4,8.8a1.058,1.058,0,0,1-.2-1.4,1.058,1.058,0,0,1,1.4-.2l7.9,5.3a1.083,1.083,0,0,0,1.1,0l7.9-5.3a.984.984,0,0,1,1.4.3A1.091,1.091,0,0,1,21.6,8.8Z"
+                            transform="translate(0 -3)"
+                            fill="#3596d2"
+                          />
+                        </svg>
+                      </p>
+                      <p class="">{{ et.email }}</p>
+                    </div>
+                  </td>
+                  <td class="py-2 px-2">
+                    <div class="flex space-x-1 items-center">
+                      <p class="rounded-full px-2 py-2 shadow-xl">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="18"
+                          viewBox="0 0 24 18"
+                        >
+                          <path
+                            id="email"
+                            d="M20,3H4A4.012,4.012,0,0,0,0,7V17a4.012,4.012,0,0,0,4,4H20a4.012,4.012,0,0,0,4-4V7A4.012,4.012,0,0,0,20,3Zm1.6,5.8-7.9,5.3a3.371,3.371,0,0,1-1.7.5,3.371,3.371,0,0,1-1.7-.5L2.4,8.8a1.058,1.058,0,0,1-.2-1.4,1.058,1.058,0,0,1,1.4-.2l7.9,5.3a1.083,1.083,0,0,0,1.1,0l7.9-5.3a.984.984,0,0,1,1.4.3A1.091,1.091,0,0,1,21.6,8.8Z"
+                            transform="translate(0 -3)"
+                            fill="#3596d2"
+                          />
+                        </svg>
+                      </p>
+                      <p class="">{{ bai.mail }}</p>
+                    </div>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="py-2 border-r-2 border-r-gray-200"> <div class="flex space-x-1 items-center">
-                    <p class="rounded-full px-2 py-2 shadow-xl">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="17.262" height="17.262" viewBox="0 0 17.262 17.262">
-                        <path id="Tracé_2560" data-name="Tracé 2560" d="M9.476,13.475A14.442,14.442,0,0,0,15.8,19.79l2.11-2.115a.962.962,0,0,1,.973-.235,10.917,10.917,0,0,0,3.424.547.956.956,0,0,1,.959.959V22.3a.956.956,0,0,1-.959.959A16.3,16.3,0,0,1,6,6.959.959.959,0,0,1,6.959,6h3.356a.956.956,0,0,1,.959.959,10.917,10.917,0,0,0,.547,3.424.962.962,0,0,1-.235.973Z" transform="translate(-6 -6)" fill="#3596d2"/>
-                      </svg>
-
-                    </p>
-                    <p class="">+221 {{et.telephone}} </p>
-                  </div></td>
-                  <td class="py-2 px-2"> <div class="flex space-x-1 items-center">
-                    <p class="rounded-full px-2 py-2 shadow-xl">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="17.262" height="17.262" viewBox="0 0 17.262 17.262">
-                        <path id="Tracé_2560" data-name="Tracé 2560" d="M9.476,13.475A14.442,14.442,0,0,0,15.8,19.79l2.11-2.115a.962.962,0,0,1,.973-.235,10.917,10.917,0,0,0,3.424.547.956.956,0,0,1,.959.959V22.3a.956.956,0,0,1-.959.959A16.3,16.3,0,0,1,6,6.959.959.959,0,0,1,6.959,6h3.356a.956.956,0,0,1,.959.959,10.917,10.917,0,0,0,.547,3.424.962.962,0,0,1-.235.973Z" transform="translate(-6 -6)" fill="#3596d2"/>
-                      </svg>
-                    </p>
-                    <p class="">+221 {{bai.tel}} </p>
-                  </div></td>
+                  <td class="py-2 border-r-2 border-r-gray-200">
+                    <div class="flex space-x-1 items-center">
+                      <p class="rounded-full px-2 py-2 shadow-xl">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="17.262"
+                          height="17.262"
+                          viewBox="0 0 17.262 17.262"
+                        >
+                          <path
+                            id="Tracé_2560"
+                            data-name="Tracé 2560"
+                            d="M9.476,13.475A14.442,14.442,0,0,0,15.8,19.79l2.11-2.115a.962.962,0,0,1,.973-.235,10.917,10.917,0,0,0,3.424.547.956.956,0,0,1,.959.959V22.3a.956.956,0,0,1-.959.959A16.3,16.3,0,0,1,6,6.959.959.959,0,0,1,6.959,6h3.356a.956.956,0,0,1,.959.959,10.917,10.917,0,0,0,.547,3.424.962.962,0,0,1-.235.973Z"
+                            transform="translate(-6 -6)"
+                            fill="#3596d2"
+                          />
+                        </svg>
+                      </p>
+                      <p class="">+221 {{ et.telephone }}</p>
+                    </div>
+                  </td>
+                  <td class="py-2 px-2">
+                    <div class="flex space-x-1 items-center">
+                      <p class="rounded-full px-2 py-2 shadow-xl">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="17.262"
+                          height="17.262"
+                          viewBox="0 0 17.262 17.262"
+                        >
+                          <path
+                            id="Tracé_2560"
+                            data-name="Tracé 2560"
+                            d="M9.476,13.475A14.442,14.442,0,0,0,15.8,19.79l2.11-2.115a.962.962,0,0,1,.973-.235,10.917,10.917,0,0,0,3.424.547.956.956,0,0,1,.959.959V22.3a.956.956,0,0,1-.959.959A16.3,16.3,0,0,1,6,6.959.959.959,0,0,1,6.959,6h3.356a.956.956,0,0,1,.959.959,10.917,10.917,0,0,0,.547,3.424.962.962,0,0,1-.235.973Z"
+                            transform="translate(-6 -6)"
+                            fill="#3596d2"
+                          />
+                        </svg>
+                      </p>
+                      <p class="">+221 {{ bai.tel }}</p>
+                    </div>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="py-2 border-r-2 border-r-gray-200"> <div class="flex space-x-1 items-center">
-                    <p class="rounded-full px-2 py-2 shadow-xl">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="24.05" viewBox="0 0 18 24.05">
-                        <path id="pin" d="M12,0A8.963,8.963,0,0,0,3,9a17.688,17.688,0,0,0,8.5,14.9,1.079,1.079,0,0,0,1.1,0A17.957,17.957,0,0,0,21,9,8.963,8.963,0,0,0,12,0Zm0,13a4,4,0,1,1,4-4A4.012,4.012,0,0,1,12,13Z" transform="translate(-3)" fill="#3596d2"/>
-                      </svg>
-
-
-                    </p>
-                    <p class="w-1/2">{{et.Adreesse}} </p>
-                  </div></td>
-                  <td class="py-2 px-2"> <div class="flex space-x-1 items-center">
-                    <p class="rounded-full px-2 py-2 shadow-xl">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="24.05" viewBox="0 0 18 24.05">
-                        <path id="pin" d="M12,0A8.963,8.963,0,0,0,3,9a17.688,17.688,0,0,0,8.5,14.9,1.079,1.079,0,0,0,1.1,0A17.957,17.957,0,0,0,21,9,8.963,8.963,0,0,0,12,0Zm0,13a4,4,0,1,1,4-4A4.012,4.012,0,0,1,12,13Z" transform="translate(-3)" fill="#3596d2"/>
-                      </svg>
-
-
-                    </p>
-                    <p class="">{{bai.adresse}} </p>
-                  </div></td>
+                  <td class="py-2 border-r-2 border-r-gray-200">
+                    <div class="flex space-x-1 items-center">
+                      <p class="rounded-full px-2 py-2 shadow-xl">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="24.05"
+                          viewBox="0 0 18 24.05"
+                        >
+                          <path
+                            id="pin"
+                            d="M12,0A8.963,8.963,0,0,0,3,9a17.688,17.688,0,0,0,8.5,14.9,1.079,1.079,0,0,0,1.1,0A17.957,17.957,0,0,0,21,9,8.963,8.963,0,0,0,12,0Zm0,13a4,4,0,1,1,4-4A4.012,4.012,0,0,1,12,13Z"
+                            transform="translate(-3)"
+                            fill="#3596d2"
+                          />
+                        </svg>
+                      </p>
+                      <p class="w-1/2">{{ et.Adreesse }}</p>
+                    </div>
+                  </td>
+                  <td class="py-2 px-2">
+                    <div class="flex space-x-1 items-center">
+                      <p class="rounded-full px-2 py-2 shadow-xl">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="24.05"
+                          viewBox="0 0 18 24.05"
+                        >
+                          <path
+                            id="pin"
+                            d="M12,0A8.963,8.963,0,0,0,3,9a17.688,17.688,0,0,0,8.5,14.9,1.079,1.079,0,0,0,1.1,0A17.957,17.957,0,0,0,21,9,8.963,8.963,0,0,0,12,0Zm0,13a4,4,0,1,1,4-4A4.012,4.012,0,0,1,12,13Z"
+                            transform="translate(-3)"
+                            fill="#3596d2"
+                          />
+                        </svg>
+                      </p>
+                      <p class="">{{ bai.adresse }}</p>
+                    </div>
+                  </td>
                 </tr>
                 <tr>
                   <td class="py-2"></td>
-                  <td class="border-l-2 border-l-gray-200 px-2 py-2"> <div class="flex space-x-1 items-center">
-                    <p class="rounded-full px-2 py-2 shadow-xl">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="30.042" height="15.021" viewBox="0 0 30.042 15.021">
-                        <g id="_211853_link_icon" data-name="211853_link_icon" transform="translate(-64 -160)">
-                          <path id="Tracé_2566" data-name="Tracé 2566" d="M256.039,208h0Z" transform="translate(-176.979 -44.245)" fill="#3596d2"/>
-                          <path id="Tracé_2567" data-name="Tracé 2567" d="M191.06,160h-3.794a6.208,6.208,0,0,1,2.472,3.755h1.322a2.444,2.444,0,0,1,2.464,2.464v2.5a2.512,2.512,0,0,1-2.464,2.543H182.3a2.578,2.578,0,0,1-2.543-2.543v-2.464H176v2.464a6.309,6.309,0,0,0,6.3,6.3h8.762a6.257,6.257,0,0,0,6.22-6.3v-2.5A6.19,6.19,0,0,0,191.06,160Z" transform="translate(-103.238)" fill="#3596d2"/>
-                          <path id="Tracé_2568" data-name="Tracé 2568" d="M84.779,163.755A6.191,6.191,0,0,0,79.06,160H70.3a6.257,6.257,0,0,0-6.3,6.22v2.5a6.324,6.324,0,0,0,6.3,6.3h3.716a6.435,6.435,0,0,1-2.511-3.755H70.3a2.578,2.578,0,0,1-2.543-2.543v-2.5a2.512,2.512,0,0,1,2.543-2.464H79.06a2.444,2.444,0,0,1,2.464,2.464v2.543H85.28V166.22A6.275,6.275,0,0,0,84.779,163.755Z" fill="#3596d2"/>
-                        </g>
-                      </svg>
-
-
-                    </p>
-                    <p class="">{{bai.role}} </p>
-                  </div></td>
+                  <td class="border-l-2 border-l-gray-200 px-2 py-2">
+                    <div class="flex space-x-1 items-center">
+                      <p class="rounded-full px-2 py-2 shadow-xl">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="30.042"
+                          height="15.021"
+                          viewBox="0 0 30.042 15.021"
+                        >
+                          <g
+                            id="_211853_link_icon"
+                            data-name="211853_link_icon"
+                            transform="translate(-64 -160)"
+                          >
+                            <path
+                              id="Tracé_2566"
+                              data-name="Tracé 2566"
+                              d="M256.039,208h0Z"
+                              transform="translate(-176.979 -44.245)"
+                              fill="#3596d2"
+                            />
+                            <path
+                              id="Tracé_2567"
+                              data-name="Tracé 2567"
+                              d="M191.06,160h-3.794a6.208,6.208,0,0,1,2.472,3.755h1.322a2.444,2.444,0,0,1,2.464,2.464v2.5a2.512,2.512,0,0,1-2.464,2.543H182.3a2.578,2.578,0,0,1-2.543-2.543v-2.464H176v2.464a6.309,6.309,0,0,0,6.3,6.3h8.762a6.257,6.257,0,0,0,6.22-6.3v-2.5A6.19,6.19,0,0,0,191.06,160Z"
+                              transform="translate(-103.238)"
+                              fill="#3596d2"
+                            />
+                            <path
+                              id="Tracé_2568"
+                              data-name="Tracé 2568"
+                              d="M84.779,163.755A6.191,6.191,0,0,0,79.06,160H70.3a6.257,6.257,0,0,0-6.3,6.22v2.5a6.324,6.324,0,0,0,6.3,6.3h3.716a6.435,6.435,0,0,1-2.511-3.755H70.3a2.578,2.578,0,0,1-2.543-2.543v-2.5a2.512,2.512,0,0,1,2.543-2.464H79.06a2.444,2.444,0,0,1,2.464,2.464v2.543H85.28V166.22A6.275,6.275,0,0,0,84.779,163.755Z"
+                              fill="#3596d2"
+                            />
+                          </g>
+                        </svg>
+                      </p>
+                      <p class="">{{ bai.role }}</p>
+                    </div>
+                  </td>
                 </tr>
                 <tr>
                   <td></td>
-                  <td class="py-2 border-l-2 border-l-gray-200 px-2"><div class="flex space-x-1 items-center">
-                    <p class="rounded-full px-2 py-2 shadow-xl">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="19.121" height="19.314" viewBox="0 0 19.121 19.314">
-                        <g id="Icone_Pofession" data-name="Icone Pofession" transform="translate(-1.972 -1.559)">
-                          <path id="Tracé_2563" data-name="Tracé 2563" d="M14.576,19.883V17.44L8.911,20.025a1.52,1.52,0,0,1-.209.069v.885a.427.427,0,0,1-.854,0v-.885a1.526,1.526,0,0,1-.209-.069L1.972,17.44v6.426A1.125,1.125,0,0,0,3.1,24.989H9.438A5.378,5.378,0,0,1,14.576,19.883Z" transform="translate(0 -10.853)" fill="#3596d2"/>
-                          <path id="Tracé_2564" data-name="Tracé 2564" d="M8.556,8.394l6.02-2.747V4.974A1.125,1.125,0,0,0,13.452,3.85h-2.2c0-.013,0-.025-.006-.038A3.077,3.077,0,0,0,5.3,3.846v0H3.1A1.125,1.125,0,0,0,1.972,4.974v.674l6.02,2.747A.678.678,0,0,0,8.556,8.394ZM8.278,2.668a1.972,1.972,0,0,1,1.8,1.182h-3.6a1.969,1.969,0,0,1,1.8-1.182Z" transform="translate(0 0)" fill="#3596d2"/>
-                          <path id="Tracé_2565" data-name="Tracé 2565" d="M38.713,37.1l-2.2-2.238a4.56,4.56,0,1,0-1.423,1.353l2.236,2.272A.981.981,0,1,0,38.713,37.1Zm-5.978-2.427a2.348,2.348,0,1,1,2.348-2.348,2.349,2.349,0,0,1-2.348,2.348Z" transform="translate(-17.907 -17.902)" fill="#3596d2"/>
-                        </g>
-                      </svg>
-
-                    </p>
-                    <p class="">{{bai.poste_occupe}} </p>
-                  </div></td>
+                  <td class="py-2 border-l-2 border-l-gray-200 px-2">
+                    <div class="flex space-x-1 items-center">
+                      <p class="rounded-full px-2 py-2 shadow-xl">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="19.121"
+                          height="19.314"
+                          viewBox="0 0 19.121 19.314"
+                        >
+                          <g
+                            id="Icone_Pofession"
+                            data-name="Icone Pofession"
+                            transform="translate(-1.972 -1.559)"
+                          >
+                            <path
+                              id="Tracé_2563"
+                              data-name="Tracé 2563"
+                              d="M14.576,19.883V17.44L8.911,20.025a1.52,1.52,0,0,1-.209.069v.885a.427.427,0,0,1-.854,0v-.885a1.526,1.526,0,0,1-.209-.069L1.972,17.44v6.426A1.125,1.125,0,0,0,3.1,24.989H9.438A5.378,5.378,0,0,1,14.576,19.883Z"
+                              transform="translate(0 -10.853)"
+                              fill="#3596d2"
+                            />
+                            <path
+                              id="Tracé_2564"
+                              data-name="Tracé 2564"
+                              d="M8.556,8.394l6.02-2.747V4.974A1.125,1.125,0,0,0,13.452,3.85h-2.2c0-.013,0-.025-.006-.038A3.077,3.077,0,0,0,5.3,3.846v0H3.1A1.125,1.125,0,0,0,1.972,4.974v.674l6.02,2.747A.678.678,0,0,0,8.556,8.394ZM8.278,2.668a1.972,1.972,0,0,1,1.8,1.182h-3.6a1.969,1.969,0,0,1,1.8-1.182Z"
+                              transform="translate(0 0)"
+                              fill="#3596d2"
+                            />
+                            <path
+                              id="Tracé_2565"
+                              data-name="Tracé 2565"
+                              d="M38.713,37.1l-2.2-2.238a4.56,4.56,0,1,0-1.423,1.353l2.236,2.272A.981.981,0,1,0,38.713,37.1Zm-5.978-2.427a2.348,2.348,0,1,1,2.348-2.348,2.349,2.349,0,0,1-2.348,2.348Z"
+                              transform="translate(-17.907 -17.902)"
+                              fill="#3596d2"
+                            />
+                          </g>
+                        </svg>
+                      </p>
+                      <p class="">{{ bai.poste_occupe }}</p>
+                    </div>
+                  </td>
                 </tr>
               </tbody>
             </table>
+<<<<<<< HEAD
            
         </div>
         <div>
@@ -229,23 +516,83 @@
               <div class="flex flex-col space-y-1">
                 <p class="text-bleudusite font-semibold">Filière</p>
                 <p>{{res[0].formation}} </p>
+=======
+          </div>
+          <div>
+            <div class="flex flex-col justify-center items-center">
+              <img
+                [src]="
+                  'https://starfish-app-82b5l.ondigitalocean.app/etudiant/image/afficher/' + res[0].photo
+                "
+                class="rounded-full mx-auto w-32 h-32"
+                alt=""
+              />
+              <div class="flex space-x-1">
+                <p class="text-bleudusite text-center text-lg">
+                  {{ res[0].prenom }}
+                </p>
+                <p class="text-bleudusite text-center text-lg">
+                  {{ res[0].nom }}
+                </p>
+                <p></p>
+              </div>
+            </div>
+            <div class="bg-white text-black rounded-lg px-1 py-2">
+              <div class="flex space-y-2 flex-col">
+                <div class="flex flex-col space-y-1">
+                  <p class="text-bleuclair font-semibold">Niveau en cours</p>
+                  <p>{{ res[0].classe }}</p>
+                </div>
+                <div class="flex flex-col space-y-1">
+                  <p class="text-bleuclair font-semibold">Filiere</p>
+                  <p>{{ res[0].formation }}</p>
+                </div>
+>>>>>>> cfd754c5e576675606d93d9ae19ced3b2dff9bbc
               </div>
             </div>
           </div>
         </div>
-    </div>
       </div>
+<<<<<<< HEAD
       <div class=" flex justify-end  space-x-1"> 
         <span routerLink="/historiqueetudiant/{{code}}" class="bg-bleudusite my-2 px-3 py-3 rounded-lg hover:cursor-pointer font-semibold ">
           Historique
         </span>
         <i class="fas fa-book"></i>
         <span class="bg-bleudusite  my-2 px-3 py-3  hover:cursor-pointer rounded-lg text-center font-semibold" routerLink="/modifier/{{code}}">Modifier Profil</span>
+=======
+      <div class="flex justify-end space-x-1">
+        <span
+          routerLink="/historiqueetudiant/{{ code }}"
+          class="bg-bleudusite my-2 px-3 py-3 rounded-lg hover:cursor-pointer flex justify-center items-center space-x-2"
+          ><span class="mr-1"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-4 h-4"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75"
+              />
+            </svg>
+          </span>
+          Historique
+        </span>
+        <span
+          class="bg-bleudusite my-2 px-3 py-3 hover:cursor-pointer rounded-lg text-center"
+          routerLink="/modifier/{{ code }}"
+          >Modifier Profil</span
+        >
+>>>>>>> cfd754c5e576675606d93d9ae19ced3b2dff9bbc
       </div>
     </div>
-    <div class="w-1/6 py-10" >
+    <div class="w-1/6 py-10">
       <app-dropdown></app-dropdown>
     </div>
-
   </div>
 </div>

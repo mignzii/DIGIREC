@@ -7,12 +7,12 @@ import { Observable,
   providedIn: 'root'
 })
 export class PaiementService {
-  public apiurl='http://localhost:6001/facture'
-  public apiurl2='http://localhost:6001/facture/debiteur'
-  public apiurl1='http://localhost:6001/etudiant/mign'
-  public apiurl3='http://localhost:6001/facture/getfacture'
-  public apiurl4='http://localhost:6001/facture/maxfacture'
-  public apiurl5='http://localhost:6001/facture/onefacture'
+  public apiurl='https://starfish-app-82b5l.ondigitalocean.app/facture'
+  public apiurl2='https://starfish-app-82b5l.ondigitalocean.app/facture/debiteur'
+  public apiurl1='https://starfish-app-82b5l.ondigitalocean.app/etudiant/mign'
+  public apiurl3='https://starfish-app-82b5l.ondigitalocean.app/facture/getfacture'
+  public apiurl4='https://starfish-app-82b5l.ondigitalocean.app/facture/maxfacture'
+  public apiurl5='https://starfish-app-82b5l.ondigitalocean.app/facture/onefacture'
 
   public reponse:any
   public envoie:any

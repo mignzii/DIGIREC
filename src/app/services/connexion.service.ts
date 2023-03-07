@@ -8,7 +8,7 @@ import { Observable, observable
 export class ConnexionService {
 
   constructor(private http:HttpClient) { }
-  public apiurl="http://104.236.2.144/membrepersonnel"
+  public apiurl="https://starfish-app-82b5l.ondigitalocean.app/membrepersonnel"
   recupone(id:any):Observable<any>{
     return this.http.get(`${this.apiurl}/${id}`)
   }

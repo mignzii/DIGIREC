@@ -7,15 +7,15 @@ import { Observable,
   providedIn: 'root'
 })
 export class EtudiantsService {
-public url="https://starfish-app-82b5l.ondigitalocean.app/etudiant"
-public url1="https://starfish-app-82b5l.ondigitalocean.app/bailleur"
-public url2="https://starfish-app-82b5l.ondigitalocean.app/etudiant/test/montantprevisionnel"
-public url7="https://starfish-app-82b5l.ondigitalocean.app/etudiant/dernieretudiant/inscrit/annee"
-public url8="https://starfish-app-82b5l.ondigitalocean.app/bailleur/postbailleur"
-public url9="https://starfish-app-82b5l.ondigitalocean.app/bailleur/dernierbailleur/bailleurinscrit"
-public url5="https://starfish-app-82b5l.ondigitalocean.app/etudiant/test4/totalmontant"
-public url6="https://starfish-app-82b5l.ondigitalocean.app/etudiant/postetudiant"
-public url10="https://starfish-app-82b5l.ondigitalocean.app/etudiant/updateetuidant"
+public url="https://coral-app-a57e6.ondigitalocean.app/etudiant"
+public url1="https://coral-app-a57e6.ondigitalocean.app/bailleur"
+public url2="https://coral-app-a57e6.ondigitalocean.app/etudiant/test/montantprevisionnel"
+public url7="https://coral-app-a57e6.ondigitalocean.app/etudiant/dernieretudiant/inscrit/annee"
+public url8="https://coral-app-a57e6.ondigitalocean.app/bailleur/postbailleur"
+public url9="https://coral-app-a57e6.ondigitalocean.app/bailleur/dernierbailleur/bailleurinscrit"
+public url5="https://coral-app-a57e6.ondigitalocean.app/etudiant/test4/totalmontant"
+public url6="https://coral-app-a57e6.ondigitalocean.app/etudiant/postetudiant"
+public url10="https://coral-app-a57e6.ondigitalocean.app/etudiant/updateetuidant"
 
 
   constructor(private http:HttpClient) { }

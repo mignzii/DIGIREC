@@ -7,6 +7,7 @@ import { Observable,
   providedIn: 'root'
 })
 export class EtudiantsService {
+<<<<<<< HEAD
 public url="https://coral-app-a57e6.ondigitalocean.app/etudiant"
 public url1="https://coral-app-a57e6.ondigitalocean.app/bailleur"
 public url2="https://coral-app-a57e6.ondigitalocean.app/etudiant/test/montantprevisionnel"
@@ -16,6 +17,17 @@ public url9="https://coral-app-a57e6.ondigitalocean.app/bailleur/dernierbailleur
 public url5="https://coral-app-a57e6.ondigitalocean.app/etudiant/test4/totalmontant"
 public url6="https://coral-app-a57e6.ondigitalocean.app/etudiant/postetudiant"
 public url10="https://coral-app-a57e6.ondigitalocean.app/etudiant/updateetuidant"
+=======
+public url="http://104.236.2.144/etudiant"
+public url1="http://104.236.2.144/bailleur"
+public url2="http://104.236.2.144/etudiant/test/montantprevisionnel"
+public url7="http://104.236.2.144/etudiant/dernieretudiant/inscrit/annee"
+public url8="http://104.236.2.144/bailleur/postbailleur"
+public url9="http://104.236.2.144/bailleur/dernierbailleur/bailleurinscrit"
+public url5="http://104.236.2.144/etudiant/test4/totalmontant"
+public url6="http://104.236.2.144/etudiant/postetudiant"
+public url10="http://104.236.2.144/etudiant/updateetuidant"
+>>>>>>> parent of cfd754c ( last essai)
 
 
   constructor(private http:HttpClient) { }

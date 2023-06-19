@@ -7,10 +7,10 @@ import mysql from 'mysql'
 
 const router = express.Router()
 const db = mysql.createConnection({
-    host: "mysql-digirec-esmt.alwaysdata.net",
-    user: "279564",
-    password: "Petiteecole2022",
-    database: "digirec-esmt_digirec_esmt"
+    host: "localhost",
+    user: "",
+    password: "",
+    database: "digirec"
 })
 db.connect((err) =>{
     if(err) throw err
@@ -34,7 +34,13 @@ router.get('/dernierbailleur/bailleurinscrit',(req,response)=>{
     if (err) throw err
    else{
     let a=result[0].derniercode
-    let b =a.replace("CEP","")
+    let b;
+    if (a==null) {
+      b=0
+    } else {
+       b =a.replace("CEP","")
+    }
+    
     response.json({message:b})
     console.log(b)
    }

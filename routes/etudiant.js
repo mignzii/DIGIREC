@@ -12,10 +12,10 @@ import Excel from 'exceljs'
 
 const router = express.Router()
 const db = mysql.createConnection({
-  host: "mysql-digirec-esmt.alwaysdata.net",
-  user: "279564",
-  password: "Petiteecole2022",
-  database: "digirec-esmt_digirec_esmt"
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "digirec"
 })
 db.connect((err) =>{
     if(err) throw err
@@ -256,7 +256,7 @@ router.get('/',(req,response)=>{
   db.query("SELECT * FROM etudiant where etatSolde='debiteur' ",(err,result)=>{
     if (err) throw err
     response.send(result)
-    console.log('result')
+    console.log('resultat' +result)
   } )
 } )
 // recuperer id etudiant du dernier etudiant inscrit
@@ -265,7 +265,15 @@ router.get('/dernieretudiant/inscrit/annee',(req,response)=>{
     if (err) throw err
    else{
     let a=result[0].derniercode
-    let b =a.replace("CE","")
+    let b;
+    console.log("a"+ a)
+    if (a==null) {
+      b=0
+    }
+    else{
+     b =a.replace("CE","")
+    }
+    
     response.json({message:b})
     console.log(b)
    }

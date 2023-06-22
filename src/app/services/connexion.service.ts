@@ -8,7 +8,7 @@ import { Observable, observable
 export class ConnexionService {
 
   constructor(private http:HttpClient) { }
-  public apiurl="https://coral-app-a57e6.ondigitalocean.app/membrepersonnel"
+  public apiurl="https://digirecbackend.digirec.online/membrepersonnel"
   recupone(id:any):Observable<any>{
     return this.http.get(`${this.apiurl}/${id}`)
   }

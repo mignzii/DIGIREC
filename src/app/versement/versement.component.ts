@@ -84,8 +84,9 @@ this.FS=false
 
 affiche(){
   this.infoetudiant.recupinfoetudiant(this.code.value).subscribe(data=>{
-    console.log(data)
+    console.log("les donnees de l'etudiant " +data)
     this.stock=data
+    console.log(this.stock)
   })
 
 }

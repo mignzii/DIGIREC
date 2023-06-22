@@ -7,15 +7,15 @@ import { Observable,
   providedIn: 'root'
 })
 export class EtudiantsService {
-public url="https://coral-app-a57e6.ondigitalocean.app/etudiant"
-public url1="https://coral-app-a57e6.ondigitalocean.app/bailleur"
-public url2="https://coral-app-a57e6.ondigitalocean.app/etudiant/test/montantprevisionnel"
-public url7="https://coral-app-a57e6.ondigitalocean.app/etudiant/dernieretudiant/inscrit/annee"
-public url8="https://coral-app-a57e6.ondigitalocean.app/bailleur/postbailleur"
-public url9="https://coral-app-a57e6.ondigitalocean.app/bailleur/dernierbailleur/bailleurinscrit"
-public url5="https://coral-app-a57e6.ondigitalocean.app/etudiant/test4/totalmontant"
-public url6="https://coral-app-a57e6.ondigitalocean.app/etudiant/postetudiant"
-public url10="https://coral-app-a57e6.ondigitalocean.app/etudiant/updateetuidant"
+public url="https://digirecbackend.digirec.online/etudiant"
+public url1="https://digirecbackend.digirec.online/bailleur"
+public url2="https://digirecbackend.digirec.online/etudiant/test/montantprevisionnel"
+public url7="https://digirecbackend.digirec.online/etudiant/dernieretudiant/inscrit/annee"
+public url8="https://digirecbackend.digirec.online/bailleur/postbailleur"
+public url9="https://digirecbackend.digirec.online/bailleur/dernierbailleur/bailleurinscrit"
+public url5="https://digirecbackend.digirec.online/etudiant/test4/totalmontant"
+public url6="https://digirecbackend.digirec.online/etudiant/postetudiant"
+public url10="https://digirecbackend.digirec.online/etudiant/updateetuidant"
 
 
   constructor(private http:HttpClient) { }

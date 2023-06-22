@@ -50,7 +50,7 @@ public idbailleurpasse:any
   ngOnInit(): void {
     this.paie.getmaxid().subscribe(data=>{
       this.idfacture=data[0].idfacture+1
-      console.log(this.idfacture)
+      console.log("Num facture est "+this.idfacture)
     })
     this.etudiant.recupidetudiant().subscribe(data=>{
       console.log(data)

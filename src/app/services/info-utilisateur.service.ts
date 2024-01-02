@@ -9,9 +9,9 @@ import { Observable, observable
 export class InfoUtilisateurService {
   public envoie:any
   public data:any=new FormData()
-  public apiurl="https://digirecbackend.digirec.online/personnel"
-  public apiurl1="https://digirecbackend.digirec.online/personnel/update"
-  public apiurl2="https://digirecbackend.digirec.online/personnel/updateprofile"
+  public apiurl="http://localhost:6001/personnel"
+  public apiurl1="http://localhost:6001/personnel/update"
+  public apiurl2="http://localhost:6001/personnel/updateprofile"
   constructor(private http:HttpClient) {
    }
    recupinfo(id:string):Observable<any>{

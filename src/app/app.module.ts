@@ -43,6 +43,7 @@ import { ExporttoexelComponent } from './exporttoexel/exporttoexel.component';
 import { ModifprofilComponent } from './modifprofil/modifprofil.component';
 import { CanActivate } from '@angular/router';
 import { AuthGuardService as authGuard  } from './services/auth-guard.service';
+import { CaisseComponent } from './caisse/caisse.component';
 
 const appRoutes : Routes =[
   {path:'',component:PageacceuilComponent},
@@ -65,6 +66,7 @@ const appRoutes : Routes =[
   {path:'ajoutetudiant',component:EtudiantComponent,canActivate:[authGuard]},
   {path:'parametre',component:ParametreComponent,canActivate:[authGuard]},
   {path:'ecriture',component:EcriturecomptableComponent,canActivate:[authGuard]},
+  {path:'caisse',component:CaisseComponent,canActivate:[authGuard]},
   {path:'historiqueetudiant/:idetudiant',component:HistoriqueetudiantComponent,canActivate:[authGuard]},
   {path:'exporttoexcel',component:ExporttoexelComponent,canActivate:[authGuard]},
   {path:'modifier/:idetudiant',component:ModifprofilComponent,canActivate:[authGuard]}
@@ -96,7 +98,8 @@ const appRoutes : Routes =[
     HistoriqueetudiantComponent,
     PaginationPipePipe,
     ExporttoexelComponent,
-    ModifprofilComponent
+    ModifprofilComponent,
+    CaisseComponent
   ],
   imports: [
     BrowserModule,MatProgressSpinnerModule,NgxPrintModule,NgxPrintElementModule,

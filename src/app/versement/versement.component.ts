@@ -22,6 +22,8 @@ export class VersementComponent implements OnInit {
   public FM=false
   public ancien=false
   public nouveau=false
+  code=new FormControl()
+  codeetudiant=new FormControl()
 
   montant=new FormControl()
   libelle=new FormControl()
@@ -35,8 +37,9 @@ export class VersementComponent implements OnInit {
     console.log(this.test)
   }
 
-  code=new FormControl()
+
   public stock:any
+  public etudiantinfo:any
   affichepaiem(){
     this.paiemen=true
     console.log(this.paiemen)
@@ -84,11 +87,39 @@ this.FS=false
 
 affiche(){
   this.infoetudiant.recupinfoetudiant(this.code.value).subscribe(data=>{
-    console.log("les donnees de l'etudiant " +data)
-    this.stock=data
+    console.log("les donnees de l'etudiant " , data)
+    this.stock=data[0]
     console.log(this.stock)
   })
+  this.paie.getoneinfo(this.code.value).subscribe((data)=>{
+    console.log(data)
+    this.getdateandclasse(data)
+  })
 
+}
+affiche2(){
+  console.log('certif')
+}
+getdateandclasse(data: any) {
+  const datesUniques: { [key: string]: any } = {};
+
+  // Parcours du tableau et stockage des dates uniques et de la classe
+  for (const facture of data) {
+    const date = facture.Annee;
+    const classe = facture.classe;
+
+    // Si la date n'existe pas encore dans l'objet, ajoutez-la avec sa classe
+    if (!datesUniques[date]) {
+      datesUniques[date] = classe;
+    }
+  }
+
+  console.log(datesUniques);
+  this.etudiantinfo=datesUniques
+}
+
+getKeys(obj: any): string[] {
+  return Object.keys(obj);
 }
 
 public serveurresponse:any

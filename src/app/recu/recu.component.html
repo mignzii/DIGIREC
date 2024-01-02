@@ -177,7 +177,7 @@
           </g>
         </svg>
 
-        <div style="display: flex; flex-direction: column; align-items: center">
+        <div style="display: flex; flex-direction: row; align-items: center ; justify-content: space-around;">
           <span
             >Recu No <span class="font-bold">{{ idfacture }} </span>
           </span>
@@ -470,7 +470,7 @@
     >
       <img
         [src]="
-          'https://digirecbackend.digirec.online/personnel/image/afficher/' +
+          'http://localhost:6001/personnel/image/afficher/' +
           responsable[0].photo
         "
         alt=""

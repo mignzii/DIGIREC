@@ -1,10 +1,11 @@
-<div class="h-screen w-full bg-gris-clair">
-  <div class="pt-[75px] pl-[250px]">
+<div class=" w-full h-auto bg-white">
+  <div class="pt-6 px-5">
    <a routerLink="/dashboard/{{test}}" class="cursor-pointer"> <span class="material-icons text-bleudenuit"> arrow_back_ios </span></a>
-    <p class="text-bleudusite text-5xl font-bold">DIGIREC ESMT</p>
+    <p class=" text-2xl font-medium rounded-xl shadow-md mt-1 py-1 px-2 text-bleudusite border border-gray-200 w-72 bg-white" *ngIf="FS==true">Frais Scolaire</p>
+    <p class=" text-2xl font-medium rounded-xl shadow-md mt-1 py-1 px-2 text-bleudusite border border-gray-200 w-96 bg-white" *ngIf="FC==true">Frais De Fomation / Certification</p>
     <!-- Choix du type d'operation -->
-    <p class="py-2 text-xl text-gray-600"> Veuillez Choisir votre type d'operation</p>
-  <div class="flex my-2 space-x-4">
+   
+ <!--   <div class="flex my-2 space-x-4">
     <div class="flex flex-col space-y-1 items-center justify-center">
       <label for="" class="text-xl text-gray-600 font-semibold">Frais de Dossier</label>
     <a (click)="dossier() "><input type="radio" class="w-6 h-6" name="frais"  value="Frais de Dossier" id=""></a>
@@ -23,9 +24,9 @@
     </div>
   </div>
 
+-->
 
-
-  <div class="flex justify-between  ">
+  <div class="flex justify-between w-full shadow-md rounded-sm border border-gray-200 my-2  ">
     <!-- element a changer   -->
      <!-- pour frais de Dossier -->
      <ng-container *ngIf="FD==true"  [ngTemplateOutlet]="fraisdosiier" ></ng-container>
@@ -112,173 +113,448 @@
   </div>
 </ng-template>
 <ng-template #fraisscolarite>
-  <div class="flex w-full mb-11 mt-4 justify-between">
-    <div class="flex flex-col  space-y-4">
-      <div class="flex items-center space-x-2 my-[20px]  ">
-        <label for="" class="text-xl font-semibold text-gray-600">Nº Etudiant</label>
-        <input type="text" class="rounded-full p-3" [formControl]="code" placeholder=" CE000001"/>
-        <button class="bg-bleudusite border-2 py-3 px-8 w-[25%] rounded-[20px]" (click)="affiche() ">
-          <span class="text-white" >Chercher</span>
+  <div class="flex w-full px-2 space-x-2 mt-4 justify-between">
+    <div class="bg-white rounded-xl border border-gray-200 shadow-md mb-6 px-2 h-auto w-1/3">
+        <div class="flex flex-col space-y-2 justify-center items-center">
+          <div>
+            <img src="../../assets/IMG-20220901-WA0023.jpg" class="rounded-full w-24 my-4 h-24" alt="">
+          </div>
+          <div class=" w-5/6" >
+            <p class="text-center text-black  font-medium leading-6 text-base py-1 ">{{ stock?.prenom }} {{ stock?.nom }} </p>
+          </div>
+          <div class="bg-bleudusite w-5/6" >
+            <p class="text-center text-white font-medium leading-6 text-base py-1 ">Année Scolaire</p>
+          </div>
+          <div class="flex divide-x-2  text-white   w-5/6">
+            <div class="bg-red-500 font-medium leading-6 text-base w-full py-1 px-1" [ngClass]="{first:stock?.nbredeversement==1 || stock?.nbredeversement==2 || stock?.nbredeversement==3 } ">Versement 1</div>
+            <div class="bg-red-500 font-medium leading-6 text-base w-full py-1 px-1" [ngClass]="{first:stock?.nbredeversement==2 || stock?.nbredeversement==3  } ">Versement 2</div>
+            <div class="bg-red-500 font-medium leading-6 text-base w-full py-1  px-1" [ngClass]="{first:stock?.nbredeversement==3} ">Versement 3</div>
+          </div>
+          <div></div>
+        </div>
+        <!-- Detail -->
+        <div class="flex flex-col space-y-1">
+          <div class="flex justify-between items-center px-2  ">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 76 77">
+              <defs>
+                <filter id="Ellipse_17" x="0" y="0" width="76" height="77" filterUnits="userSpaceOnUse">
+                  <feOffset dy="3" input="SourceAlpha"/>
+                  <feGaussianBlur stdDeviation="3" result="blur"/>
+                  <feFlood flood-opacity="0.161"/>
+                  <feComposite operator="in" in2="blur"/>
+                  <feComposite in="SourceGraphic"/>
+                </filter>
+              </defs>
+              <g id="ICONE_PREVISONNNEL" data-name="ICONE PREVISONNNEL" transform="translate(8.545 6)">
+                <g transform="matrix(1, 0, 0, 1, -8.54, -6)" filter="url(#Ellipse_17)">
+                  <ellipse id="Ellipse_17-2" data-name="Ellipse 17" cx="29" cy="29.5" rx="29" ry="29.5" transform="translate(9 6)" fill="#fff"/>
+                </g>
+                <g id="_6598184_bill_finance_payment_receipt_sale_icon" data-name="6598184_bill_finance_payment_receipt_sale_icon" transform="translate(12.488 12.501)">
+                  <path id="Tracé_2573" data-name="Tracé 2573" d="M15.574,30.52h-9.5a1.127,1.127,0,1,1,0-2.254h8.735a11.2,11.2,0,0,1-.282-2.468,11.441,11.441,0,0,1,.361-2.8H6.072a1.127,1.127,0,0,1,0-2.254h9.66a11.339,11.339,0,0,1,5.557-5.264H6.072a1.127,1.127,0,0,1,0-2.254h15.78a1.127,1.127,0,0,1,.947,1.713,11.463,11.463,0,0,1,3-.417,7.479,7.479,0,0,1,1.127.056V4.381A3.381,3.381,0,0,0,23.543,1H4.381A3.381,3.381,0,0,0,1,4.381V31.433a3.381,3.381,0,0,0,3.381,3.381H19.034a11.271,11.271,0,0,1-3.46-4.294Zm-9.5-24.8h15.78a1.127,1.127,0,1,1,0,2.254H6.072a1.127,1.127,0,0,1,0-2.254Z" transform="translate(-1 -1)" fill="#3596d2"/>
+                  <path id="Tracé_2574" data-name="Tracé 2574" d="M24.017,15a9.017,9.017,0,1,0,9.017,9.017A9.017,9.017,0,0,0,24.017,15ZM21.2,20.072h.113a1.127,1.127,0,1,1-.113,0Zm5.636,7.89a1.129,1.129,0,0,1-.113-2.254h.113a1.127,1.127,0,0,1,0,2.254Zm.8-5.963L22,27.635a1.132,1.132,0,1,1-1.6-1.6L26.035,20.4a1.132,1.132,0,1,1,1.6,1.6Z" transform="translate(0.78 0.78)" fill="#3596d2"/>
+                </g>
+              </g>
+            </svg>
+            <p class=" text-black text-sm font-semibold">Montant Facturé </p>
+            <p class=" text-black text-sm font-semibold">{{stock?.montant}} </p>
+            <p class=" text-black text-sm font-semibold">F CFA </p>
+           </div>
+           <div class=" flex justify-between items-center px-2  ">
+          
+             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 76 77">
+               <defs>
+                 <filter id="Ellipse_17" x="0" y="0" width="76" height="77" filterUnits="userSpaceOnUse">
+                   <feOffset dy="3" input="SourceAlpha"/>
+                   <feGaussianBlur stdDeviation="3" result="blur"/>
+                   <feFlood flood-opacity="0.161"/>
+                   <feComposite operator="in" in2="blur"/>
+                   <feComposite in="SourceGraphic"/>
+                 </filter>
+               </defs>
+               <g id="ICONE_CA" data-name="ICONE CA" transform="translate(9.211 6)">
+                 <g transform="matrix(1, 0, 0, 1, -9.21, -6)" filter="url(#Ellipse_17)">
+                   <ellipse id="Ellipse_17-2" data-name="Ellipse 17" cx="29" cy="29.5" rx="29" ry="29.5" transform="translate(9 6)" fill="#fff"/>
+                 </g>
+                 <path id="_3671753_currency_dollar_icon" data-name="3671753_currency_dollar_icon" d="M19.612,39.224A19.612,19.612,0,1,1,39.223,19.612,19.612,19.612,0,0,1,19.612,39.224Zm1.961-9.806h1.961a5.884,5.884,0,0,0,0-11.767H15.67a1.961,1.961,0,0,1,0-3.922H27.456V9.806H21.573V5.884H17.65V9.806H15.689a5.884,5.884,0,0,0,0,11.767h7.845a1.961,1.961,0,0,1,0,3.922H11.767v3.922H17.65V33.34h3.922Z" transform="translate(9.268 9.52)" fill="#3596d2"/>
+               </g>
+             </svg>
+             <p class=" text-gray-500 text-sm font-medium">Total Réglé  </p>
+             <p class=" text-gray-500 text-sm font-medium">{{stock?.totalversement}}  </p>
+             <p class=" text-gray-500 text-sm font-medium">F CFA </p>
+      
+        
+           </div>
+           <div class=" flex justify-between items-center px-2 ">
+        
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 77 77">
+                <defs>
+                  <filter id="Ellipse_17" x="0" y="0" width="77" height="77" filterUnits="userSpaceOnUse">
+                    <feOffset dy="3" input="SourceAlpha"/>
+                    <feGaussianBlur stdDeviation="3" result="blur"/>
+                    <feFlood flood-opacity="0.161"/>
+                    <feComposite operator="in" in2="blur"/>
+                    <feComposite in="SourceGraphic"/>
+                  </filter>
+                </defs>
+                <g id="ICONE_RAP" data-name="ICONE RAP" transform="translate(9.105 6)">
+                  <g transform="matrix(1, 0, 0, 1, -9.1, -6)" filter="url(#Ellipse_17)">
+                    <circle id="Ellipse_17-2" data-name="Ellipse 17" cx="29.5" cy="29.5" r="29.5" transform="translate(9 6)" fill="#fff"/>
+                  </g>
+                  <g id="icone-restant" transform="translate(5.844 11.713)">
+                    <path id="Tracé_2571" data-name="Tracé 2571" d="M58.441,24.629a2.941,2.941,0,0,0-4.16,0L53,25.909A17.668,17.668,0,0,0,35.768,12a17.43,17.43,0,0,0-10.6,3.608A2.941,2.941,0,0,0,28.718,20.3a11.6,11.6,0,0,1,7.05-2.413,11.746,11.746,0,0,1,11.117,8.079l-1.947-1.551a2.94,2.94,0,0,0-3.666,4.6l7.372,5.884a2.937,2.937,0,0,0,3.913-.218l5.884-5.884a2.941,2.941,0,0,0,0-4.16Z" transform="translate(-12.234 -12)" fill="#f26013"/>
+                    <path id="Tracé_2572" data-name="Tracé 2572" d="M30.585,51.241a11.6,11.6,0,0,1-7.05,2.413,11.746,11.746,0,0,1-11.117-8.079l1.946,1.551a2.94,2.94,0,0,0,3.666-4.6l-7.372-5.884a2.945,2.945,0,0,0-3.913.218L.863,42.749a2.942,2.942,0,1,0,4.16,4.16l1.28-1.28A17.668,17.668,0,0,0,23.535,59.538a17.43,17.43,0,0,0,10.6-3.608,2.941,2.941,0,1,0-3.551-4.689Z" transform="translate(-0.001 -24.236)" fill="#f26013"/>
+                  </g>
+                </g>
+              </svg>
+              <p class=" text-black text-sm font-semibold">Solde </p>
+              <p class=" text-black text-sm font-semibold">{{stock?.montantEtat}}  </p>
+              <p class=" text-black text-sm font-semibold">F CFA </p>
+       
+        
+           </div>
+           
+        </div>
+        <!-- Fin Detail -->
+        <!-- prise en chager -->
+          <div class="w-40 bg-bleudusite flex flex-col py-1 space-y-2 px-2 rounded-md text-white">
+            <p class="text-sm">Pris (e) en charge par </p>
+            <p class="text-sm">{{stock?.statut}}</p>
+
+          </div>
+        <!-- Fin prise en charge -->
+        <!-- Résumé Paiement  -->
+        <div *ngIf="etudiantinfo">
+          <div class="flex justify-between mt-1" *ngFor="let key of getKeys(etudiantinfo)">
+            <div class="flex flex-col space-y-1">
+              <p class="text-sm font-semibold">Année Scolaire</p>
+              <p>{{ key }}</p>
+            </div>
+            <div class="flex flex-col space-y-1">
+              <p class="text-sm font-semibold">Classe</p>
+              <p>{{ etudiantinfo[key] }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <div *ngIf="!etudiantinfo" class="flex justify-center items-center space-y-2">
+          Aucune information sur l'étudiant disponible.
+        </div>
+        
+        <!-- Fin Résumé Paiement  -->
+    </div>
+    <div class="flex flex-col w-1/3 justify-between  space-y-4">
+      <div class="flex  space-y-2 my-[20px] flex-col  ">
+        <label for="" class="text-xl font-semibold text-gray-600">Adresse Email ou Identifiant</label>
+        <input type="text" class="rounded-full border border-gray-500 p-3" [formControl]="code" placeholder=" mbaye.diop@esmt.sn"/>
+        <button class="bg-bleudusite border-2 py-3 text-center w-[38%] rounded-[20px]" (click)="affiche() ">
+          <span class="text-white" >Rechercher</span>
         </button>
       </div>
-      <div class="flex space-x-8">
-        <div class="flex flex-col space-y-2">
-          <label for="annee"
-            ><div class="text-xl font-semibold text-gray-600">Année scolaire</div>
-          </label>
-          <div class="flex items-center w-full bg-white rounded-full">
-            <input type="text" class="rounded-full p-3" value="{{stock[0].annee_scolaire}} " placeholder="   2022-2023" />
 
-          </div>
-        </div>
-        <div class="flex flex-col space-y-2">
-          <label for="Classe"
-            ><div class="text-xl  font-semibold text-gray-600">Classe</div>
-          </label>
-          <div class="flex items-center w-full bg-white rounded-full">
-            <input type="text" class="rounded-full p-3" value="{{stock[0].classe}}" placeholder="  MDSIA/MS2D"/>
-
-          </div>
-        </div>
+      <div class="flex items-center  space-x-2">
+        <a (click)="scolarite()" class="bg-green-500 cursor-pointer flex items-center justify-between py-3 px-1 rounded-xl font-medium text-white space-x-2 "><p> Frais Scolaires
+          </p><span class="material-symbols-outlined">
+            person_check
+            </span></a>
+        <a (click)="certif()" class="bg-bleudusite cursor-pointer flex items-center justify-between py-3 px-1 rounded-xl font-medium text-white space-x-2 "><p>Frais de formation  </p>
+          <span class="material-symbols-outlined">
+            workspace_premium
+            </span></a>
+        <a class="bg-bleudusite  flex items-center cursor-pointer justify-between py-3 px-1 rounded-xl font-medium text-white space-x-2 ">
+          <p>Autres  </p>
+          <span class="material-symbols-outlined">
+            content_copy
+            </span>
+          </a>
       </div>
-      <div class="flex space-x-8">
-        <div class="flex flex-col">
-          <label for="nom"><div class="text-xl font-semibold text-gray-600">Nom</div> </label>
-          <div class="flex items-center w-full bg-white rounded-full">
-            <input type="text" class="rounded-full p-3" value="{{stock[0].nom}}" placeholder="   MBAYE" />
-
-          </div>
-        </div>
-
-        <div class="flex space-x-8">
-        <div class="flex flex-col">
-          <label for="Prenom"
-            ><div class="text-xl font-semibold text-gray-600">Prénom</div>
-          </label>
-          <div class="flex items-center w-full bg-white rounded-full">
-            <input type="text" class="rounded-full p-3" value="{{stock[0].prenom}}" placeholder="   Jean Pierre" />
-
-          </div>
-        </div>
-      </div>
-      </div>
-      
-     <div class="flex space-x-2">
-      <a href="#ex1" rel="modal:open" class=" ">  <button (click)="postversement() " class="bg-bleudusite border-2 py-3 px-8 w-[100%] rounded-[20px]">
-        <span class="text-white">Enregistrer</span>
-      </button></a>
-
-     </div>
 
     </div>
-    <div class="bg-bleudusite p-8 mt-8 ml-2 mr-20 rounded-[10%] shadow-md">
-      <div class="flex flex-col items-center space-y-8">
-       
-        <div class="flex flex-col space-y-2 w-[80%]">
-          <div class="flex flex-col mb-5  items-center">
-            <label for="Prenom"><div class="text-xl font-bold text-white">
-              Montant</div>
-            </label>
-            <input type="text" class="w-full border rounded-full p-3" [formControl]="montant" placeholder="1 255 000 FCFA"/>
-          </div>
-          <div class="flex flex-col items-center mt-1">
-            <label for="Prenom"><div class="text-xl font-bold text-white">
-              Type de versement</div>
-            </label>
-
-          <div class="flex justify-between space-x-2 space-y-1 text-white ">
-            <div class=" flex flex-col mt-1 items-center font-semibold">
-              <label for="">Espèce</label>
-              <a (click)="affichecontraire() "> <input type="radio" class="w-6 h-6" value="Espece" [formControl]="type" ></a> 
+    <div class="flex flex-col w-1/4 space-y-1 mt-8 ml-2 mr-20">
+      <div class="bg-bleudusite  h-[530px] p-8  rounded-[10%] shadow-md">
+        <div class="flex flex-col items-center space-y-8">
+         
+          <div class="flex flex-col space-y-2 w-[80%]">
+            <div class="flex flex-col mb-5  items-center">
+              <label for="Prenom"><div class="text-xl font-bold text-white">
+                Montant</div>
+              </label>
+              <input type="text" class="w-full border rounded-full p-3" [formControl]="montant" placeholder="1 255 000 FCFA"/>
             </div>
-            <div class=" flex flex-col items-center font-semibold">
-              <label for="">Chèque</label>
-              <a (click)="affichepaiem() "><input type="radio" value="Cheque" class="w-6 h-6" [formControl]="type" ></a> 
-            </div>
-            <div class=" flex flex-col items-center font-semibold">
-              <label for="">Virement</label>
-              <a (click)="affichepaiem() "> <input type="radio" value="Virement" class="w-6 h-6" [formControl]="type"  ></a>
-            </div>
-            <div class="flex flex-col items-center font-semibold">
-              <label for="">Dépôt</label>
-             <a (click)="affichepaiem() "><input type="radio" value="Banque" class="w-6 h-6" [formControl]="type" ></a> 
-            </div>
-          </div>
-          <div>
-            <ng-container *ngIf="paiemen==true"  [ngTemplateOutlet]="paiement" ></ng-container>
-          </div>
-
-          </div>
-          <div class="flex flex-col items-center">
-            <label for="Prenom">
-              <div class="text-md font-bold text-white">
-                Date
+            <div class="flex flex-col items-center mt-1">
+              <label for="Prenom"><div class="text-xl font-bold text-white">
+                Type de versement</div>
+              </label>
+  
+            <div class="flex justify-between space-x-2 space-y-1 text-white ">
+              <div class=" flex flex-col mt-1 items-center font-semibold">
+                <label for="">Espèce</label>
+                <a (click)="affichecontraire() "> <input type="radio" class="w-6 h-6" value="Espece" [formControl]="type" ></a> 
               </div>
-            </label>
-            <div class="">
-              <input type="date" class="rounded-full p-3 border text-gray-600" placeholder="01/01/2022" [formControl]="date"/>
+              <div class=" flex flex-col items-center font-semibold">
+                <label for="">Chèque</label>
+                <a (click)="affichepaiem() "><input type="radio" value="Cheque" class="w-6 h-6" [formControl]="type" ></a> 
+              </div>
+              <div class=" flex flex-col items-center font-semibold">
+                <label for="">Virement</label>
+                <a (click)="affichepaiem() "> <input type="radio" value="Virement" class="w-6 h-6" [formControl]="type"  ></a>
+              </div>
+              <div class="flex flex-col items-center font-semibold">
+                <label for="">Dépôt</label>
+               <a (click)="affichepaiem() "><input type="radio" value="Banque" class="w-6 h-6" [formControl]="type" ></a> 
+              </div>
             </div>
-
-
+            <div>
+              <ng-container *ngIf="paiemen==true"  [ngTemplateOutlet]="paiement" ></ng-container>
+            </div>
+  
+            </div>
+            <div class="flex flex-col items-center">
+              <label for="Prenom">
+                <div class="text-md font-bold text-white">
+                  Date
+                </div>
+              </label>
+              <div class="">
+                <input type="date" class="rounded-full p-3 border text-gray-600" placeholder="01/01/2022" [formControl]="date"/>
+              </div>
+  
+  
+            </div>
           </div>
+         
         </div>
       </div>
+      <div class="flex space-x-2 justify-center">
+        <a href="#ex1" rel="modal:open" class=" ">  <button (click)="postversement() " class="bg-bleudusite border-2 py-3 px-8 w-[100%] rounded-[20px]">
+          <span class="text-white">Enregistrer</span>
+        </button></a>
+  
+       </div>
     </div>
+   
   </div>
 </ng-template>
 <ng-template #fraiscertif>
-  <div class="flex flex-col  space-y-4">
-    <div class="flex items-center space-x-2 my-[20px]  ">
-      <label for="" class="text-xl font-bold">Code Certification</label>
-      <input type="text" class="rounded-full p-3" [formControl]="code" placeholder="numero etudiant "/>
-      <button class="bg-bleudusite border-2 py-3 px-8 w-[20%] rounded-[20px]" (click)="affiche() ">
-        <span class="text-white" >Chercher</span>
-      </button>
+  <div class="flex w-full px-2 space-x-2 mt-4 justify-between">
+    <div class="bg-white rounded-xl border border-gray-200 shadow-md mb-6 px-2 h-auto w-1/3">
+        <div class="flex flex-col space-y-2 justify-center items-center">
+          <div>
+            <img src="../../assets/IMG-20220901-WA0023.jpg" class="rounded-full w-24 my-4 h-24" alt="">
+          </div>
+          <div class=" w-5/6" >
+            <p class="text-center text-black  font-medium leading-6 text-base py-1 ">Test Thiam</p>
+          </div>
+          <div class="bg-bleudusite w-5/6" >
+            <p class="text-center text-white font-medium leading-6 text-base py-1 ">Année Scolaire</p>
+          </div>
+          <div class="flex w-5/6 ">
+            <p class="bg-[#1ad4a5] w-full text-white py-1 px-1 leading-6">1ére tranche</p>
+            <p class="bg-[#1ad4a5] w-full text-white py-1 px-1 leading-6">2éme tranche</p>
+            <p class="bg-[#FE066B] w-full text-white px-1 py-1 leading-6">3éme tranche</p>
+          </div>
+          <div></div>
+        </div>
+        <!-- Detail -->
+        <div class="flex flex-col space-y-1">
+          <div class="flex justify-between items-center px-2  ">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 76 77">
+              <defs>
+                <filter id="Ellipse_17" x="0" y="0" width="76" height="77" filterUnits="userSpaceOnUse">
+                  <feOffset dy="3" input="SourceAlpha"/>
+                  <feGaussianBlur stdDeviation="3" result="blur"/>
+                  <feFlood flood-opacity="0.161"/>
+                  <feComposite operator="in" in2="blur"/>
+                  <feComposite in="SourceGraphic"/>
+                </filter>
+              </defs>
+              <g id="ICONE_PREVISONNNEL" data-name="ICONE PREVISONNNEL" transform="translate(8.545 6)">
+                <g transform="matrix(1, 0, 0, 1, -8.54, -6)" filter="url(#Ellipse_17)">
+                  <ellipse id="Ellipse_17-2" data-name="Ellipse 17" cx="29" cy="29.5" rx="29" ry="29.5" transform="translate(9 6)" fill="#fff"/>
+                </g>
+                <g id="_6598184_bill_finance_payment_receipt_sale_icon" data-name="6598184_bill_finance_payment_receipt_sale_icon" transform="translate(12.488 12.501)">
+                  <path id="Tracé_2573" data-name="Tracé 2573" d="M15.574,30.52h-9.5a1.127,1.127,0,1,1,0-2.254h8.735a11.2,11.2,0,0,1-.282-2.468,11.441,11.441,0,0,1,.361-2.8H6.072a1.127,1.127,0,0,1,0-2.254h9.66a11.339,11.339,0,0,1,5.557-5.264H6.072a1.127,1.127,0,0,1,0-2.254h15.78a1.127,1.127,0,0,1,.947,1.713,11.463,11.463,0,0,1,3-.417,7.479,7.479,0,0,1,1.127.056V4.381A3.381,3.381,0,0,0,23.543,1H4.381A3.381,3.381,0,0,0,1,4.381V31.433a3.381,3.381,0,0,0,3.381,3.381H19.034a11.271,11.271,0,0,1-3.46-4.294Zm-9.5-24.8h15.78a1.127,1.127,0,1,1,0,2.254H6.072a1.127,1.127,0,0,1,0-2.254Z" transform="translate(-1 -1)" fill="#3596d2"/>
+                  <path id="Tracé_2574" data-name="Tracé 2574" d="M24.017,15a9.017,9.017,0,1,0,9.017,9.017A9.017,9.017,0,0,0,24.017,15ZM21.2,20.072h.113a1.127,1.127,0,1,1-.113,0Zm5.636,7.89a1.129,1.129,0,0,1-.113-2.254h.113a1.127,1.127,0,0,1,0,2.254Zm.8-5.963L22,27.635a1.132,1.132,0,1,1-1.6-1.6L26.035,20.4a1.132,1.132,0,1,1,1.6,1.6Z" transform="translate(0.78 0.78)" fill="#3596d2"/>
+                </g>
+              </g>
+            </svg>
+            <p class=" text-black text-sm font-semibold">Montant Facturé </p>
+            <p class=" text-black text-sm font-semibold">1 255 000 </p>
+            <p class=" text-black text-sm font-semibold">F CFA </p>
+           </div>
+           <div class=" flex justify-between items-center px-2  ">
+          
+             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 76 77">
+               <defs>
+                 <filter id="Ellipse_17" x="0" y="0" width="76" height="77" filterUnits="userSpaceOnUse">
+                   <feOffset dy="3" input="SourceAlpha"/>
+                   <feGaussianBlur stdDeviation="3" result="blur"/>
+                   <feFlood flood-opacity="0.161"/>
+                   <feComposite operator="in" in2="blur"/>
+                   <feComposite in="SourceGraphic"/>
+                 </filter>
+               </defs>
+               <g id="ICONE_CA" data-name="ICONE CA" transform="translate(9.211 6)">
+                 <g transform="matrix(1, 0, 0, 1, -9.21, -6)" filter="url(#Ellipse_17)">
+                   <ellipse id="Ellipse_17-2" data-name="Ellipse 17" cx="29" cy="29.5" rx="29" ry="29.5" transform="translate(9 6)" fill="#fff"/>
+                 </g>
+                 <path id="_3671753_currency_dollar_icon" data-name="3671753_currency_dollar_icon" d="M19.612,39.224A19.612,19.612,0,1,1,39.223,19.612,19.612,19.612,0,0,1,19.612,39.224Zm1.961-9.806h1.961a5.884,5.884,0,0,0,0-11.767H15.67a1.961,1.961,0,0,1,0-3.922H27.456V9.806H21.573V5.884H17.65V9.806H15.689a5.884,5.884,0,0,0,0,11.767h7.845a1.961,1.961,0,0,1,0,3.922H11.767v3.922H17.65V33.34h3.922Z" transform="translate(9.268 9.52)" fill="#3596d2"/>
+               </g>
+             </svg>
+             <p class=" text-gray-500 text-sm font-medium">Total Réglé  </p>
+             <p class=" text-gray-500 text-sm font-medium">855 000 </p>
+             <p class=" text-gray-500 text-sm font-medium">F CFA </p>
+      
+        
+           </div>
+           <div class=" flex justify-between items-center px-2 ">
+        
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 77 77">
+                <defs>
+                  <filter id="Ellipse_17" x="0" y="0" width="77" height="77" filterUnits="userSpaceOnUse">
+                    <feOffset dy="3" input="SourceAlpha"/>
+                    <feGaussianBlur stdDeviation="3" result="blur"/>
+                    <feFlood flood-opacity="0.161"/>
+                    <feComposite operator="in" in2="blur"/>
+                    <feComposite in="SourceGraphic"/>
+                  </filter>
+                </defs>
+                <g id="ICONE_RAP" data-name="ICONE RAP" transform="translate(9.105 6)">
+                  <g transform="matrix(1, 0, 0, 1, -9.1, -6)" filter="url(#Ellipse_17)">
+                    <circle id="Ellipse_17-2" data-name="Ellipse 17" cx="29.5" cy="29.5" r="29.5" transform="translate(9 6)" fill="#fff"/>
+                  </g>
+                  <g id="icone-restant" transform="translate(5.844 11.713)">
+                    <path id="Tracé_2571" data-name="Tracé 2571" d="M58.441,24.629a2.941,2.941,0,0,0-4.16,0L53,25.909A17.668,17.668,0,0,0,35.768,12a17.43,17.43,0,0,0-10.6,3.608A2.941,2.941,0,0,0,28.718,20.3a11.6,11.6,0,0,1,7.05-2.413,11.746,11.746,0,0,1,11.117,8.079l-1.947-1.551a2.94,2.94,0,0,0-3.666,4.6l7.372,5.884a2.937,2.937,0,0,0,3.913-.218l5.884-5.884a2.941,2.941,0,0,0,0-4.16Z" transform="translate(-12.234 -12)" fill="#f26013"/>
+                    <path id="Tracé_2572" data-name="Tracé 2572" d="M30.585,51.241a11.6,11.6,0,0,1-7.05,2.413,11.746,11.746,0,0,1-11.117-8.079l1.946,1.551a2.94,2.94,0,0,0,3.666-4.6l-7.372-5.884a2.945,2.945,0,0,0-3.913.218L.863,42.749a2.942,2.942,0,1,0,4.16,4.16l1.28-1.28A17.668,17.668,0,0,0,23.535,59.538a17.43,17.43,0,0,0,10.6-3.608,2.941,2.941,0,1,0-3.551-4.689Z" transform="translate(-0.001 -24.236)" fill="#f26013"/>
+                  </g>
+                </g>
+              </svg>
+              <p class=" text-black text-sm font-semibold">Solde </p>
+              <p class=" text-black text-sm font-semibold">855 000 </p>
+              <p class=" text-black text-sm font-semibold">F CFA </p>
+       
+        
+           </div>
+           
+        </div>
+        <!-- Fin Detail -->
+        <!-- prise en chager -->
+          <div class="w-40 bg-bleudusite flex flex-col space-y-2 px-2 rounded-md text-white">
+            <p class="text-sm">Pris (e) en charge par </p>
+            <p class="text-sm">Fann Point E</p>
+
+          </div>
+        <!-- Fin prise en charge -->
+        <!-- Résumé Paiement  -->
+          <div class="flex justify-between">
+            <div class="flex flex-col space-y-3">
+              <p class="text-sm font-semibold">Annee Scolaire </p>
+              <p>2020- 2021</p>
+              <p>2021- 2022</p>
+              <p>2023- 2024</p>
+              <p>2019- 2020</p>
+            </div>
+            <div  class="flex flex-col space-y-1">
+              <p class="text-sm font-semibold">Classe </p>
+              <p>LMEN 1</p>
+              <p>LMEN 2</p>
+              <p>LMEN 3</p>
+              <p>DIC 1</p>
+              <p>Master 1</p>
+            </div>
+          </div>
+        <!-- Fin Résumé Paiement  -->
     </div>
-    <div class="flex space-x-8">
-      <div class="flex flex-col space-y-2">
-        <label for="annee"
-          ><div class="text-xl font-bold">Annee Certification</div>
-        </label>
-        <div class="flex items-center w-full bg-white rounded-full">
-          <input type="text" class="rounded-full p-3" value="{{stock[0].annee_scolaire}} " placeholder=" 2022-2023" />
-
-        </div>
+    <div class="flex flex-col w-1/3 justify-between  space-y-4">
+      <div class="flex  space-y-2 my-[20px] flex-col  ">
+        <label for="" class="text-xl font-semibold text-gray-600">Adresse Email ou Identifiant</label>
+        <input type="text" class="rounded-full border border-gray-500 p-3" [formControl]="codeetudiant" placeholder=" mbaye.diop@esmt.sn"/>
+        <button class="bg-bleudusite border-2 py-3 text-center w-[38%] rounded-[20px]" (click)="affiche2() ">
+          <span class="text-white" >Rechercher</span>
+        </button>
       </div>
-      <div class="flex flex-col">
-        <label for="Classe"
-          ><div class="text-xl font-bold">Niveau</div>
-        </label>
-        <div class="flex items-center w-full bg-white rounded-full">
-          <input type="text" class="rounded-full p-3" value="{{stock[0].classe}}" placeholder="MP-S2"/>
 
-        </div>
+      <div class="flex items-center  space-x-2">
+        <a (click)="scolarite()" class="bg-green-500 cursor-pointer flex items-center justify-between py-3 px-1 rounded-xl font-medium text-white space-x-2 " [ngStyle]="{'background-color':FS==true ? 'green' : '#0078B7' }">
+          <p> Frais Scolaires
+          </p><span class="material-symbols-outlined">
+            person_check
+            </span></a>
+        <a (click)="certif()" class="bg-bleudusite cursor-pointer flex items-center justify-between py-3 px-1 rounded-xl font-medium text-white space-x-2 " [ngStyle]="{'background-color':FC==true ? 'green' : '#0078B7' }"  ><p>Frais de formation  </p>
+          <span class="material-symbols-outlined">
+            workspace_premium
+            </span></a>
+        <a class="bg-bleudusite  flex items-center cursor-pointer justify-between py-3 px-1 rounded-xl font-medium text-white space-x-2 ">
+          <p>Autres  </p>
+          <span class="material-symbols-outlined">
+            content_copy
+            </span>
+          </a>
       </div>
+
     </div>
-    <div class="flex space-x-8">
-      <div class="flex flex-col">
-        <label for="nom"><div class="text-xl font-bold">Nom</div> </label>
-        <div class="flex items-center w-full bg-white rounded-full">
-          <input type="text" class="rounded-full p-3" value="{{stock[0].nom}}" placeholder="Diakhoumpa" />
-
+    <div class="flex flex-col w-1/4 space-y-1 mt-8 ml-2 mr-20">
+      <div class="bg-bleudusite  h-[530px] p-8  rounded-[10%] shadow-md">
+        <div class="flex flex-col items-center space-y-8">
+         
+          <div class="flex flex-col space-y-2 w-[80%]">
+            <div class="flex flex-col mb-5  items-center">
+              <label for="Prenom"><div class="text-xl font-bold text-white">
+                Montant</div>
+              </label>
+              <input type="text" class="w-full border rounded-full p-3" [formControl]="montant" placeholder="1 255 000 FCFA"/>
+            </div>
+            <div class="flex flex-col items-center mt-1">
+              <label for="Prenom"><div class="text-xl font-bold text-white">
+                Type de versement</div>
+              </label>
+  
+            <div class="flex justify-between space-x-2 space-y-1 text-white ">
+              <div class=" flex flex-col mt-1 items-center font-semibold">
+                <label for="">Espèce</label>
+                <a (click)="affichecontraire() "> <input type="radio" class="w-6 h-6" value="Espece" [formControl]="type" ></a> 
+              </div>
+              <div class=" flex flex-col items-center font-semibold">
+                <label for="">Chèque</label>
+                <a (click)="affichepaiem() "><input type="radio" value="Cheque" class="w-6 h-6" [formControl]="type" ></a> 
+              </div>
+              <div class=" flex flex-col items-center font-semibold">
+                <label for="">Virement</label>
+                <a (click)="affichepaiem() "> <input type="radio" value="Virement" class="w-6 h-6" [formControl]="type"  ></a>
+              </div>
+              <div class="flex flex-col items-center font-semibold">
+                <label for="">Dépôt</label>
+               <a (click)="affichepaiem() "><input type="radio" value="Banque" class="w-6 h-6" [formControl]="type" ></a> 
+              </div>
+            </div>
+            <div>
+              <ng-container *ngIf="paiemen==true"  [ngTemplateOutlet]="paiement" ></ng-container>
+            </div>
+  
+            </div>
+            <div class="flex flex-col items-center">
+              <label for="Prenom">
+                <div class="text-md font-bold text-white">
+                  Date
+                </div>
+              </label>
+              <div class="">
+                <input type="date" class="rounded-full p-3 border text-gray-600" placeholder="01/01/2022" [formControl]="date"/>
+              </div>
+  
+  
+            </div>
+          </div>
+         
         </div>
       </div>
-      <div class="flex flex-col">
-        <label for="Prenom"
-          ><div class="text-xl font-bold">Prenom</div>
-        </label>
-        <div class="flex items-center w-full bg-white rounded-full">
-          <input type="text" class="rounded-full p-3" value="{{stock[0].prenom}}" placeholder="ABDOU" />
-
-        </div>
-      </div>
+      <div class="flex space-x-2 justify-center">
+        <a href="#ex1" rel="modal:open" class=" ">  <button (click)="postversement() " class="bg-bleudusite border-2 py-3 px-8 w-[100%] rounded-[20px]">
+          <span class="text-white">Enregistrer</span>
+        </button></a>
+  
+       </div>
     </div>
-   <div class="flex space-x-2">
-    <a href="#ex1" rel="modal:open" class=" ">  <button (click)="postversement() " class="bg-bleudusite border-2 py-3 px-8 w-[100%] rounded-[20px]">
-      <span class="text-white">Enregistrer</span>
-    </button></a>
-
-   </div>
+   
   </div>
 </ng-template>
 <ng-template #fraismodule>

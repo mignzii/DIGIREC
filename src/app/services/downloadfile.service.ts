@@ -12,27 +12,27 @@ export class DownloadfileService {
   constructor(private http: HttpClient) { }
   
   downloadFile(): Observable<any>{
-    return this.http.get('http://localhost:6001/facture/download');
+    return this.http.get('https://digirecbackend.digirec.online/facture/download');
   }
   downloadFiletrue(): Observable<Blob>{
-    return this.http.get('http://localhost:6001/facture/downloadfile', { responseType: 'blob' });
+    return this.http.get('https://digirecbackend.digirec.online/facture/downloadfile', { responseType: 'blob' });
   }
   downloadFileCA(): Observable<Blob> {
-    return this.http.get('http://localhost:6001/etudiant/downloadCA', { responseType: 'blob' });
+    return this.http.get('https://digirecbackend.digirec.online/etudiant/downloadCA', { responseType: 'blob' });
   }
   downloadFileteanche(): Observable<Blob> {
-    return this.http.get('http://localhost:6001/etudiant/downloadtranche', { responseType: 'blob' });
+    return this.http.get('https://digirecbackend.digirec.online/etudiant/downloadtranche', { responseType: 'blob' });
   }
   donwloadfileDebiteur(): Observable<Blob> {
-    return this.http.get('http://localhost:6001/etudiant/downloaddebiteur', { responseType: 'blob' });
+    return this.http.get('https://digirecbackend.digirec.online/etudiant/downloaddebiteur', { responseType: 'blob' });
   }
   createfiletranche(): Observable<any> {
-    return this.http.get('http://localhost:6001/etudiant/createdownloadtranche');
+    return this.http.get('https://digirecbackend.digirec.online/etudiant/createdownloadtranche');
   }
   createfileCA(): Observable<any> {
-    return this.http.get('http://localhost:6001/etudiant/createdownloadCA');
+    return this.http.get('https://digirecbackend.digirec.online/etudiant/createdownloadCA');
   }
   createfileDebiteur(): Observable<any> {
-    return this.http.get('http://localhost:6001/etudiant/createdownloaddebiteur');
+    return this.http.get('https://digirecbackend.digirec.online/etudiant/createdownloaddebiteur');
   }
 }

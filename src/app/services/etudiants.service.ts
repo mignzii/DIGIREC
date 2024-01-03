@@ -7,16 +7,16 @@ import { Observable,
   providedIn: 'root'
 })
 export class EtudiantsService {
-public url="http://localhost:6001/etudiant"
-public url1="http://localhost:6001/bailleur"
-public url2="http://localhost:6001/etudiant/test/montantprevisionnel"
-public url7="http://localhost:6001/etudiant/dernieretudiant/inscrit/annee"
-public url8="http://localhost:6001/bailleur/postbailleur"
-public url9="http://localhost:6001/bailleur/dernierbailleur/bailleurinscrit"
-public url5="http://localhost:6001/etudiant/test4/totalmontant"
-public url6="http://localhost:6001/etudiant/postetudiant"
-public url10="http://localhost:6001/etudiant/updateetuidant"
-public url11="http://localhost:6001/etudiant/passerEtudiant"
+public url="https://digirecbackend.digirec.online/etudiant"
+public url1="https://digirecbackend.digirec.online/bailleur"
+public url2="https://digirecbackend.digirec.online/etudiant/test/montantprevisionnel"
+public url7="https://digirecbackend.digirec.online/etudiant/dernieretudiant/inscrit/annee"
+public url8="https://digirecbackend.digirec.online/bailleur/postbailleur"
+public url9="https://digirecbackend.digirec.online/bailleur/dernierbailleur/bailleurinscrit"
+public url5="https://digirecbackend.digirec.online/etudiant/test4/totalmontant"
+public url6="https://digirecbackend.digirec.online/etudiant/postetudiant"
+public url10="https://digirecbackend.digirec.online/etudiant/updateetuidant"
+public url11="https://digirecbackend.digirec.online/etudiant/passerEtudiant"
 
   constructor(private http:HttpClient) { }
   public data:any=new FormData()

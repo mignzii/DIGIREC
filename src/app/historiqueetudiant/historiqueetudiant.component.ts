@@ -44,7 +44,7 @@ export class HistoriqueetudiantComponent implements OnInit {
   }
   facture_etudiant:any
   sortirfacu(){
-    this.facture_etudiant=this.rec.filter((item:any)=> item.libelle==='facture' 
+    this.facture_etudiant=this.rec.filter((item:any)=> item.libelle==='Facture Scolarite' 
     )
     console.log(this.facture_etudiant)
     this.facture_affiche=true

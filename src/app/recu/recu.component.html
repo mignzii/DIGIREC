@@ -177,58 +177,58 @@
           </g>
         </svg>
 
-        <div style="display: flex; flex-direction: row; align-items: center ; justify-content: space-around;">
+        <div style="display: flex; flex-direction: row; align-items: center ; justify-content: space-around; width: 100%;">
           <span
             >Recu No <span class="font-bold">{{ idfacture }} </span>
           </span>
           <span class="font-bold">{{ date }}</span>
         </div>
         <!-- elements grand div -->
-        <div style="display: flex">
+        <div style="display: flex ; ">
           <div>
-            <div>
-              <p>Nom :</p>
+            <div  >
+              <p style="margin-bottom: 4px;" >Nom :</p>
             </div>
             <div>
-              <p>Prenom :</p>
+              <p style="margin-bottom: 4px;">Prenom :</p>
             </div>
             <div>
-              <p>Email :</p>
+              <p style="margin-bottom: 4px;">Email :</p>
             </div>
             <div>
-              <p>Classe 4 :</p>
+              <p style="margin-bottom: 4px;">Classe :</p>
             </div>
             <div>
-              <p>Objet :</p>
+              <p style="margin-bottom: 4px;">Objet :</p>
             </div>
             <div>
-              <p>Montant :</p>
+              <p style="margin-bottom: 4px;">Montant :</p>
             </div>
             <div>
-              <p>Mode de reglement :</p>
+              <p style="margin-bottom: 4px;">Mode de reglement :</p>
             </div>
           </div>
           <div>
             <div>
-              <p>{{ res[0].nom }}</p>
+              <p style="margin-bottom: 4px;">{{ res[0].nom }}</p>
             </div>
             <div>
-              <p>{{ res[0].prenom }}</p>
+              <p style="margin-bottom: 4px;">{{ res[0].prenom }}</p>
             </div>
             <div>
-              <p>{{ res[0].email }}</p>
+              <p style="margin-bottom: 4px;">{{ res[0].email }}</p>
             </div>
             <div>
-              <p>{{ res[0].classe }}</p>
+              <p style="margin-bottom: 4px;">{{ res[0].classe }}</p>
             </div>
             <div>
-              <p>{{ libelle }}</p>
+              <p style="margin-bottom: 4px;">{{ libelle }}</p>
             </div>
             <div>
-              <p>{{ montant }} F</p>
+              <p style="margin-bottom: 4px;">{{ montant }} F</p>
             </div>
             <div>
-              <p>Especes</p>
+              <p style="margin-bottom: 4px;">Especes</p>
             </div>
           </div>
         </div>
@@ -237,10 +237,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: column;
+            flex-direction: column;margin-top: 4px;
           "
         >
-          <span>Rocade Fann Bel Air,Dakar,Liberte Senegal</span>
+          <span style="margin-bottom: 4px;">Rocade Fann Bel Air,Dakar,Liberte Senegal</span>
           <span>33 8645778 - 337599076</span>
         </div>
         <div

@@ -95,7 +95,7 @@
                     </svg>
                     <div class="flex  flex-col items-center justify-center">
                       <p  class="w-full text-center  font-medium text-black "> reçus émis</p>
-                      <p  class="font-medium  " >{{encaisser.length}} reçus </p>
+                      <p  class="font-medium  " >{{encaisser?.length}} reçus </p>
                      </div>
                   </div>
   
@@ -113,7 +113,7 @@
                   <input type="date" class="bg-bleudusite px-2 text-white rounded-md" name="date2" id="">
                 </div>
               <div class="w-full  py-2 px-1">
-                <table class="w-full border font-bold ">
+                <table class="w-full border font-bold " datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
                   <thead>
                     <tr>
                     <th class="border-2  text-bleudusite text-center font-bold py-1">Date</th>

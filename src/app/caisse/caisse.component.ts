@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PaiementService } from '../services/paiement.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-caisse',
@@ -11,15 +12,22 @@ export class CaisseComponent implements OnInit {
   public Totaljour:any
   public Recujour:any
   public encaisser:any
+  dtOptions: any = {};
+  dtTrigger: Subject<any> = new Subject<any>();
   constructor(private caiisedetail:PaiementService ) { }
 
   ngOnInit(): void {
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 2
+    };
     this.caiisedetail.getallinfo().subscribe(data=>{
       console.log(data)
       this.encaisser=data.filter((element:any)=>{
         return element.Type_versement=="Espece"
       })
       console.log(this.encaisser)
+      this.dtTrigger.next(this.encaisser)
       this.moyenEncaisse=(this.encaisser.reduce((total: any, facture: any) => total + facture.montantcredit, 0))/this.encaisser.length;
       console.log(this.moyenEncaisse)
       this.montantversertoday(this.encaisser)

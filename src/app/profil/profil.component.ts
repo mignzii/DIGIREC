@@ -22,11 +22,17 @@ classe=new FormControl()
 formation=new FormControl()
 montant=new FormControl()
 dateau=new Date()
+public totaversement:any=0
+public montantfacture:any 
+pourcentageProgression:number=0
 
   ngOnInit(): void {
     this.info.recupinfoetudiant(this.code).subscribe(data=>{
       this.res=data
       console.log(this.res)
+      this.totaversement=this.res[0].totalversement
+    this.montantfacture=this.res[0].montant
+    this.pourcentageProgression = parseFloat(((this.totaversement / this.montantfacture) * 100).toFixed(1));
       if(this.res){
         this.info.recupbailleur(this.res[0].id_bailleur).subscribe((data)=>{
           this.res1=data

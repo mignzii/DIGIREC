@@ -7,12 +7,13 @@ import { Observable,
   providedIn: 'root'
 })
 export class PaiementService {
-  public apiurl='https://digirecbackend.digirec.online/facture'
-  public apiurl2='https://digirecbackend.digirec.online/facture/debiteur'
-  public apiurl1='https://digirecbackend.digirec.online/etudiant/mign'
-  public apiurl3='https://digirecbackend.digirec.online/facture/getfacture'
-  public apiurl4='https://digirecbackend.digirec.online/facture/maxfacture'
-  public apiurl5='https://digirecbackend.digirec.online/facture/onefacture'
+  public apiurl='http://localhost:6001/facture'
+  public apiurl2='http://localhost:6001/facture/debiteur'
+  public apiurl1='http://localhost:6001/etudiant/mign'
+  public apiurl3='http://localhost:6001/facture/getfacture'
+  public apiurl4='http://localhost:6001/facture/maxfacture'
+  public apiurl5='http://localhost:6001/facture/onefacture'
+  public apiurl6='http://localhost:6001/facture/caisse'
 
   public reponse:any
   public envoie:any
@@ -29,8 +30,12 @@ export class PaiementService {
   miseajour():Observable<any>{
     return this.http.put(this.apiurl1,this.envoie)
   }
-  getallinfo():Observable<any>{
-    return this.http.get(this.apiurl3)
+  // ajouter un parametre date pour recuperer les etudiants de cette période 
+  getallinfo(annee:string,page:number):Observable<any>{
+    return this.http.get(`${this.apiurl3}/${annee}/${page}`)
+  }
+  getcaisse():Observable<any>{
+    return this.http.get(this.apiurl6)
   }
   getmaxid():Observable<any>{
     return this.http.get(this.apiurl4)

@@ -12,22 +12,18 @@ export class CaisseComponent implements OnInit {
   public Totaljour:any
   public Recujour:any
   public encaisser:any
+  public facture_etudiant:any
+  public recu_affiche:any
   dtOptions: any = {};
   dtTrigger: Subject<any> = new Subject<any>();
   constructor(private caiisedetail:PaiementService ) { }
 
   ngOnInit(): void {
-    this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 2
-    };
-    this.caiisedetail.getallinfo().subscribe(data=>{
+    this.caiisedetail.getcaisse().subscribe(data=>{
       console.log(data)
-      this.encaisser=data.filter((element:any)=>{
-        return element.Type_versement=="Espece"
-      })
+      this.encaisser=data
       console.log(this.encaisser)
-      this.dtTrigger.next(this.encaisser)
+    
       this.moyenEncaisse=(this.encaisser.reduce((total: any, facture: any) => total + facture.montantcredit, 0))/this.encaisser.length;
       console.log(this.moyenEncaisse)
       this.montantversertoday(this.encaisser)
@@ -86,7 +82,32 @@ export class CaisseComponent implements OnInit {
       currentPageNumber,
     };
   }
-  
+  sortirecu(iduser:any){
+    this.facture_etudiant=this.encaisser.filter((item:any)=> item.id_facture === iduser
+    )
+    console.log(this.facture_etudiant)
+    this.recu_affiche=true
+  }
+
+  ele:string="impression"
+   PrintElem(elem:any){
+    var mywindow :any = window.open('', 'PRINT', 'height=900,width=1300');
+
+    mywindow.document.write('<html><head><title>' + document.title  + '</title>');
+    mywindow.document.write('<link rel="stylesheet" href="../../styles.css" />');
+    mywindow.document.write('</head><body >');
+    mywindow.document.write(document.getElementById(elem)?.innerHTML);
+    mywindow.document.write('</body></html>');
+
+    mywindow.document.close(); // necessary for IE >= 10
+    mywindow.focus(); // necessary for IE >= 10*/
+
+    mywindow.print();
+    mywindow.close();
+    console.log("test")
+    return true;
+
+}
 
   
 }

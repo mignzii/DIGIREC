@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DownloadfileService } from '../services/downloadfile.service';
 import { InfoUtilisateurService } from '../services/info-utilisateur.service';
+import { FormControl } from '@angular/forms';
 import Swal from 'sweetalert2'
 
 @Component({
@@ -22,6 +23,9 @@ public res:any
 
     })
   }
+  annee=new FormControl()
+  page=new FormControl()
+ 
   onDownloadClick() {
     this.downloadfile.downloadFile().subscribe(data => { 
       console.log(data)
@@ -121,6 +125,12 @@ public res:any
         link.click();
       
     });
+  }
+  putparameter(){
+    // j'utilise le localstoarge pour stocker l'annee et la page 
+    localStorage.setItem('anne',this.annee.value)
+    localStorage.setItem('page',this.page.value)
+    
   }
 
 }

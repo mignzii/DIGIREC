@@ -7,16 +7,17 @@ import { Observable,
   providedIn: 'root'
 })
 export class EtudiantsService {
-public url="https://digirecbackend.digirec.online/etudiant"
-public url1="https://digirecbackend.digirec.online/bailleur"
-public url2="https://digirecbackend.digirec.online/etudiant/test/montantprevisionnel"
-public url7="https://digirecbackend.digirec.online/etudiant/dernieretudiant/inscrit/annee"
-public url8="https://digirecbackend.digirec.online/bailleur/postbailleur"
-public url9="https://digirecbackend.digirec.online/bailleur/dernierbailleur/bailleurinscrit"
-public url5="https://digirecbackend.digirec.online/etudiant/test4/totalmontant"
-public url6="https://digirecbackend.digirec.online/etudiant/postetudiant"
-public url10="https://digirecbackend.digirec.online/etudiant/updateetuidant"
-public url11="https://digirecbackend.digirec.online/etudiant/passerEtudiant"
+public url="http://localhost:6001/etudiant"
+public url14="http://localhost:6001/etudiant/debiteurfilte"
+public url1="http://localhost:6001/bailleur"
+public url2="http://localhost:6001/etudiant/test/montantprevisionnel"
+public url7="http://localhost:6001/etudiant/dernieretudiant/inscrit/annee"
+public url8="http://localhost:6001/bailleur/postbailleur"
+public url9="http://localhost:6001/bailleur/dernierbailleur/bailleurinscrit"
+public url5="http://localhost:6001/etudiant/test4/totalmontant"
+public url6="http://localhost:6001/etudiant/postetudiant"
+public url10="http://localhost:6001/etudiant/updateetuidant"
+public url11="http://localhost:6001/etudiant/passerEtudiant"
 
   constructor(private http:HttpClient) { }
   public data:any=new FormData()
@@ -24,8 +25,9 @@ public url11="https://digirecbackend.digirec.online/etudiant/passerEtudiant"
   recupinfoetudiant(id:any):Observable<any>{
     return this.http.get(`${this.url}/${id}`)
   }
-  recupdebiteur():Observable<any>{
-    return this.http.get(this.url)
+  // j'ajoute un parametre année pour recuperer les etudiants de cette année 
+  recupdebiteur(annee:string,page:number):Observable<any>{
+    return this.http.get(`${this.url}/${annee}/${page}`)
   }
   recupbailleur(id:any):Observable<any>{
     return this.http.get(`${this.url1}/${id}`)

@@ -3,7 +3,31 @@
   <div class="col-span-7 bg-gris-clair flex  space-x-4 w-full px-5 h-auto">
     <div class="py-10 w-2/3">
 
+     <div class="flex justify-between">
       <p class="" style="font-size: 35px; color: #3596D2;">DIGIREC ESMT</p>
+      <div class="flex space-x-3 items-center text-bleuclair">
+        <div class="flex flex-col space-y-1">
+          <label for="">Année</label>
+          <select [formControl]="annee" class="py-1 px-1" id="">
+            <option value="2018-2019">2018-2019</option>
+            <option value="2019-2020">2019-2020</option>
+            <option value="2021-2022">2021-2022</option>
+            <option value="2022-2023">2022-2023</option>
+            <option value="2023-2024">2023-2024</option>
+          </select>
+        </div>
+        <div class="flex flex-col space-y-1">
+          <label for="">Pagination</label>
+          <select [formControl]="page" class="py-1 px-1" name="" id="">
+            <option value="10">10 par page</option>:
+            <option value="20">20 par page</option>
+            <option value="50">50 par page</option>
+            <option value="100">100 par page</option>
+          </select>
+        </div>
+        <button (click)="putparameter()" class="bg-bleuclair text-white leading-5 py-1 px-1 rounded-md mt-7 h-7 items-end flex">Valider</button>
+      </div>
+     </div>
       <div class="bg-gris-clair  font-semibold text-md rounded-lg shadow-md flex flex-col py-6 px-6 space-y-4 justify-center items-center">
         <div class="w-full py-2 flex space-x-1">
         <div class="bg-bleudusite w-4/5 flex justify-between py-1 items-center rounded-lg  px-2 ">

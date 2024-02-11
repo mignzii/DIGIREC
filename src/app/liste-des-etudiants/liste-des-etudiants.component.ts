@@ -22,7 +22,7 @@ export class ListeDesEtudiantsComponent implements OnInit {
       pagingType: 'full_numbers',
       pageLength: 2
     };
-    this.etudiant.recupdebiteur().subscribe(data=>{
+    this.etudiant.recupdebiteur('2020-2021',25).subscribe(data=>{
       console.log(data)
       this.infoEtudiant=data
       this.changeetudiant(this.infoEtudiant)

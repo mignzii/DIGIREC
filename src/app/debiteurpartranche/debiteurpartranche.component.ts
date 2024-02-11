@@ -19,7 +19,7 @@ export class DebiteurpartrancheComponent implements OnInit {
       pagingType: 'full_numbers',
       pageLength: 2
     };
-    this.lidtedebit.recupdebiteur().subscribe(data=>{
+    this.lidtedebit.recupdebiteur('2020-2021',25).subscribe(data=>{
       this.rec=data
       console.log(this.rec)
       this.dtTrigger.next(this.rec);

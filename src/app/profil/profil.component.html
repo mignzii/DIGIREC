@@ -11,16 +11,19 @@
           <div class="flex space-x-2   px-2 py-3 rounded-2xl">
             <div class="w-1/4 rounded-xl h-64 shadow-md border-2 border-gray-300 mx-2">
               <p class="text-center text-bleudusite font-semibold py-1">Etat des paiements</p>
-              <div class="flex divide-x-2 px-2 rounded-3xl ">
-                <div class="bg-red-500 font-semibold rounded-l-3xl text-xs px-1" [ngClass]="{first:res[0].nbredeversement==1 || res[0].nbredeversement==2 || res[0].nbredeversement==3 } ">Versement 1</div>
-                <div class="bg-red-500 font-semibold text-xs  px-1" [ngClass]="{first:res[0].nbredeversement==2 || res[0].nbredeversement==3  } ">Versement 2</div>
-                <div class="bg-red-500 font-semibold text-xs  rounded-r-3xl px-1" [ngClass]="{first:res[0].nbredeversement==3} ">Versement 3</div>
+              <div class="border rounded-xl  border-gray-400 bg-red-400 w-[95%] flex ml-1">
+         
+                <div class="progress-bar   h-8  rounded-xl w-full" style="background-color: #1AD4A7;" role="progressbar" [style.width.%]="pourcentageProgression">
+                
+                </div>
+                <div class="absolute  pl-1 pt-1 text-white leading-6 text-sm font-medium  " [ngClass]="{'first': pourcentageProgression ==100 }" >Total réglé: {{totaversement}} FCFA, soit   {{ pourcentageProgression }}%</div>
+                <!--   <p class="text-white w-48 px-2 " [ngClass]="{'first': pourcentageProgression ==100 }">Total Versement : {{totaversement}} </p> -->
               </div>
               <div class=" w-4/5 px-2 ">
               
                 <div class="bg-bleudusite font-semibold w-full flex mt-2 justify-center flex-col px-1 py-1 rounded-lg">
                   <p class="text-white font-semibold w-full ">Structure /Entreprise :</p>
-                  <p>{{res[0].statut}} </p>
+                  <p class="font-medium">{{res[0].statut}} </p>
                 </div>
                 
                 <div
@@ -443,7 +446,7 @@
               <div class="flex flex-col justify-center items-center">
                 <img
                   [src]="
-                    'https://digirecbackend.digirec.online/etudiant/image/afficher/' + res[0].photo
+                    'http://localhost:6001/etudiant/image/afficher/' + res[0].photo
                   "
                   class="rounded-full mx-auto w-32 h-32"
                   alt=""

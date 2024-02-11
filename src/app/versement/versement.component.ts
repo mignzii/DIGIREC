@@ -33,6 +33,9 @@ export class VersementComponent implements OnInit {
   banque=new FormControl()
   reference=new FormControl()
   public test=sessionStorage.getItem('iduser')
+  public totaversement:any=0
+  public montantfacture:any 
+  pourcentageProgression:number=0
   ngOnInit(): void {
     console.log(this.test)
   }
@@ -89,6 +92,11 @@ affiche(){
   this.infoetudiant.recupinfoetudiant(this.code.value).subscribe(data=>{
     console.log("les donnees de l'etudiant " , data)
     this.stock=data[0]
+    this.totaversement=this.stock.totalversement
+    this.montantfacture=this.stock.montant
+    this.pourcentageProgression = parseFloat(((this.totaversement / this.montantfacture) * 100).toFixed(1));
+
+   
     console.log(this.stock)
   })
   this.paie.getoneinfo(this.code.value).subscribe((data)=>{
@@ -140,14 +148,30 @@ postversement(){
   })
 
 }
+postfacture(){
+  this.paie.reponse={
+    "num_etudiant": this.code.value,
+      "libelle": "Frais de Formation",
+       "montant": this.montant.value,
+        "date_emission": this.date.value,
+        "typeoperation":this.type.value,
+        "banque":this.reference.value,
+        "reference":this.banque.value,
+        
+  }
+  this.paie.postpaie().subscribe(data=>{
+    this.serveurresponse=data
+    console.log(this.serveurresponse)
+  })
 
-nbreversement=0
+}
+
 miseajour(){
   this.paie.envoie={
-      "totalvers":(parseInt(this.stock[0].totalversement))+(parseInt(this.montant.value)),
-      "montantEtat":parseInt(this.stock[0].montant)-(parseInt(this.stock[0].totalversement)+(parseInt(this.montant.value))),
+      "totalvers":(parseInt(this.stock.totalversement))+(parseInt(this.montant.value)),
+      "montantEtat":parseInt(this.stock.montant)-(parseInt(this.stock.totalversement)+(parseInt(this.montant.value))),
       "num_etudiant":this.code.value,
-      "nbredevers":this.stock[0].nbredeversement+1,
+      "nbredevers":this.stock.nbredeversement+1,
       "responsable":this.responsable.value
   }
   this.paie.miseajour().subscribe(data=>{
@@ -155,6 +179,7 @@ miseajour(){
   })
 
 }
+
 
 
 

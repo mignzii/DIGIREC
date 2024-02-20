@@ -21,7 +21,7 @@ export class EcriturecomptableComponent implements OnInit {
       pagingType: 'full_numbers',
       pageLength: 2
     };
-    this.paie.getallinfo('2020-2021',10).subscribe(data=>{
+    this.paie.getallinfo('2023-2024',10).subscribe(data=>{
       this.rec=data
       console.log(this.rec)
       this.dtTrigger.next(this.rec);

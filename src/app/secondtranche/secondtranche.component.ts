@@ -21,7 +21,7 @@ export class SecondtrancheComponent implements OnInit {
       pagingType: 'full_numbers',
       pageLength: 2
     };
-    this.lidtedebit.recupdebiteur('2020-2021',100).subscribe(async (data)=>{
+    this.lidtedebit.recupdebiteur('2023-2024',100).subscribe(async (data)=>{
       console.log(data)
       this.rec=data
       this.rec=await Promise.all(this.rec.map(async(objection:any)=>

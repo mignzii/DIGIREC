@@ -7,13 +7,13 @@ import { Observable,
   providedIn: 'root'
 })
 export class PaiementService {
-  public apiurl='http://localhost:6001/facture'
-  public apiurl2='http://localhost:6001/facture/debiteur'
-  public apiurl1='http://localhost:6001/etudiant/mign'
-  public apiurl3='http://localhost:6001/facture/getfacture'
-  public apiurl4='http://localhost:6001/facture/maxfacture'
-  public apiurl5='http://localhost:6001/facture/onefacture'
-  public apiurl6='http://localhost:6001/facture/caisse'
+  public apiurl='https://digirecbackend.digirec.online/facture'
+  public apiurl2='https://digirecbackend.digirec.online/facture/debiteur'
+  public apiurl1='https://digirecbackend.digirec.online/etudiant/mign'
+  public apiurl3='https://digirecbackend.digirec.online/facture/getfacture'
+  public apiurl4='https://digirecbackend.digirec.online/facture/maxfacture'
+  public apiurl5='https://digirecbackend.digirec.online/facture/onefacture'
+  public apiurl6='https://digirecbackend.digirec.online/facture/caisse'
 
   public reponse:any
   public envoie:any

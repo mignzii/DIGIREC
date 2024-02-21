@@ -25,7 +25,7 @@ dateau=new Date()
 public totaversement:any=0
 public montantfacture:any 
 pourcentageProgression:number=0
-
+etudiantinfo:any
   ngOnInit(): void {
     this.info.recupinfoetudiant(this.code).subscribe(data=>{
       this.res=data
@@ -44,7 +44,8 @@ pourcentageProgression:number=0
     this.facture.getoneinfo(this.code).subscribe((data)=>{
       console.log(data)
       this.dateEtudiant=data
-      this.getDate(this.dateEtudiant)
+     
+      this.getdateandclasse(this.dateEtudiant)
 
     })
    
@@ -64,18 +65,27 @@ pourcentageProgression:number=0
       console.log(data)
     })
   }
-  getDate(data:any){
-    const datesUniques: any[] = [];
-// Parcours du tableau et stockage des dates uniques
-for (const facture of data) {
- 
+  getdateandclasse(data: any) {
+    const datesUniques: { [key: string]: any } = {};
   
-  const date = facture.Annee;
-  if (!datesUniques.includes(date)) {
-    datesUniques.push(date);
+    // Parcours du tableau et stockage des dates uniques et de la classe
+    for (const facture of data) {
+      const date = facture.Annee;
+      const classe = facture.classe;
+  
+      // Si la date n'existe pas encore dans l'objet, ajoutez-la avec sa classe
+      if (!datesUniques[date]) {
+        datesUniques[date] = classe;
+      }
+    }
+  
+    console.log(datesUniques);
+    this.etudiantinfo=datesUniques
   }
-}
-console.log(datesUniques)
+  
+  getKeys(obj: any): string[] {
+    return Object.keys(obj);
   }
+
 
 }

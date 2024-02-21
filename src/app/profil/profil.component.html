@@ -85,7 +85,7 @@
                       
 
                     </p>
-                      <p class="text-red-500 font-semibold">{{item.montantEtat}} FCFA</p>
+                      <p class="text-red-500 font-semibold">{{item.montant-item.totalversement}} FCFA</p>
                   </div>
                   <div class="flex space-x-1">
                     <p class="rounded-full px-2 py-2 shadow-xl">
@@ -462,26 +462,18 @@
                 </div>
               </div>       
             <div class="bg-white justify-center  text-black  px-2  rounded-xl py-2">
-              <div class="grid grid-cols-2 ">
-               <div class="flex flex-col space-y-2">
-                <p class="font-medium ">Année Scolaire</p>
-                <div class="flex flex-col space-y-4">
-                  <p>2022-2023</p>
-                  <p>2023-2024 </p>
-                  <p>2025-2026</p>
-                </div> 
-               </div>
-               
-               <div class="flex flex-col space-y-2">
-                <p class="font-medium ">Classe</p>
-                <div class="flex flex-col space-y-4">
-                  <p>Master Tr</p>
-                  <p>DIC Tr</p>
-                  <p>Licence Tr</p>
-                </div> 
-               </div>
-           
-          </div>
+               <div *ngIf="etudiantinfo">
+                <div class="flex justify-between mt-1" *ngFor="let key of getKeys(etudiantinfo)">
+                  <div class="flex flex-col space-y-1">
+                    <p class="text-sm font-semibold">Année Scolaire</p>
+                    <p>{{ key }}</p>
+                  </div>
+                  <div class="flex flex-col space-y-1">
+                    <p class="text-sm font-semibold">Classe</p>
+                    <p>{{ etudiantinfo[key] }}</p>
+                  </div>
+                </div>
+              </div> 
             </div>
           </div>
   

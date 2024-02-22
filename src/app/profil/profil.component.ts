@@ -72,11 +72,11 @@ etudiantinfo:any
     for (const facture of data) {
       const date = facture.Annee;
       const classe = facture.classe;
-  
-      // Si la date n'existe pas encore dans l'objet, ajoutez-la avec sa classe
-      if (!datesUniques[date]) {
+      if (facture.libelle=="Facture Scolarite" &&!datesUniques[date] ) {
         datesUniques[date] = classe;
-      }
+      } 
+      // Si la date n'existe pas encore dans l'objet, ajoutez-la avec sa classe
+     
     }
   
     console.log(datesUniques);

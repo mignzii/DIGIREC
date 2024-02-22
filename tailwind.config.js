@@ -14,7 +14,8 @@ module.exports = {
       "texte-r":"#F26013",
       "blanc":"#ffffff",
       "gris-texte":"#707070",
-      "rougeversement":"#fd036e"
+      "rougeversement":"#fd036e",
+      "bleudiv":"#F8FCFF"
      },},
   },
 

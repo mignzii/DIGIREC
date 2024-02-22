@@ -115,11 +115,11 @@ getdateandclasse(data: any) {
   for (const facture of data) {
     const date = facture.Annee;
     const classe = facture.classe;
-
-    // Si la date n'existe pas encore dans l'objet, ajoutez-la avec sa classe
-    if (!datesUniques[date]) {
+    if (facture.libelle=="Facture Scolarite" &&!datesUniques[date] ) {
       datesUniques[date] = classe;
-    }
+    } 
+    // Si la date n'existe pas encore dans l'objet, ajoutez-la avec sa classe
+   
   }
 
   console.log(datesUniques);
@@ -131,6 +131,7 @@ getKeys(obj: any): string[] {
 }
 
 public serveurresponse:any
+public serveurresponse2:any
 postversement(){
   this.paie.reponse={
     "num_etudiant": this.code.value,
@@ -151,7 +152,7 @@ postversement(){
 postfacture(){
   this.paie.reponse={
     "num_etudiant": this.code.value,
-      "libelle": "Frais de Formation",
+      "libelle": "CISCO, CAPM, PMP, AWS Cloud",
        "montant": this.montant.value,
         "date_emission": this.date.value,
         "typeoperation":this.type.value,
@@ -160,8 +161,8 @@ postfacture(){
         
   }
   this.paie.postpaie().subscribe(data=>{
-    this.serveurresponse=data
-    console.log(this.serveurresponse)
+    this.serveurresponse2=data
+    console.log(this.serveurresponse2)
   })
 
 }

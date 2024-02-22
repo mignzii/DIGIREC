@@ -62,6 +62,7 @@
   </div>
   <div id="ex1" class="modal">
     <ng-container *ngIf="serveurresponse==true"[ngTemplateOutlet]="bon" ></ng-container>
+    <ng-container *ngIf="serveurresponse2==true"[ngTemplateOutlet]="bonformation" ></ng-container>
     <ng-container *ngIf="serveurresponse==false"[ngTemplateOutlet]="mauvais" ></ng-container>
   </div>
   <div id="ex2" class="modal">
@@ -73,6 +74,10 @@
 <ng-template #bon>
   <p>Votre enregistrement a été effectué avec succès</p>
   <a routerLink="/recu/{{code.value}}/{{montant.value}}/Frais de Scolarité /{{date.value}}" rel="modal:close" (click)="miseajour() "><p class="text-bleudusite">Imprimer le reçu</p></a>
+</ng-template>
+<ng-template #bonformation>
+  <p>Votre enregistrement a été effectué avec succès</p>
+  <a routerLink="/recu/{{code.value}}/{{montant.value}}/Frais de Formation /{{date.value}}" rel="modal:close" ><p class="text-bleudusite">Imprimer le reçu</p></a>
 </ng-template>
 <ng-template #mauvais>
   <p>Votre enregistrement n'a bien été effectué</p>
@@ -163,11 +168,11 @@
                 </g>
               </g>
             </svg>
-            <p class=" text-black text-sm font-semibold">Montant Facturé </p>
+            <p class=" text-black text-sm  font-semibold">Montant Facturé </p>
             <p class=" text-black text-sm font-semibold">{{stock?.montant}} </p>
             <p class=" text-black text-sm font-semibold">F CFA </p>
            </div>
-           <div class=" flex justify-between items-center px-2  ">
+           <div class=" flex justify-between bg-bleudiv items-center px-2  ">
           
              <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 76 77">
                <defs>
@@ -232,8 +237,8 @@
         <!-- Fin prise en charge -->
         <!-- Résumé Paiement  -->
         <div *ngIf="etudiantinfo">
-          <div class="flex justify-between mt-1" *ngFor="let key of getKeys(etudiantinfo)">
-            <div class="flex flex-col space-y-1">
+          <div class="flex justify-between mt-1 bg-bleudiv" *ngFor="let key of getKeys(etudiantinfo)">
+            <div class="flex flex-col space-y-1 ">
               <p class="text-sm font-semibold">Année Scolaire</p>
               <p>{{ key }}</p>
             </div>

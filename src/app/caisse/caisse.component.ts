@@ -41,9 +41,9 @@ export class CaisseComponent implements OnInit {
     const formattedDate = `${year}-${month}-${day}`;
 
     console.log(formattedDate); 
-    const facturesAujourdhui = factures.filter((factureparm:any) => factureparm.date_emission === formattedDate);
+   // const facturesAujourdhui = factures.filter((factureparm:any) => factureparm.date_emission === formattedDate);
     // Calculer le montant total des factures filtrées
-      const montantTotalAujourdhui = facturesAujourdhui.reduce((total:any, facture:any) => total + facture.montantcredit, 0);
+      const montantTotalAujourdhui = factures.reduce((total:any, facture:any) => total + facture.montantcredit, 0);
 
       console.log("Montant total encaissé aujourd'hui :", montantTotalAujourdhui);
       this.Totaljour=montantTotalAujourdhui

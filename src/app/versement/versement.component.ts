@@ -32,6 +32,7 @@ export class VersementComponent implements OnInit {
   type=new FormControl()
   banque=new FormControl()
   reference=new FormControl()
+  type_scol=new FormControl()
   public test=sessionStorage.getItem('iduser')
   public totaversement:any=0
   public montantfacture:any 
@@ -152,7 +153,7 @@ postversement(){
 postfacture(){
   this.paie.reponse={
     "num_etudiant": this.code.value,
-      "libelle": "CISCO, CAPM, PMP, AWS Cloud",
+      "libelle": this.type_scol.value,
        "montant": this.montant.value,
         "date_emission": this.date.value,
         "typeoperation":this.type.value,

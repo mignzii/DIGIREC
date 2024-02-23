@@ -36,7 +36,7 @@ password = new FormControl()
         console.log("test")
         console.log(this.url)
         location.href = `https://digirec-esmt.vercel.app/dashboard/${this.url}`;
-       //location.href = `http://localhost:4200/dashboard/${this.url}`;
+      // location.href = `http://localhost:4200/dashboard/${this.url}`;
       }
       else{
         this.isnum=false

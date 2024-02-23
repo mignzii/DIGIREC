@@ -1,3 +1,4 @@
+ <!--
 <div class=" h-screen w-full bg-gris-clair ">
 
   <div class=" pt-[75px] pl-[250px]">
@@ -37,5 +38,39 @@
   </div>
 
 </div>
+   -->
 
-
+<div class="w-full flex ">
+  <div class="left">
+      <div class="content">
+          <img src="../../assets/logo-digirec.svg" alt="Logo" class="logo">
+          <h1 class="title">Nous sommes heureux de vous revoir,</h1>
+          <h2 class="subtitle">Enregistrez vos paiements et suivez-les en vous connectant à votre compte.</h2>
+          <div class="flex flex-col mt-[20px]">
+            <div class="flex  flex-col   space-x-20">
+              <div class="flex flex-col space-y-1 ">
+                  <label for="email" class="text-xl pl-1 font-bold text-bleudusite">Adresse e-mail</label>
+                  <input type="email" class="rounded-full p-3 w-1/2 bg-slate-200 border " [formControl]="username" placeholder="ABDOU MBAYE">
+              </div>
+             
+    
+            </div>
+            <div>
+              <div class="flex flex-col space-y-1">
+                <label for="email" class="text-xl pl-1 font-bold text-bleudusite">Mot de passe</label>
+                <input type="password" [formControl]="password" class="rounded-full  p-3 w-1/2 bg-slate-200 border ">
+            </div>
+    
+            </div>
+            <div class="flex flex-col pt-[60px] space-y-2">
+              <span class="underline underline-offset-4">Mot de passe oublié ?</span>
+              <button (click)="connecter()" class="bg-bleudusite border-2 py-3 px-5 w-1/2 rounded-[20px] "><span class="text-white">CONNEXION</span> </button>
+              
+            </div>
+    
+          </div>
+          <!-- Add more inputs if needed -->
+      </div>
+  </div>
+  <div class="right"></div>
+</div>

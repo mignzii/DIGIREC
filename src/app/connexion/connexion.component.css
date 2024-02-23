@@ -1,0 +1,53 @@
+
+.container {
+    display: flex;
+    height: 100vh;
+    background-color: ghostwhite;
+    width: 100%;
+}
+.left {
+    width: 50%;
+    margin-top: 100px;
+    margin-left: 150px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+
+}
+.right {
+    width: 50%;
+  background-image: url('../../assets/conn.jpeg');
+    background-size: cover;
+   height: 100vh;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px;
+}
+.logo {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 20px;
+}
+.title {
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: #075188;
+    font-weight: 600;
+}
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: rgb(179, 179, 179);
+
+}
+.inputs {
+    width: 100%;
+    max-width: 300px; /* Adjust width as needed */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

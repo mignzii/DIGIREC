@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 export class ConnexionService {
 
   constructor(private http:HttpClient) { }
-  public apiurl="https://digirecbackend.digirec.online/membrepersonnel"
+  public apiurl="https://digirecbackend.digirec.site/membrepersonnel"
   recupone(id:any):Observable<any>{
     return this.http.get(`${this.apiurl}/${id}`)
   }

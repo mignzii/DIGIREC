@@ -7,13 +7,13 @@ import { Observable,
   providedIn: 'root'
 })
 export class PaiementService {
-  public apiurl='https://digirecbackend.digirec.online/facture'
-  public apiurl2='https://digirecbackend.digirec.online/facture/debiteur'
-  public apiurl1='https://digirecbackend.digirec.online/etudiant/mign'
-  public apiurl3='https://digirecbackend.digirec.online/facture/getfacture'
-  public apiurl4='https://digirecbackend.digirec.online/facture/maxfacture'
-  public apiurl5='https://digirecbackend.digirec.online/facture/onefacture'
-  public apiurl6='https://digirecbackend.digirec.online/facture/caisse'
+  public apiurl='https://digirecbackend.digirec.site/facture'
+  public apiurl2='https://digirecbackend.digirec.site/facture/debiteur'
+  public apiurl1='https://digirecbackend.digirec.site/etudiant/mign'
+  public apiurl3='https://digirecbackend.digirec.site/facture/getfacture'
+  public apiurl4='https://digirecbackend.digirec.site/facture/maxfacture'
+  public apiurl5='https://digirecbackend.digirec.site/facture/onefacture'
+  public apiurl6='https://digirecbackend.digirec.site/facture/caisse'
 
   public reponse:any
   public envoie:any

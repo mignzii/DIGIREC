@@ -12,27 +12,27 @@ export class DownloadfileService {
   constructor(private http: HttpClient) { }
   
   downloadFile(): Observable<any>{
-    return this.http.get('https://digirecbackend.digirec.online/facture/download');
+    return this.http.get('https://digirecbackend.digirec.site/facture/download');
   }
   downloadFiletrue(): Observable<Blob>{
-    return this.http.get('https://digirecbackend.digirec.online/facture/downloadfile', { responseType: 'blob' });
+    return this.http.get('https://digirecbackend.digirec.site/facture/downloadfile', { responseType: 'blob' });
   }
   downloadFileCA(): Observable<Blob> {
-    return this.http.get('https://digirecbackend.digirec.online/etudiant/downloadCA', { responseType: 'blob' });
+    return this.http.get('https://digirecbackend.digirec.site/etudiant/downloadCA', { responseType: 'blob' });
   }
   downloadFileteanche(): Observable<Blob> {
-    return this.http.get('https://digirecbackend.digirec.online/etudiant/downloadtranche', { responseType: 'blob' });
+    return this.http.get('https://digirecbackend.digirec.site/etudiant/downloadtranche', { responseType: 'blob' });
   }
   donwloadfileDebiteur(): Observable<Blob> {
-    return this.http.get('https://digirecbackend.digirec.online/etudiant/downloaddebiteur', { responseType: 'blob' });
+    return this.http.get('https://digirecbackend.digirec.site/etudiant/downloaddebiteur', { responseType: 'blob' });
   }
   createfiletranche(): Observable<any> {
-    return this.http.get('https://digirecbackend.digirec.online/etudiant/createdownloadtranche');
+    return this.http.get('https://digirecbackend.digirec.site/etudiant/createdownloadtranche');
   }
   createfileCA(): Observable<any> {
-    return this.http.get('https://digirecbackend.digirec.online/etudiant/createdownloadCA');
+    return this.http.get('https://digirecbackend.digirec.site/etudiant/createdownloadCA');
   }
   createfileDebiteur(): Observable<any> {
-    return this.http.get('https://digirecbackend.digirec.online/etudiant/createdownloaddebiteur');
+    return this.http.get('https://digirecbackend.digirec.site/etudiant/createdownloaddebiteur');
   }
 }

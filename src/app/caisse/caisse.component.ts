@@ -24,7 +24,7 @@ export class CaisseComponent implements OnInit {
       this.encaisser=data
       console.log(this.encaisser)
     
-      this.moyenEncaisse=(this.encaisser.reduce((total: any, facture: any) => total + facture.montantcredit, 0))/this.encaisser.length;
+      this.moyenEncaisse= Math.round((this.encaisser.reduce((total: any, facture: any) => total + facture.montantcredit, 0))/this.encaisser.length) ;
       console.log(this.moyenEncaisse)
       this.montantversertoday(this.encaisser)
     })

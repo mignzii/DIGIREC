@@ -177,6 +177,7 @@ miseajour(){
       "responsable":this.responsable.value
   }
   this.paie.miseajour().subscribe(data=>{
+    console.log('j ai update les champs')
     console.log(data)
   })
 
